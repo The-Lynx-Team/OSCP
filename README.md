@@ -24,7 +24,7 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [TJNulls' preparation guide for PWK OSCP](https://www.netsecfocus.com/oscp/2019/03/29/The_Journey_to_Try_Harder-_TJNulls_Preparation_Guide_for_PWK_OSCP.html)
 - [Abatchy: How to prepare for PWK/OSCP, a noob-friendly guide ](https://www.abatchy.com/2017/03/how-to-prepare-for-pwkoscp-noob)
 - [5 Tips for OSCP Prep](https://medium.com/bugbountywriteup/5-tips-for-oscp-prep-76001cdf4f4f)
-
+- [BIG resource list](https://backdoorshell.gitbooks.io/oscp-useful-links/content/chapter1.html)
 ## GitHub repos
 - [Awesome OSCP](https://github.com/The-Lynx-Team/awesome-oscp)
 - [Enumeration wikis](https://github.com/theonlykernel/enumeration/wiki)
