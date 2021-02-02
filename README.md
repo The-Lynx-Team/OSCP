@@ -27,3 +27,4 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 
 ## GitHub repos
 - [Awesome OSCP](https://github.com/The-Lynx-Team/awesome-oscp)
+- [Enumeration wikis](https://github.com/theonlykernel/enumeration/wiki)
