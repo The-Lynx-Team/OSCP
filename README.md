@@ -31,6 +31,7 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Tips for passing the exam](https://www.reddit.com/r/oscp/comments/9j6q7d/tips_for_passing_the_exam/)
 - [1st attempt, 80+ points. My experience and some unpopular opinions inside.](https://www.reddit.com/r/oscp/comments/la1kxe/1st_attempt_80_points_my_experience_and_some/)
 - [First Attempt ... Discouraged](https://www.reddit.com/r/oscp/comments/l7x5gq/first_attempt_discouraged/)
+- [1 attempt 1 fail with 55 points](https://www.reddit.com/r/oscp/comments/l5sett/1_attempt_1_fail_with_55_points/)
 
 ## GitHub repos
 - [Awesome OSCP](https://github.com/The-Lynx-Team/awesome-oscp)
