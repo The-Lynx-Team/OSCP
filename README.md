@@ -30,6 +30,8 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Path to OSCP](https://localhost.exposed/path-to-oscp/)
 - [Offensive Security Certified Professional – Lab and Exam Review](https://theslickgeek.com/oscp/)
 - [My Fight for the OSCP](https://alphacybersecurity.tech/my-fight-for-the-oscp/)
+- [Passing the OSCP while working full time](https://medium.com/@galolbardes/passing-the-oscp-while-working-full-time-29cb22d622e0)
+- [Not your standard OSCP guide](https://blog.thehackingnomad.com/)
 
 ## Reddit
 - [First Attempt ... Discouraged](https://www.reddit.com/r/oscp/comments/l7x5gq/first_attempt_discouraged/)
@@ -37,7 +39,10 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Failed the OSCP - any tips for the next attempt?](https://www.reddit.com/r/netsecstudents/comments/5fwc1z/failed_the_oscp_any_tips_for_the_next_attempt/danovo5/)
 - [Tips for passing the exam](https://www.reddit.com/r/oscp/comments/9j6q7d/tips_for_passing_the_exam/)
 - [1st attempt, 80+ points. My experience and some unpopular opinions inside.](https://www.reddit.com/r/oscp/comments/la1kxe/1st_attempt_80_points_my_experience_and_some/)
-- [First cert, first try, unconventional approach](https://www.reddit.com/r/oscp/comments/l41dxe/first_cert_first_attempt_an_unconventional/)
+- [First cert, first try, unconventional approach]
+- [Passing the OSCP while working full time](https://www.reddit.com/r/oscp/comments/l41dxe/first_cert_first_attempt_an_unconventional/)
+- [How Offensive Security Saved My Life - An OSCP Journey](https://www.reddit.com/r/oscp/comments/lc3937/how_offensive_security_saved_my_life_an_oscp/)
+- [Unmotivated in ctfs](https://www.reddit.com/r/oscp/comments/l9dm4z/unmotivated_in_ctfs/)
 
 ## GitHub repos
 - [Awesome OSCP](https://github.com/The-Lynx-Team/awesome-oscp)
