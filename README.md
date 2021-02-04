@@ -41,5 +41,14 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Enumeration wikis](https://github.com/theonlykernel/enumeration/wiki)
 - [PimpMyKali](https://github.com/Dewalt-arch/pimpmykali)
 
+## Webbing
+- [Web vulnerabilities to gain access to the system](https://www.exploit-db.com/papers/13017)
+- [Basic Shellshock Exploitation](https://blog.knapsy.com/blog/2014/10/07/basic-shellshock-exploitation/)
+
+## Genereal useful resources
+- [Explain shell](https://explainshell.com/)
+- [Powershell basics](https://www.darkoperator.com/powershellbasics)
+
+
 ## Cheat sheets
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
