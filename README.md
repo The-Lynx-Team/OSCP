@@ -51,7 +51,7 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 ## Genereal useful resources
 - [Explain shell](https://explainshell.com/)
 - [Powershell basics](https://www.darkoperator.com/powershellbasics)
-
+- [Pentest Tips and Tricks](https://jivoi.github.io/2015/07/01/pentest-tips-and-tricks/)
 ## Methodologies
 - [CTF Series : Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html)
 
