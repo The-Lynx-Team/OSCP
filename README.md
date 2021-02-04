@@ -49,6 +49,8 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Explain shell](https://explainshell.com/)
 - [Powershell basics](https://www.darkoperator.com/powershellbasics)
 
+## Methodologies
+- [CTF Series : Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html)
 
 ## Cheat sheets
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
