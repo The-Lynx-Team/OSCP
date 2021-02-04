@@ -43,6 +43,10 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Passing the OSCP while working full time](https://www.reddit.com/r/oscp/comments/l41dxe/first_cert_first_attempt_an_unconventional/)
 - [How Offensive Security Saved My Life - An OSCP Journey](https://www.reddit.com/r/oscp/comments/lc3937/how_offensive_security_saved_my_life_an_oscp/)
 - [Unmotivated in ctfs](https://www.reddit.com/r/oscp/comments/l9dm4z/unmotivated_in_ctfs/)
+- [Need help to prepare OSCP Checklist](https://www.reddit.com/r/oscp/comments/l95y1z/need_help_to_prepare_oscp_checklist/)
+- [Preparing for 4th attempt](https://www.reddit.com/r/oscp/comments/l90f1q/preparing_for_4th_attempt/)
+- [Second Attempt Failure](https://www.reddit.com/r/oscp/comments/la0xzk/second_attempt_failure/)
+- [Access to machines for report writing?](https://www.reddit.com/r/oscp/comments/lbntjv/access_to_machines_for_report_writing/)
 
 ## GitHub repos
 - [Awesome OSCP](https://github.com/The-Lynx-Team/awesome-oscp)
