@@ -16,7 +16,7 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [GitHub repos](#github-repos)
 
 ## Official Offensive Security References
-- [Exame Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
+- [Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
 
 ## Blog
 - [the-oscp-preperation-guide-2020](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
@@ -60,6 +60,11 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Explain shell](https://explainshell.com/)
 - [Powershell basics](https://www.darkoperator.com/powershellbasics)
 - [Pentest Tips and Tricks](https://jivoi.github.io/2015/07/01/pentest-tips-and-tricks/)
+
+## PrivEsc
+- [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+- [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
+
 ## Methodologies
 - [CTF Series : Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html)
 
