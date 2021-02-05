@@ -60,7 +60,7 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Explain shell](https://explainshell.com/)
 - [Powershell basics](https://www.darkoperator.com/powershellbasics)
 - [Pentest Tips and Tricks](https://jivoi.github.io/2015/07/01/pentest-tips-and-tricks/)
-
+- [Big list with tips, tricks and cheat sheets](https://guif.re/)
 ## PrivEsc
 - [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 - [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
