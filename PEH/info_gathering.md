@@ -134,3 +134,23 @@ WhatWeb identifies websites. Its goal is to answer the question, "What is that W
 It shows more granular information.
 
 **The combination of more tools is the best way to get more precise information.**
+
+## Information Gathering with Burp Suite
+
+https://portswigger.net/burp
+
+Burp is an http proxy so with it we can capture the HTTP traffic and play with it.
+
+It's very useful for webapp pentesting. An alternative is ZAP proxy.
+
+## Google Fu
+
+It's hacker's best friend.
+
+Not your kind of google everyday engine.
+
+https://www.exploit-db.com/google-hacking-database
+
+## Utilizing Social Media
+
+Social media are the go-to OSINT sources.
