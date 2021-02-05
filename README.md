@@ -61,6 +61,10 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [Powershell basics](https://www.darkoperator.com/powershellbasics)
 - [Pentest Tips and Tricks](https://jivoi.github.io/2015/07/01/pentest-tips-and-tricks/)
 - [Big list with tips, tricks and cheat sheets](https://guif.re/)
+
+## Buffer Overflow
+- [Do Stack Bufferoverflow Good](https://github.com/justinsteven/dostackbufferoverflowgood)
+
 ## PrivEsc
 - [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 - [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
@@ -68,5 +72,12 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 ## Methodologies
 - [CTF Series : Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html)
 
+## Automation scripts
+- [Autorecon](https://github.com/Tib3rius/AutoRecon)
+- [Onetwopunch](https://github.com/superkojiman/onetwopunch)
+
 ## Cheat sheets
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
+
+## HackTheBox
+- [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120)
