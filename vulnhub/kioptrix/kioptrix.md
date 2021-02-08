@@ -2,7 +2,7 @@
 # Kioptrix notes
 
 ## 1 RECON
-nmap -sS -sV -p- -Pn -T4 -vv -oN allPorts.txt 192.168.154.3
+```nmap -sS -sV -p- -Pn -T4 -vv -oN allPorts.txt 192.168.154.3
 PORT      STATE SERVICE     REASON         VERSION
 22/tcp    open  ssh         syn-ack ttl 64 OpenSSH 2.9p2 (protocol 1.99)
 80/tcp    open  http        syn-ack ttl 64 Apache httpd 1.3.20 ((Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)
@@ -10,7 +10,7 @@ PORT      STATE SERVICE     REASON         VERSION
 139/tcp   open  netbios-ssn syn-ack ttl 64 Samba smbd (workgroup: MYGROUP)
 443/tcp   open  ssl/https   syn-ack ttl 64 Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
 32768/tcp open  status      syn-ack ttl 64 1 (RPC #100024)
-
+```
 ## 2 ENUMERATION
 ### Services
 #### Web

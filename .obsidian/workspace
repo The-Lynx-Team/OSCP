@@ -1,0 +1,113 @@
+{
+  "main": {
+    "id": "8df1087a062c1f28",
+    "type": "split",
+    "children": [
+      {
+        "id": "b9e6e03376d3c5ab",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "PEH/exploitation_basics.md",
+            "mode": "source"
+          }
+        },
+        "group": "b0f836d9ad899fa5"
+      },
+      {
+        "id": "98804fb90af14394",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "PEH/exploitation_basics.md",
+            "mode": "preview"
+          }
+        },
+        "group": "b0f836d9ad899fa5"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a7f295fec629ff9a",
+    "type": "split",
+    "children": [
+      {
+        "id": "1ddcf6b47d654999",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa5504907bff8870",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "1da3f5dd3a3ce8c9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "366220b50ca1ecd9",
+    "type": "split",
+    "children": [
+      {
+        "id": "d8312e7b0967554d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "540761db29c73d76",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "PEH/exploitation_basics.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "PEH/exploitation_basics.md",
+    "README.md",
+    "PEH/img/Pasted image 20210208150324.png",
+    "PEH/img/Pasted image 20210208150547.png",
+    "PEH/img/Pasted image 20210208150941.png",
+    "PEH/img/5stages.png",
+    "PEH/other_scan_tool.md",
+    "Pasted image 20210208150324.png",
+    "PEH/Five stages of EH.md",
+    "Untitled.md"
+  ]
+}
