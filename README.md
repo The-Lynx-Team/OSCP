@@ -17,6 +17,7 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 
 ## Official Offensive Security References
 - [Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
+- [Try Harder: From mantra to mindset](https://www.offensive-security.com/offsec/what-it-means-to-try-harder/)
 
 ## Blog
 - [the-oscp-preperation-guide-2020](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
