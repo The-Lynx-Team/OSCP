@@ -10,8 +10,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "PEH/post_exploitation.md",
-            "mode": "source"
+            "file": "Courses/LPE/initial_enumeration.md",
+            "mode": "preview"
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PEH/post_exploitation.md",
+                "file": "Courses/LPE/initial_enumeration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,15 +86,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "LPE/initial_enumeration.md",
     "Untitled.md",
-    "PEH/exploitation_basics.md",
-    "troubleshooting.md",
-    "PEH/other_scan_tool.md",
-    "PEH/Five stages of EH.md",
-    "PEH/info_gathering.md",
+    "OSPG/Photograph/1. reconnaissance.md",
+    "OSPG/Photograph/4. privilege escalation.md",
+    "OSPG/Photograph/3. exploitation.md",
+    "OSPG/Photograph/2. enumeration service.md",
+    "LPE/Untitled.md",
+    "vulnhub/kioptrix/kioptrix.md",
     "README.md",
-    "PEH/img/Pasted image 20210208150324.png",
-    "PEH/img/Pasted image 20210208150547.png",
-    "PEH/img/Pasted image 20210208150941.png"
+    "OSPG/Photograph/5. loot.md"
   ]
 }
