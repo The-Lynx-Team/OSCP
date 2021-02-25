@@ -4,13 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "98804fb90af14394",
+        "id": "2649a9abb5e4a98a",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Courses/LPE/initial_enumeration.md",
+            "file": "Methodologies/recon_enum_methodology🛠.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "651a1dca6f11cfd7",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Methodologies/recon_enum_methodology🛠.md",
             "mode": "preview"
           }
         }
@@ -53,7 +64,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "366220b50ca1ecd9",
@@ -69,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Courses/LPE/initial_enumeration.md",
+                "file": "Methodologies/recon_enum_methodology🛠.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,15 +98,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "LPE/initial_enumeration.md",
-    "Untitled.md",
-    "OSPG/Photograph/1. reconnaissance.md",
-    "OSPG/Photograph/4. privilege escalation.md",
-    "OSPG/Photograph/3. exploitation.md",
-    "OSPG/Photograph/2. enumeration service.md",
-    "LPE/Untitled.md",
-    "vulnhub/kioptrix/kioptrix.md",
+    "Methodologies/recon_enum_methodology🛠.md",
+    "Methodologies/privesc_methodology👽.md",
     "README.md",
-    "OSPG/Photograph/5. loot.md"
+    "Untitled.md",
+    "recon_enum_methodology🛠.md",
+    "Methodology🛠.md",
+    "CTF/OSPG/Photograph/1. reconnaissance.md",
+    "CTF/OSPG/Photograph/2. enumeration service.md",
+    "M.md",
+    "troubleshooting.md"
   ]
 }
