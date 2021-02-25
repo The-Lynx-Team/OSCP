@@ -1,4 +1,4 @@
-# Reconnaissence Enumeration Methodology🛠
+# Reconnaissance Enumeration Methodology🛠
 
 ## General
 - [ ] add host to your /etc/hosts if you already know its name
