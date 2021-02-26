@@ -82,3 +82,6 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 
 ## HackTheBox
 - [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120)
+
+## Reporting
+- [Reporting * ptestmethod.readthedocs.io](https://ptestmethod.readthedocs.io/en/latest/LFF-IPS-P5-Reporting.html)
