@@ -71,8 +71,9 @@ Download script and run it with a wordlist: [http://pentestmonkey.net/tools/user
 - [ ] LFI / RFI test
 - [ ] cgi-bin found? try shellshock [https://www.exploit-db.com/exploits/34900](https://www.exploit-db.com/exploits/34900)
 - [ ] Check every input field for SQLi
-	- [ ] Cheat sheet 1 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md)
-	- [ ] Cheat sheet 2 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md) or [https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/  
+	- [ ] Cheatsheet 1 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md)
+	- [ ] Cheatsheet 2 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md)
+	- [ ] Cheatsheet 3 [https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/  
 ](https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/)
 - [ ] Check for code injection: [Owasp code injection](https://owasp.org/www-community/attacks/Code_Injection)
 ### DNS (Port 53)
