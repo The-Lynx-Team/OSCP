@@ -1,5 +1,4 @@
 # Reconnaissance Enumeration Methodology🛠
-
 ## General
 - [ ] add host to your /etc/hosts if you already know its name
 - [ ] rever the machine
@@ -7,15 +6,17 @@
 - [ ] nc -v \<TARGET\> \<PORT\>
 - [ ] telnet \<TARGET\> \<PORT\>
 ## Network scanning
+If you don't know the alive hosts,  you can scan the full subnet to find them, so you can do a deeper scan on them later.
+### Go big
 - [ ] nmap -sn 10.x.x.x.x
 - [ ] nmap -sL 10.x.x.x.x
 - [ ] nbtscan -r 10.x.x.x.x
 - [ ] netdiscover -r 10.x.x.x/24
 - [ ] smbtree
-## Individual host scanning
+### Go small (Individual host scanning)
 - [ ] nmap -v --dns-server *DNS* -sV --reason -O --open -Pn \<TARGET\>
 - [ ] nmap -sV --reason -O -p- \<TARGET\>
-- [ ] nmap -sU -sV *TARGET*
+- [ ] nmap -sU -sV \<TARGET\>
 - [ ] nmap -sV -v -n --script vuln \<TARGET\>
 - [ ] nmap --script ssl-heartbleed \<TARGET\>
 

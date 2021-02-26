@@ -4,27 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "2649a9abb5e4a98a",
+        "id": "651a1dca6f11cfd7",
         "type": "leaf",
-        "dimension": 81.39344262295081,
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
             "file": "Methodologies/recon_enum_methodology🛠.md",
             "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "651a1dca6f11cfd7",
-        "type": "leaf",
-        "dimension": 18.606557377049178,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Methodologies/recon_enum_methodology🛠.md",
-            "mode": "preview"
           }
         }
       }
