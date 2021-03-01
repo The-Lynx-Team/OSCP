@@ -8,9 +8,10 @@
 				   ---- have fun ----
 ```
 # OSCP
-Repo interna per raggruppare tutto il materiale utile/interessante per conseguire l'OSCP.
+This repo is curated by us with the objective to gather all the info that we'd found useful and interesting for the OSCP. The material inside this repo is collected from other resources (websites, courses, blogs, git repos, etc).
 
 ## TOC
+- [How to navigate the repo](#how-to-navigate-the-repo)
 - [Official Offensive Security references](#official-offensive-security-references)
 - [Blog](#blog)
 - [Reddit](#reddit)
@@ -25,6 +26,26 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 - [HackTheBox](#hackthebox)
 - [Reporting](#reporting)
 
+## How to navigate the repo
+The repo is structured by this way:
+```bash
+|── CTF
+│   └── OSPG
+│       └── Easy
+├── Courses
+│   ├── LPE
+│   └── PEH
+├── Methodologies
+├── README.md
+└── troubleshooting.md
+```
+* **CTF**: here you can find for used platform the walkthroughs/notes
+* **CTF/OSPG/EASY/HOST_X**: inside each OSPG host directory you can find how we organize our work
+* **Course**: here we put some notes from courses we have done
+* **Methodologies**: here you can find a .md file for each phase (recon/enum,privesc,postexlpoit,etc).
+* **troubleshooting.md**: is a ledger to record all the tecnhical issues:solution we have found along the way
+
+_Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. This justify the directory structure that we are using at this moment. We think that the graph view provided by Obsidian is a nice way to have a visual view of the data we gather._
 ## Official Offensive Security References
 - [Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
 - [Try Harder: From mantra to mindset](https://www.offensive-security.com/offsec/what-it-means-to-try-harder/)
