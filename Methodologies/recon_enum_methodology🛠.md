@@ -55,9 +55,8 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > nmap -sV --reason -O -p- $IP
 - [ ] Do a version detection on UDP ports
 > nmap -sU -sV -n $IP
-
-- [ ] nmap -sV -v -n --script vuln $IP
-- [ ] nmap --script ssl-heartbleed $IP
+- [ ] Vulnerable to heartbleed?
+> nmap --script ssl-heartbleed $IP
 - [ ] Version/OS detection using other DNS servers
 > nmap -v --dns-server \<DNS\> -sV --reason -O --open -Pn $IP
 - [ ] Try identify unknown services
@@ -67,23 +66,34 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 ## Service enumeration
 ### FTP - TCP Port 21
 - [ ] [Banner grabbing](#grab-the-damn-banner)
-- [ ] Check for common exploits
-- [ ] Run command ftp $IP
-- [ ] Check for anonymous access
+- [ ] Connect and check for anonymous access
 - [ ] Any known vulnerabilty?
 > nmap –script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -p 21 $IP
 - [ ] Default credentials check
 > hydra -s \<PORT\> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ft  
 ### SSH (22)
-```console
-> ssh <TARGET> 22
-```
+- [ ] [Banner grabbing](#grab-the-damn-banner)
+- [ ] User enumeration
+	> msf > use auxiliary/scanner/ssh/ssh_enumusers
+
+	> python /usr/share/exploitdb/platforms/linux/remote/40136.py -U /usr/share/wordlists/metasploit/unix_users.txt $IP
+- [ ] Bruteforce root
+> hydra -v -V -l root -P password-file.txt ssh://$IP
+- [ ] Bruteforce list of user
+> hydra -v -V -L userlist.txt -P password-file.txt ssh://$IP
+- [ ] Use requested Key Exchange List
+> ssh user@$IP -oKexAlgorithms={kex\_list}
+- [ ] Use requested cipher
+> ssh user@$IP -c {cipher}
+- [ ] Use requested MAC
+> ssh user@$IP -m {MAC}
 ### SMTP - TCP Port 25
 - [ ] nmap –script smtp-commands,smtp-enum-users,smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -p 25 $IP
 - [ ] nc -nvv $IP
 - [ ] manual testing with **telnet** and VRFY / EXPN
 ### Finger (79)
-Download script and run it with a wordlist: [http://pentestmonkey.net/tools/user-enumeration/finger-user-enum](http://pentestmonkey.net/tools/user-enumeration/finger-user-enum)
+- [ ] Download script and run it with a wordlist: [http://pentestmonkey.net/tools/user-enumeration/finger-user-enum](http://pentestmonkey.net/tools/user-enumeration/finger-user-enum)
+> finger-user-enum.pl -U users.txt -t $IP
 ### Web App (80/443)
 - [ ] Investigate SSL/TLS cert details for further information
 - [ ] Investigate robots.txt

@@ -6,6 +6,7 @@
       {
         "id": "55aab899f04da7d2",
         "type": "leaf",
+        "active": true,
         "state": {
           "type": "markdown",
           "state": {
@@ -18,7 +19,6 @@
       {
         "id": "af0d73b559310828",
         "type": "leaf",
-        "active": true,
         "state": {
           "type": "markdown",
           "state": {
@@ -27,17 +27,6 @@
           }
         },
         "group": "d4610c2f77e81740"
-      },
-      {
-        "id": "66908656a09b3cf5",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Methodologies/recon_enum_methodology🛠.md",
-            "mode": "source"
-          }
-        }
       }
     ],
     "direction": "vertical"
