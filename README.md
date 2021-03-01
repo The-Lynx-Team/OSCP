@@ -5,7 +5,7 @@
    ██║   ██╔══██║██╔══╝       ██║    ╚██╔╝  ██║╚██╗██║ ██╔██╗        ██║   ██╔══╝  ██╔══██║██║╚██╔╝██║
    ██║   ██║  ██║███████╗     ███████╗██║   ██║ ╚████║██╔╝ ██╗       ██║   ███████╗██║  ██║██║ ╚═╝ ██║
    ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚══════╝╚═╝   ╚═╝  ╚═══╝╚═╝  ╚═╝       ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝  
-				   ---- have fun ----
+			       ---- lynxes just wanna have fun ----
 ```
 # OSCP
 This repo is curated by us with the objective to gather all the info that we'd found useful and interesting for the OSCP. The material inside this repo is collected from other resources (websites, courses, blogs, git repos, etc).
