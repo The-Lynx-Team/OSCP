@@ -24,6 +24,7 @@ This repo is curated by us with the objective to gather all the info that we'd f
 - [Automation scripts](#automation-scripts)
 - [Cheat sheets](#cheat-sheets)
 - [HackTheBox](#hackthebox)
+- [VulnHub](#vulnhub)
 - [Reporting](#reporting)
 
 ## How to navigate the repo
