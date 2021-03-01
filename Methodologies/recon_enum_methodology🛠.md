@@ -66,7 +66,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > nmap -sS -sV --script=/path/to/your/vulnscan.nse -oN nmap/vulnScan $IP
 ## Service enumeration
 ### FTP - TCP Port 21
-- [ ] [Banner grabbing](#grab-the-damn-banner!)
+- [ ] [Banner grabbing](#grab-the-damn-banner)
 - [ ] Check for common exploits
 - [ ] Run command ftp $IP
 - [ ] Check for anonymous access
