@@ -108,11 +108,19 @@ _Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. T
 - [Autorecon](https://github.com/Tib3rius/AutoRecon)
 - [Onetwopunch](https://github.com/superkojiman/onetwopunch)
 
+## Tool 
+- [Parser Nmap](https://github.com/shifty0g/ultimate-nmap-parser)
+
 ## Cheat sheets
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
+- [OSCP-Prep-cheatsheet](https://github.com/evets007/OSCP-Prep-cheatsheet)
+- [Immunity Debugger](https://psyl0ckediary.tumblr.com/post/148689728108/4-immunity-debugger-first-steps)
 
 ## HackTheBox
 - [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120)
+
+## VulnHub
+- [OSCP-Like VulnHub boxes](https://www.abatchy.com/2017/02/oscp-like-vulnhub-vms.html) 
 
 ## Reporting
 - [Reporting * ptestmethod.readthedocs.io](https://ptestmethod.readthedocs.io/en/latest/LFF-IPS-P5-Reporting.html)
