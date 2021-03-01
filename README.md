@@ -13,7 +13,17 @@ Repo interna per raggruppare tutto il materiale utile/interessante per conseguir
 ## TOC
 - [Official Offensive Security references](#official-offensive-security-references)
 - [Blog](#blog)
+- [Reddit](#reddit)
 - [GitHub repos](#github-repos)
+- [Webbing](#webbing)
+- [Genereal useful resources](genereal-useful-resources)
+- [Buffer Overflow](#buffer-overflow)
+- [PrivEsc](#privesc)
+- [Methodologies](#methodologies)
+- [Automation scripts](#automation-scripts)
+- [Cheat sheets](#cheat-sheets)
+- [HackTheBox](#hackthebox)
+- [Reporting](#reporting)
 
 ## Official Offensive Security References
 - [Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
