@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "b1353deec6d901ee",
+    "type": "split",
+    "children": [
+      {
+        "id": "4e0915c4fbaaef50",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "CTF/OSPG/Easy/Helpdesk/3. exploitation.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "216d7dc49a0b709f",
+    "type": "split",
+    "children": [
+      {
+        "id": "401ed27023de6cdd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5b11baa945918bf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "0ce811165afc8143",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9948ca006642140a",
+    "type": "split",
+    "children": [
+      {
+        "id": "dfbb5a49ad38a959",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e99eb9f53714c99",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CTF/OSPG/Easy/Helpdesk/3. exploitation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "CTF/OSPG/Easy/Helpdesk/3. exploitation.md",
+    "CTF/OSPG/Easy/Helpdesk/recon_enum_methodology🛠.md",
+    "CTF/OSPG/Easy/Helpdesk/2. enumeration service.md",
+    "CTF/OSPG/Easy/Helpdesk/1. reconnaissance.md"
+  ]
+}

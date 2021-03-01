@@ -1,10 +1,10 @@
 # Reconnaissance Enumeration Methodology🛠
 ## Pre engagement
-- [ ] Log all commands of the current session
+- [x] Log all commands of the current session
 > script engagement_x.log
 > ...
 > exit # when the session has finished
-- [ ] Set the target IP to the $IP  variable
+- [x] Set the target IP to the $IP  variable
 > export $IP=x.x.x.x
 
 ## General methodology
@@ -45,12 +45,12 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > netdiscover -r 10.x.x.x/24
 - [ ] smbtree
 ### Go small (Individual host scanning)
-- [ ] Run a simple TCP port scan to uncover open ports
-> nmap -p- -T4 -oA nmap/ezTCPScan $IP
-- [ ] Run a simple UDP port scan to uncover open ports
+- [x] Run a simple TCP port scan to uncover open ports
+> nmap -p- -T4 -Pn -oA nmap/ezTCPScan $IP
+- [x] Run a simple UDP port scan to uncover open ports
 > nmap -sU -n -p- -T4 -oA nmap/ezUDPScan $IP
-- [ ] If lazy do an Aggressive scan on open ports (A = O+sC+sV)
-> nmap -A -T4 -px,y,z -v -oA nmap/aggressiveScan $IP
+- [x] If lazy do an Aggressive scan on open ports (A = O+sC+sV)
+> nmap -A -T4 -px,y,z -v -Pn -oA nmap/aggressiveScan $IP
 - [ ] Do a version detection on TCP ports
 > nmap -sV --reason -O -p- $IP
 - [ ] Do a version detection on UDP ports
@@ -96,10 +96,12 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > finger-user-enum.pl -U users.txt -t $IP
 ### Web App (80/443)
 - [ ] Investigate SSL/TLS cert details for further information
-- [ ] Investigate robots.txt
-- [ ] View source code
+- [x] Any known vulnerability?
+- [ ] Default credentials
+- [x] Investigate robots.txt
+- [x] View source code
 - [ ] Nikto
-- [ ] Directory Traversal Fuzzer
+- [x] Directory Traversal Fuzzer
 	- [ ] Gobuster (**Doesn't work recursively!!!**)
 		- [ ] File and directory fuzzing
 		- [ ] Vhost bruteforcing
@@ -165,8 +167,12 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 ### RPCBind (111)
 - [ ] rpcinfo -p $IP
 
+### RPC (135)
+- [x] Identify exposed RPC services
+> rpcdump $IP -p 135
+- [x] Look for [notable RPC int](https://book.hacktricks.xyz/pentesting/135-pentesting-msrpc#notable-rpc-interfaces) from the output
 ### SMB/RPC (Port 139/445)
-- [ ] Enumeration
+- [x] Enumeration
 	> nmblookup -A $IP
 
 	>  enum4linux -a $IP
@@ -178,12 +184,12 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> nmap -script smb-enum-users.nse –script-args=unsafe=1 -p445 $IP
 
 	> nmap -script smb-protocols $IP
-- [ ] nmap -n -p 139,445 -v --script smb-vuln* -oA nmap/smb-vulns  $IP
-- [ ] nmap -script smb-os-discovery.nse –script-args=unsafe=1 -p445 $IP
-- [ ] nmap -script smb-check-vulns.nse –script-args=unsafe=1 -p445 $IP
-
+- [x] nmap -script smb-os-discovery.nse –script-args=unsafe=1 -p445 $IP
 - [ ] nbtscan
-- [ ] enum4linux
+- [x] Any known vulnerability?
+	>  nmap -n -p445 -Pn -script smb-vuln* -oN nmap/smbVuln445 $IP
+
+	>  nmap -n -p 139 -Pn -v --script smb-vuln* -oN nmap/smbVuln139  $IP
 - [ ] Manual browsing (Prefer it whenever possible):
 > smbclient -L INSERTIPADDRESS
 > smbclient //INSERTIPADDRESS/tmp
@@ -286,7 +292,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 
 
 ### Anything else
-- [ ] nmap scripts (locate *nse* | grep servicename)
+- [x] nmap scripts (locate *nse* | grep servicename)
 - [ ] hydra
 - [ ]  MSF auxiliary modules
 - [ ]  Download the software and investigate it locally
