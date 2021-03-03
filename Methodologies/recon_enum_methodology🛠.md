@@ -64,7 +64,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] Full vulnerability scanning with [vulnscan.nse](https://github.com/scipag/vulscan)
 > nmap -sS -sV --script=/path/to/your/vulnscan.nse -oN nmap/vulnScan $IP
 ## Service enumeration
-### FTP - TCP Port 21
+### FTP (TCP 21) | TFTP (UDP 21)
 - [ ] [Banner grabbing](#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
 - [ ] Any known vulnerability?
@@ -77,7 +77,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> nmap –script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -Pn -oN nmap/ftpVuln -p 21 $IP
 - [ ] Default credentials check
 > hydra -s \<PORT\> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ft  
-### SSH (22)
+### SSH (TCP 22)
 - [ ] [Banner grabbing](#grab-the-damn-banner)
 - [ ] User enumeration
 	> msf > use auxiliary/scanner/ssh/ssh_enumusers
@@ -93,7 +93,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > ssh user@$IP -c {cipher}
 - [ ] Use requested MAC
 > ssh user@$IP -m {MAC}
-### SMTP - TCP Port 25
+### SMTP (TCP 25)
 - [ ] Enumeration with nmap
 >  nmap –script smtp-commands,smtp-enum-users,smtp-ntlm-info,smtp-open-relay -Pn -oN nmap/smtpEnum -p 25,465,587 $IP
 - [ ] nmap –script smtp-commands,smtp-enum-users,smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -p 25 $IP
@@ -107,10 +107,10 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> nmap –script smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -Pn -p 25,465,587 -oN nmap/smtpVuln $IP
 - [ ] nc -nvv $IP
 - [ ] manual testing with **telnet** and VRFY / EXPN
-### Finger (79)
+### Finger (TCP 79)
 - [ ] Download script and run it with a wordlist: [http://pentestmonkey.net/tools/user-enumeration/finger-user-enum](http://pentestmonkey.net/tools/user-enumeration/finger-user-enum)
 > finger-user-enum.pl -U users.txt -t $IP
-### Web App (80/443)
+### Web App (TCP 80/443)
 #### Phase Alpha - enumeration
 - [ ] Investigate SSL/TLS cert details for further information
 - [ ] Investigate **robots.txt**
@@ -177,7 +177,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 ](https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/)
 - [ ] Check for code injection: [Owasp code injection](https://owasp.org/www-community/attacks/Code_Injection)
 
-### DNS (Port 53)
+### DNS (UDP/TCP 53)
 - [ ] Find domain names for host
 > whois $IP
 - [ ] Find IP and authoritative servers
@@ -205,7 +205,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Check on google
 	> site:github.com *Service version.release*
 	
-###  POP (Port 110)
+###  POP (TCP 110)
 - [ ] Is username enumeration possible?
 - [ ] Nmap enumeration (Default scripts runned with -sC flag):
 	> nmap --script pop3-capabilities -Pn -oN nmap/popCapabilities -p 110,995 $IP
@@ -226,10 +226,12 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Check on google
 	> site:github.com *Service version.release*
 
-### RPCBind (111)
+### RPCBind (TCP/UDP 111)
 - [ ] rpcinfo -p $IP
-
-### SMB/RPC (Port 139/445)
+### RPC (TCP 135)
+- [ ] rpcinfo -p $IP
+- [ ] 
+### SMB (TCP 139/445)
 - [ ] Enumeration
 	> nmblookup -A $IP
 
@@ -261,7 +263,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> nmap -n -v --script="smb-vuln*" -oN nmap/smbAllVulns  -p 139,445 $IP
 	> nmap -n -v -script smb-os-discovery.nse –script-args=unsafe=1 -oN nmap/smbOS -p 445 $IP
 	> nmap -n -v script smb-check-vulns –script-args=unsafe=1 -oN nmap/smbCehckVulns -p445 $IP
-### SNMP (161)
+### SNMP (UDP 161)
 - [ ] Enumeration
 	> for community in public private manager; do snmpwalk -c $community -v1 $IP; done
 
@@ -281,7 +283,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Check on google
 	> site:github.com *Service version.release*
 
-### MSSQL
+### MSSQL (TCP 1433)
 - [ ] Enumerate MSSQL Servers
 	> msf > use auxiliary/scanner/mssql/mssql_ping
 
@@ -307,7 +309,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> site:github.com *Service version.release*
 	- [ ] Check with nmap
 	> nmap -vv -sV -Pn -p \<PORT\> --script=ms-sql-info,ms-sql-config,ms-sql-dump-hashes --script-args=mssql.instance-port=%s,smsql.username-sa,mssql.password-sa $IP
-### Oracle (1521)
+### Oracle (TCP 1521)
 -  [ ] Default credentials
 > hydra -s \[PORT\] -C ./wordlists/oracle-default-userpass.txt -u -f $IP
 - [ ] tnscmd10g version -h $IP
@@ -322,7 +324,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Check https://nvd.nist.gov/
 	- [ ] Check on google
 	> site:github.com *Service version.release*
-### MySQL (3306)
+### MySQL (TCP 3306)
 - [ ] Default credentials?
 > hydra -s \<PORT\> -C usr/share/wordlists/mysql-default-userpass.txt -u -f $IP mysql
 - [ ] Any known vulnerability?
@@ -334,15 +336,33 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Check with nmap
 	> nmap -sV -Pn -vv --script mysql-audit,mysql-databases,mysql-dump-hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql-variables,mysql-vuln-cve2012-2122 -p 3306 $IP
 
-### RDP (3389)
+### RDP (TCP/UDP 3389)
 - [ ] Use rpd-sec-check to enumerate security settings:
 > perl ./scripts/rdp-sec-check.pl $IP:\<PORT\>
 - [ ] Use ncrack to brute force RDP:
 > ncrack -vv --user administrator -P /user/share/wordlists/rockyou.txt rdp://<\TARGET\>
 - [ ] Use hydra to bruteforce RDP:
 > hydra -t 4  -l administrator -P /usr/share/wordlists/rockyou.txt rdp://$IP
+- [ ] Check for BlueKeep
+- [ ] Check login with default guest account and blank password
+- [ ] Check with gathered users:passwds
 
-### LDAP (389)
+### VNC (TCP 5900)
+- [ ] Enum with nmap
+> nmap -sV -Pn -vv --script\=vnc-info,vnc-title -oN nmap/vncEnum -p 5900 $ip
+- [ ] Check for easy VNC passwords
+- [ ] Bruteforce:
+> hydra -s 5900 -P /usr/share/seclists/Passwords/darkweb2017-top10.txt vnc://$IP
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+	- [ ] Check with nmap
+	> nmap -sV -Pn -vv --script realvnc-auth-bypass -oN nmap/vncAuthBypass -p 5900 $IP
+
+### LDAP (TCP/UDP 389) | LDAPS (TCP/UDP 636)
 - [ ]  LDAPSearch can be utilized to locate and retrieve directory entries
 	> ldapsearch -h $IP -p \<PORT\> -x -s base
 
