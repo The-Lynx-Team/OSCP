@@ -4,15 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "231e26743ffbb98a",
+        "id": "9907c0fe3bf8d6a9",
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Methodologies/recon_enum_methodology🛠.md",
-            "mode": "preview"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -70,7 +67,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Methodologies/recon_enum_methodology🛠.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,15 +83,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "CTF/OSPG/box_template/4. privilege escalation.md",
+    "CTF/OSPG/box_template/recon_enum_methodology🛠.md",
+    "CTF/OSPG/box_template/x.x.x.x.md",
+    "CTF/OSPG/box_template/1. reconnaissance.md",
+    "CTF/OSPG/box_template/5. loot.md",
+    "CTF/OSPG/box_template/3. exploitation.md",
+    "CTF/OSPG/box_template/2. services_enumeration.md",
+    "[[CTF/OSPG/box_template/recon_enum_methodology🛠]].md",
     "Methodologies/recon_enum_methodology🛠.md",
-    "Methodologies/webapp_testing_methodology🌐.md",
-    "Methodologies/privesc_methodology👽.md",
-    "README.md",
-    "CTF/OSPG/Easy/ClamAV/recon_enum_methodology🛠.md",
-    "CTF/OSPG/Easy/Helpdesk/2. enumeration service.md",
-    "CTF/OSPG/Easy/ClamAV/2. enumeration service.md",
-    "CTF/OSPG/Easy/ClamAV/5. loot.md",
-    "CTF/OSPG/Easy/Interface/3. exploitation.md",
-    "CTF/OSPG/Easy/Helpdesk/3. exploitation.md"
+    "recon_enum_methodology.md"
   ]
 }

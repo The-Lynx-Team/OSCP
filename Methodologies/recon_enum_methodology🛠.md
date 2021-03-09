@@ -1,10 +1,10 @@
 # Reconnaissance Enumeration Methodology🛠
 ## Pre engagement
-- [x] Log all commands of the current session
+- [ ] Log all commands of the current session
 > script engagement_x.log
 > ...
 > exit # when the session has finished
-- [x] Set the target IP to the $IP  variable
+- [ ] Set the target IP to the $IP  variable
 > export $IP=x.x.x.x
 
 ## General methodology
