@@ -1,24 +1,24 @@
 # Reconnaissance Enumeration Methodology🛠
 ## Pre engagement
-- [ ] Log all commands of the current session
+- [x] Log all commands of the current session
 > script engagement_x.log
 > ...
 > exit # when the session has finished
-- [ ] Set the target IP to the $IP  variable
+- [x] Set the target IP to the $IP  variable
 > export $IP=x.x.x.x
 
 ## General methodology
-- [ ] add host to your /etc/hosts if you already know its name or if you found it
-- [ ] For every open port TCP/UDP
+- [x] add host to your /etc/hosts if you already know its name or if you found it
+- [x] For every open port TCP/UDP
 	- [ ] Find service and version
 	- [ ] Find known service bugs
 	- [ ] Find configuration issues
 	- [ ] Run nmap port scan / banner grabbing
-- [ ] Google-Fu
+- [x] Google-Fu
 	- [ ] Every error message
 	- [ ] Every URL path
 	- [ ] Every paramenter to find versions/apps/bugs
-- [ ] searchsploit every serivce
+- [x] searchsploit every serivce
 - [ ] Google
 	- [ ] Every version exploit db
 	- [ ] Every version vulnerability
@@ -53,7 +53,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > nmap -A -T4 -px,y,z -v -oA nmap/aggressiveScan $IP
 - [ ] Do a version detection on TCP ports
 > nmap -sV --reason -O -p- $IP
-- [ ] Do a version detection on UDP ports
+- [x] Do a version detection on UDP ports
 > nmap -sU -sV -n $IP
 - [ ] Vulnerable to heartbleed?
 > nmap --script ssl-heartbleed $IP
@@ -61,13 +61,13 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > nmap -v --dns-server \<DNS\> -sV --reason -O --open -Pn $IP
 - [ ] Try identify unknown services
 > amap -d $IP \<PORT\>
-- [ ] Full vulnerability scanning with [vulnscan.nse](https://github.com/scipag/vulscan)
+- [ ] Full vulnerability scanning with [vulnscan.nse]
 > nmap -sS -sV --script=/path/to/your/vulnscan.nse -oN nmap/vulnScan $IP
 ## Service enumeration
 ### FTP (TCP 21) | TFTP (UDP 21)
-- [ ] [Banner grabbing](#grab-the-damn-banner)
+- [ ]  [Banner grabbing](#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
-- [ ] Any known vulnerability?
+- [x] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
 	- [ ] Check https://www.cvedetails.com/
 	- [ ] Check https://nvd.nist.gov/
@@ -78,7 +78,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] Default credentials check
 > hydra -s \<PORT\> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ft  
 ### SSH (TCP 22)
-- [ ] [Banner grabbing](#grab-the-damn-banner)
+- [ ]  [Banner grabbing](#grab-the-damn-banner)
 - [ ] User enumeration
 	> msf > use auxiliary/scanner/ssh/ssh_enumusers
 
@@ -108,7 +108,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] nc -nvv $IP
 - [ ] manual testing with **telnet** and VRFY / EXPN
 ### Finger (TCP 79)
-- [ ] Download script and run it with a wordlist: [http://pentestmonkey.net/tools/user-enumeration/finger-user-enum](http://pentestmonkey.net/tools/user-enumeration/finger-user-enum)
+- [ ] Download script and run it with a wordlist: [http://pentestmonkey.net/tools/user-enumeration/finger-user-enum]
 > finger-user-enum.pl -U users.txt -t $IP
 ### Web App (TCP 80/443)
 #### Phase Alpha - enumeration
@@ -169,13 +169,13 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 #### Phase Bravo - go deeper
 - [ ] Follow webapp testing methodology [[webapp_testing_methodology🌐]]
 - [ ] LFI / RFI test
-- [ ] cgi-bin found? try shellshock [https://www.exploit-db.com/exploits/34900](https://www.exploit-db.com/exploits/34900)
+- [ ] cgi-bin found? try shellshock [https://www.exploit-db.com/exploits/34900]
 - [ ] Check every input field for SQLi
-	- [ ] Cheatsheet 1 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md)
-	- [ ] Cheatsheet 2 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md)
+	- [ ] Cheatsheet 1 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md]
+	- [ ] Cheatsheet 2 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md]
 	- [ ] Cheatsheet 3 [https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/  
-](https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/)
-- [ ] Check for code injection: [Owasp code injection](https://owasp.org/www-community/attacks/Code_Injection)
+]
+- [ ] Check for code injection: [Owasp code injection]
 
 ### DNS (UDP/TCP 53)
 - [ ] Find domain names for host
@@ -401,3 +401,12 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ]  Download the software and investigate it locally
 - [ ]  Try enumeration scripts for specific services
 
+
+
+[vulnscan.nse]: https://github.com/scipag/vulscan
+[http://pentestmonkey.net/tools/user-enumeration/finger-user-enum]: http://pentestmonkey.net/tools/user-enumeration/finger-user-enum
+[https://www.exploit-db.com/exploits/34900]: https://www.exploit-db.com/exploits/34900
+[https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md]: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md
+[https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/  
+]: https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/
+[Owasp code injection]: https://owasp.org/www-community/attacks/Code_Injection
