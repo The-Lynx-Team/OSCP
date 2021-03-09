@@ -30,19 +30,12 @@ This repo is curated by us with the objective to gather all the info that we'd f
 ## How to navigate the repo
 The repo is structured by this way:
 ```bash
-|── CTF
-│   └── OSPG
-│       └── Easy
-├── Courses
-│   ├── LPE
-│   └── PEH
+|── Box template
 ├── Methodologies
 ├── README.md
 └── troubleshooting.md
 ```
-* **CTF**: here you can find for used platform the walkthroughs/notes
-* **CTF/OSPG/EASY/HOST_X**: inside each OSPG host directory you can find how we organize our work
-* **Course**: here we put some notes from courses we have done
+* **Box template**: here you can how we organize our work flow
 * **Methodologies**: here you can find a .md file for each phase (recon/enum,privesc,postexlpoit,etc).
 * **README**: where you can find a list of useful links
 * **troubleshooting.md**: is a ledger to record all the tecnhical issues:solution we have found along the way

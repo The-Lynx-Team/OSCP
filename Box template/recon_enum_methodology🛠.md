@@ -65,7 +65,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > nmap -sS -sV --script=/path/to/your/vulnscan.nse -oN nmap/vulnScan $IP
 ## Service enumeration
 ### FTP (TCP 21) | TFTP (UDP 21)
-- [ ]  [Banner grabbing](CTF/OSPG/box_template/recon_enum_methodology%F0%9F%9B%A0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](Box%20template/recon_enum_methodology%F0%9F%9B%A0.md#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
 - [x] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
@@ -78,7 +78,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] Default credentials check
 > hydra -s \<PORT\> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ft  
 ### SSH (TCP 22)
-- [ ]  [Banner grabbing](CTF/OSPG/box_template/recon_enum_methodology%F0%9F%9B%A0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](Box%20template/recon_enum_methodology%F0%9F%9B%A0.md#grab-the-damn-banner)
 - [ ] User enumeration
 	> msf > use auxiliary/scanner/ssh/ssh_enumusers
 

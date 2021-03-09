@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "9907c0fe3bf8d6a9",
+        "id": "899e71bb3fa2f81e",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9948ca006642140a",
@@ -88,14 +87,14 @@
   },
   "lastOpenFiles": [
     "README.md",
+    "Courses/PEH/info_gathering.md",
+    "Courses/PEH/other_scan_tool.md",
+    "Courses/PEH/post_exploitation.md",
+    "Courses/PEH/Five stages of EH.md",
+    "Courses/PEH/exploitation_basics.md",
     "CTF/OSPG/box_template/4. privilege escalation.md",
     "CTF/OSPG/box_template/recon_enum_methodology🛠.md",
     "CTF/OSPG/box_template/x.x.x.x.md",
-    "CTF/OSPG/box_template/1. reconnaissance.md",
-    "CTF/OSPG/box_template/5. loot.md",
-    "CTF/OSPG/box_template/3. exploitation.md",
-    "CTF/OSPG/box_template/2. services_enumeration.md",
-    "[[CTF/OSPG/box_template/recon_enum_methodology🛠]].md",
-    "Methodologies/recon_enum_methodology🛠.md"
+    "CTF/OSPG/box_template/1. reconnaissance.md"
   ]
 }
