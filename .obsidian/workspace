@@ -8,8 +8,11 @@
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "preview"
+          }
         }
       }
     ],
@@ -67,6 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -83,6 +87,7 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "README.md",
     "CTF/OSPG/box_template/4. privilege escalation.md",
     "CTF/OSPG/box_template/recon_enum_methodology🛠.md",
     "CTF/OSPG/box_template/x.x.x.x.md",
@@ -91,7 +96,6 @@
     "CTF/OSPG/box_template/3. exploitation.md",
     "CTF/OSPG/box_template/2. services_enumeration.md",
     "[[CTF/OSPG/box_template/recon_enum_methodology🛠]].md",
-    "Methodologies/recon_enum_methodology🛠.md",
-    "recon_enum_methodology.md"
+    "Methodologies/recon_enum_methodology🛠.md"
   ]
 }

@@ -1,4 +1,4 @@
-```
+```bash
 ████████╗██╗  ██╗███████╗     ██╗  ██╗   ██╗███╗   ██╗██╗  ██╗    ████████╗███████╗ █████╗ ███╗   ███╗
 ╚══██╔══╝██║  ██║██╔════╝     ██║  ╚██╗ ██╔╝████╗  ██║╚██╗██╔╝    ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
    ██║   ███████║█████╗       ██║   ╚████╔╝ ██╔██╗ ██║ ╚███╔╝        ██║   █████╗  ███████║██╔████╔██║
@@ -44,6 +44,7 @@ The repo is structured by this way:
 * **CTF/OSPG/EASY/HOST_X**: inside each OSPG host directory you can find how we organize our work
 * **Course**: here we put some notes from courses we have done
 * **Methodologies**: here you can find a .md file for each phase (recon/enum,privesc,postexlpoit,etc).
+* **README**: where you can find a list of useful links
 * **troubleshooting.md**: is a ledger to record all the tecnhical issues:solution we have found along the way
 
 _Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. This justify the directory structure that we are using at this moment. We think that the graph view provided by Obsidian is a nice way to have a visual view of the data we gather._
