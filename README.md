@@ -40,7 +40,7 @@ The repo is structured by this way:
 * **README**: where you can find a list of useful links
 * **troubleshooting.md**: is a ledger to record all the tecnhical issues:solution we have found along the way
 
-_Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. This justify the directory structure that we are using at this moment. We think that the graph view provided by Obsidian is a nice way to have a visual view of the data we gather. So for a better experience use **Obsidian**._
+_Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. This justify the directory structure that we are using at this moment. We think that the graph view provided by Obsidian is a nice way to have a visual view of the data we gather. So if you use our checklists, we suggest you to run them on **Obsidian** for a better experience._
 ## Official Offensive Security References
 - [Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
 - [Try Harder: From mantra to mindset](https://www.offensive-security.com/offsec/what-it-means-to-try-harder/)
