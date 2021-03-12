@@ -94,6 +94,8 @@ _Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. T
 
 ## PrivEsc
 - [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+- [OSCP - Linux Privilege Escalation Methodology by Conda](https://www.youtube.com/watch?v=VpNaPAh93vE)
+- [OSCP - Windows Privilege Escalation Methodology by Conda](https://www.youtube.com/watch?v=Qfy-traJwIs)
 - [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
 
 ## Methodologies
