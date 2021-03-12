@@ -8,7 +8,9 @@
 			       ---- lynxes just wanna have fun ----
 ```
 # OSCP
-This repo is curated by us with the objective to gather all the info that we'd found useful and interesting for the OSCP. The material inside this repo is also collected from other resources (websites, courses, blogs, git repos, etc).
+We maintain this repo with the aim to gather all the info that we’d found useful and interesting for the OSCP. We also collect material from other resources (websites, courses, blogs, git repos, books, etc).
+
+**Before continue**: we are still working on this repo as we go on with our OSCP journey. This means we'll add or remove parts without giving notice.
 
 ## TOC
 - [How to navigate the repo](#how-to-navigate-the-repo)
@@ -22,6 +24,7 @@ This repo is curated by us with the objective to gather all the info that we'd f
 - [PrivEsc](#privesc)
 - [Methodologies](#methodologies)
 - [Automation scripts](#automation-scripts)
+- [Tools](#tools)
 - [Cheat sheets](#cheat-sheets)
 - [HackTheBox](#hackthebox)
 - [VulnHub](#vulnhub)
@@ -37,11 +40,13 @@ The repo is structured by this way:
 └── troubleshooting.md
 ```
 * **Box template**: here you can see how we organize our work flow
-* **Methodologies**: here you can find a checklist for each phase (recon/enum,privesc,postexlpoit,etc).
+* **Methodologies**: here you can find a checklist for each phase (recon/enum, postexploit, privesc, etc)
 * **README**: where you can find a list of useful links
 * **troubleshooting.md**: is a ledger to record all the tecnhical issues:solution we have found along the way
 
-_Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. This justify the directory structure that we are using at this moment. We think that the graph view provided by Obsidian is a nice way to have a visual view of the data we gather. So if you use our checklists, we suggest you to run them on **Obsidian** for a better experience._
+_**Be aware**: we use  [Obsidian](https://obsidian.md/) as note taking application. This justifies the directory structure and how we format files.
+We think the graph view provided by Obsidian is a pleasant way to have a visual view of the data we gather. So if you use our checklists, we suggest you run them on Obsidian for a better experience._
+
 ## Official Offensive Security References
 - [Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
 - [Try Harder: From mantra to mindset](https://www.offensive-security.com/offsec/what-it-means-to-try-harder/)
@@ -109,7 +114,7 @@ _Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. T
 - [Autorecon](https://github.com/Tib3rius/AutoRecon)
 - [Onetwopunch](https://github.com/superkojiman/onetwopunch)
 
-## Tool 
+## Tools
 - [Parser Nmap](https://github.com/shifty0g/ultimate-nmap-parser)
 
 ## Cheat sheets
@@ -127,8 +132,8 @@ _Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. T
 - [Reporting * ptestmethod.readthedocs.io](https://ptestmethod.readthedocs.io/en/latest/LFF-IPS-P5-Reporting.html)
 
 ## Mental and Physical Health
-Ok, this is not about popping shells, cracking codes, and launching exploits. But your health is more important than know how to pop a shell. If you are under burnout, if you can't concentrate, if you can't free your minds and visualize your target, all the above stuff is useless.
-Please, take some time to read the links below and do your own research. The InfoSec community is quite united and you'll always find someone ready to help you.
+Ok, this is not about popping shells, cracking codes, and launching exploits. Your health is more important than knowing how to pop a shell. If you are under burnout, if you can’t concentrate, if you can’t free your minds and visualize your target, all the above stuff is useless. You should find a spot to read the below links and do your own research.
+The InfoSec community is an enormous family, you’ll always find someone ready to help you.
 
 - [Mental Health Hackers](https://www.mentalhealthhackers.org/)
 - [The Causes of and Solutions for Security Burnout](https://www.youtube.com/watch?v=aqzMEfVfEnk)
