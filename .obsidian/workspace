@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "899e71bb3fa2f81e",
+        "id": "e43a06448cea51db",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -87,14 +87,14 @@
   },
   "lastOpenFiles": [
     "README.md",
-    "Courses/PEH/info_gathering.md",
-    "Courses/PEH/other_scan_tool.md",
-    "Courses/PEH/post_exploitation.md",
-    "Courses/PEH/Five stages of EH.md",
-    "Courses/PEH/exploitation_basics.md",
-    "CTF/OSPG/box_template/4. privilege escalation.md",
-    "CTF/OSPG/box_template/recon_enum_methodology🛠.md",
-    "CTF/OSPG/box_template/x.x.x.x.md",
-    "CTF/OSPG/box_template/1. reconnaissance.md"
+    "Methodologies/webapp_testing_methodology🌐.md",
+    "Methodologies/recon_enum_methodology🛠.md",
+    "Methodologies/privesc_methodology👽.md",
+    "[mental--physical-health.md",
+    "Box template/x.x.x.x.md",
+    "Box template/2. services_enumeration.md",
+    "Box template/1. reconnaissance.md",
+    "Box template/6. loot.md",
+    "Box template/5. privilege escalation.md"
   ]
 }

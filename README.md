@@ -17,7 +17,7 @@ This repo is curated by us with the objective to gather all the info that we'd f
 - [Reddit](#reddit)
 - [GitHub repos](#github-repos)
 - [Webbing](#webbing)
-- [Genereal useful resources](genereal-useful-resources)
+- [Genereal useful resources](#genereal-useful-resources)
 - [Buffer Overflow](#buffer-overflow)
 - [PrivEsc](#privesc)
 - [Methodologies](#methodologies)
@@ -26,6 +26,7 @@ This repo is curated by us with the objective to gather all the info that we'd f
 - [HackTheBox](#hackthebox)
 - [VulnHub](#vulnhub)
 - [Reporting](#reporting)
+- [Mental and Physical Health](#mental-and-physical-health)
 
 ## How to navigate the repo
 The repo is structured by this way:
@@ -96,6 +97,10 @@ _Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. T
 - [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
 - [Conda's YouTube Privilege Escalation playlist](https://www.youtube.com/watch?v=VpNaPAh93vE&list=PLDrNMcTNhhYrBNZ_FdtMq-gLFQeUZFzWV)
 - [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
+- [Privilege Escaltion FTW (Jake Williams)](https://www.youtube.com/watch?v=yXe4X-AIbps)
+- [Elevating your Windows Privileges Like a Boss! (Jake Williams)](https://www.youtube.com/watch?v=SHdM197sbIE)
+- [Tib3rius' Linux PrivEsc](https://tryhackme.com/room/linuxprivesc)
+- [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
 
 ## Methodologies
 - [CTF Series : Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html)
@@ -120,3 +125,19 @@ _Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. T
 
 ## Reporting
 - [Reporting * ptestmethod.readthedocs.io](https://ptestmethod.readthedocs.io/en/latest/LFF-IPS-P5-Reporting.html)
+
+## Mental and Physical Health
+Ok, this is not about popping shells, cracking codes, and launching exploits. But your health is more important than know how to pop a shell. If you are under burnout, if you can't concentrate, if you can't free your minds and visualize your target, all the above stuff is useful.
+Please, take some time to read the links below and do your own research. The InfoSec community is quite united and you'll always find someone ready to help you.
+
+- [Mental Health Hackers](https://www.mentalhealthhackers.org/)
+- [The Causes of and Solutions for Security Burnout](https://www.youtube.com/watch?v=aqzMEfVfEnk)
+- [Cybersecurity’s Dirty Little Secret and Talent Grenade: Burnout](https://www.youtube.com/watch?v=lsm21No9m4s)
+- [Mental health in Cyber Security](https://www.reddit.com/r/cybersecurity/comments/m1c12e/mental_health_in_cybersecurity/)
+- [What Separates the Good From the Bad: Mental Health and Cybersecurity](https://www.infosecurity-magazine.com/next-gen-infosec/separates-good-bad-mental-health/)
+- [Check whole Azeria's Self-Improvement section](https://azeria-labs.com/the-importance-of-deep-work-the-30-hour-method-for-learning-a-new-skill/)
+- [Why People Who Protect Others Need to be at Their Best; Tackling Mental Health in Cybersecurity](https://bricata.com/blog/mental-health-cybersecurity/)
+- [Mental Health for Hackers](https://www.rsaconference.com/library/webcast/66-mental-health)
+- [Mental Health for Hackers: Contents Under Pressure](https://www.tripwire.com/state-of-security/security-awareness/events/mental-health-hackers-under-pressure/)
+- [How to beat imposter syndrome to get into cybersecurity industry?](https://www.reddit.com/r/cybersecurity/comments/koh3bj/how_to_beat_imposter_syndrome_to_get_into/)
+- [Navigating Imposter Syndrome in the world of Information Security](https://medium.com/@west.a.dominique/navigating-imposter-syndrome-in-the-world-of-information-security-dc6ec10d9c0f)
