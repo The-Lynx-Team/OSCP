@@ -127,7 +127,7 @@ _Be aware: we use [Obsidian](https://obsidian.md/) as note taking application. T
 - [Reporting * ptestmethod.readthedocs.io](https://ptestmethod.readthedocs.io/en/latest/LFF-IPS-P5-Reporting.html)
 
 ## Mental and Physical Health
-Ok, this is not about popping shells, cracking codes, and launching exploits. But your health is more important than know how to pop a shell. If you are under burnout, if you can't concentrate, if you can't free your minds and visualize your target, all the above stuff is useful.
+Ok, this is not about popping shells, cracking codes, and launching exploits. But your health is more important than know how to pop a shell. If you are under burnout, if you can't concentrate, if you can't free your minds and visualize your target, all the above stuff is useless.
 Please, take some time to read the links below and do your own research. The InfoSec community is quite united and you'll always find someone ready to help you.
 
 - [Mental Health Hackers](https://www.mentalhealthhackers.org/)
