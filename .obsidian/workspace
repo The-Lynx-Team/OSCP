@@ -10,8 +10,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "README.md",
-            "mode": "preview"
+            "file": "Methodologies/recon_enum_methodology🛠.md",
+            "mode": "source"
           }
         }
       }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9948ca006642140a",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Methodologies/recon_enum_methodology🛠.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,10 +86,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "README.md",
-    "Methodologies/webapp_testing_methodology🌐.md",
     "Methodologies/recon_enum_methodology🛠.md",
     "Methodologies/privesc_methodology👽.md",
+    "README.md",
+    "Methodologies/webapp_testing_methodology🌐.md",
     "[mental--physical-health.md",
     "Box template/x.x.x.x.md",
     "Box template/2. services_enumeration.md",

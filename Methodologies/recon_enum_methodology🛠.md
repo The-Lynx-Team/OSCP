@@ -74,7 +74,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Check on google
 	> site:github.com *Service version.release*
 	- [ ] Check with nmap
-	> nmap –script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -Pn -oN nmap/ftpVuln -p 21 $IP
+	> nmap --script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -Pn -oN nmap/ftpVuln -p 21 $IP
 - [ ] Default credentials check
 > hydra -s \<PORT\> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ft  
 ### SSH (TCP 22)
@@ -95,8 +95,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > ssh user@$IP -m {MAC}
 ### SMTP (TCP 25)
 - [ ] Enumeration with nmap
->  nmap –script smtp-commands,smtp-enum-users,smtp-ntlm-info,smtp-open-relay -Pn -oN nmap/smtpEnum -p 25,465,587 $IP
-- [ ] nmap –script smtp-commands,smtp-enum-users,smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -p 25 $IP
+>  nmap --script smtp-commands,smtp-enum-users,smtp-ntlm-info,smtp-open-relay -Pn -oN nmap/smtpEnum -p 25,465,587 $IP
 - [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
 	- [ ] Check https://www.cvedetails.com/
@@ -104,7 +103,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Check on google
 	> site:github.com *Service version.release*
 	- [ ] Check with nmap
-	> nmap –script smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -Pn -p 25,465,587 -oN nmap/smtpVuln $IP
+	> nmap --script smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -Pn -p 25,465,587 -oN nmap/smtpVuln $IP
 - [ ] nc -nvv $IP
 - [ ] manual testing with **telnet** and VRFY / EXPN
 ### Finger (TCP 79)
@@ -239,9 +238,9 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	
 	>  nmap --script=smb-enum* --script-args=unsafe=1 -T5 $IP
 	
-	> nmap -script smb-enum-shares.nse –script-args=unsafe=1 -p445 $IP
+	> nmap -script smb-enum-shares.nse --script-args=unsafe=1 -p445 $IP
 
-	> nmap -script smb-enum-users.nse –script-args=unsafe=1 -p445 $IP
+	> nmap -script smb-enum-users.nse --script-args=unsafe=1 -p445 $IP
 
 	> nmap -script smb-protocols $IP
 - [ ] nbtscan
@@ -261,8 +260,8 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> site:github.com *Service version.release*
 	- [ ] Check with nmap
 	> nmap -n -v --script="smb-vuln*" -oN nmap/smbAllVulns  -p 139,445 $IP
-	> nmap -n -v -script smb-os-discovery.nse –script-args=unsafe=1 -oN nmap/smbOS -p 445 $IP
-	> nmap -n -v script smb-check-vulns –script-args=unsafe=1 -oN nmap/smbCehckVulns -p445 $IP
+	> nmap -n -v --script smb-os-discovery.nse --script-args=unsafe=1 -oN nmap/smbOS -p 445 $IP
+	> nmap -n -v --script smb-check-vulns --script-args=unsafe=1 -oN nmap/smbCehckVulns -p445 $IP
 ### SNMP (UDP 161)
 - [ ] Enumeration
 	> for community in public private manager; do snmpwalk -c $community -v1 $IP; done
