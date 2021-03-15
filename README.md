@@ -79,6 +79,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Preparing for 4th attempt](https://www.reddit.com/r/oscp/comments/l90f1q/preparing_for_4th_attempt/)
 - [Second Attempt Failure](https://www.reddit.com/r/oscp/comments/la0xzk/second_attempt_failure/)
 - [Access to machines for report writing?](https://www.reddit.com/r/oscp/comments/lbntjv/access_to_machines_for_report_writing/)
+- [OSCP Practical Advice for Success](https://www.reddit.com/r/oscp/comments/m29gx4/oscp_practical_advice_for_success/)
 
 ## GitHub repos
 - [Awesome OSCP](https://github.com/The-Lynx-Team/awesome-oscp)
@@ -106,10 +107,11 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Elevating your Windows Privileges Like a Boss! (Jake Williams)](https://www.youtube.com/watch?v=SHdM197sbIE)
 - [Tib3rius' Linux PrivEsc](https://tryhackme.com/room/linuxprivesc)
 - [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
+- [Weird PrivEsc Techinques](https://www.youtube.com/watch?v=wyeRPSjnNjY)
 
 ## Methodologies
 - [CTF Series : Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html)
-
+- [Post Exploitation](https://n00bpentesting.wordpress.com/lessons/ptes-101/post-exploitation/)
 ## Automation scripts
 - [Autorecon](https://github.com/Tib3rius/AutoRecon)
 - [Onetwopunch](https://github.com/superkojiman/onetwopunch)

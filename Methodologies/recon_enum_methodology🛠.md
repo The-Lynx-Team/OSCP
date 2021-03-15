@@ -8,17 +8,17 @@
 > export $IP=x.x.x.x
 
 ## General methodology
-- [x] add host to your /etc/hosts if you already know its name or if you found it
-- [x] For every open port TCP/UDP
+- [ ] add host to your /etc/hosts if you already know its name or if you found it
+- [ ] For every open port TCP/UDP
 	- [ ] Find service and version
 	- [ ] Find known service bugs
 	- [ ] Find configuration issues
 	- [ ] Run nmap port scan / banner grabbing
-- [x] Google-Fu
+- [ ] Google-Fu
 	- [ ] Every error message
 	- [ ] Every URL path
 	- [ ] Every paramenter to find versions/apps/bugs
-- [x] searchsploit every serivce
+- [ ] searchsploit every serivce
 - [ ] Google
 	- [ ] Every version exploit db
 	- [ ] Every version vulnerability
@@ -53,7 +53,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > nmap -A -T4 -px,y,z -v -oA nmap/aggressiveScan $IP
 - [ ] Do a version detection on TCP ports
 > nmap -sV --reason -O -p- $IP
-- [x] Do a version detection on UDP ports
+- [ ] Do a version detection on UDP ports
 > nmap -sU -sV -n $IP
 - [ ] Vulnerable to heartbleed?
 > nmap --script ssl-heartbleed $IP
@@ -67,7 +67,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 ### FTP (TCP 21) | TFTP (UDP 21)
 - [ ]  [Banner grabbing](#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
-- [x] Any known vulnerability?
+- [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
 	- [ ] Check https://www.cvedetails.com/
 	- [ ] Check https://nvd.nist.gov/
@@ -229,7 +229,6 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] rpcinfo -p $IP
 ### RPC (TCP 135)
 - [ ] rpcinfo -p $IP
-- [ ] 
 ### SMB (TCP 139/445)
 - [ ] Enumeration
 	> nmblookup -A $IP
