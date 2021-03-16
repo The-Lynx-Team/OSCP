@@ -1,0 +1,1985 @@
+body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  --font-monospace: "Fira Code", "Source Code Pro", monospace;
+}
+
+.CodeMirror pre.CodeMirror-line {
+  font-size: 14px;
+  /* font-family: "Fira Code", "Source Code Pro", monospace; */
+}
+
+/* === DARK MODE === */
+
+.theme-dark {
+  --background-primary: #343434;
+  /* --background-primary-alt: #171717; */
+  --background-primary-alt: #2c2c2c;
+  --background-secondary: #2c2c2c;
+  --background-secondary-alt: #2c2c2c;
+  --background-modifier-border: #303030;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.85);
+  --background-modifier-form-field: var(--background-primary);
+  --text-accent: #df4a16;
+  --text-accent-hover: #df7a16;
+  --text-normal: #dcddde;
+  --text-muted: #999;
+  --text-faint: #666;
+  --text-error: #ff3333;
+  --text-error-hover: #990000;
+  --text-matched: #dcddde;
+  --text-on-accent: #dcddde;
+  --text-selection: rgba(223, 74, 22, 0.8);
+  --text-highlight-bg: #df4a16;
+  /* --interactive-normal: #2a2a2a; */
+  --interactive-normal: var(--background-primary);
+  --interactive-hover: #303030;
+  --interactive-accent: #df4a16;
+  --interactive-accent-rgb: #df7a16;
+  --interactive-accent-hover: #df7a16;
+  --workspace-leaf-resize: #494949;
+  --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
+  --scrollbar-bg: rgba(255, 255, 255, 0);
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+  --accent-strong: #ec0d0d;
+  --accent-mild: #e6b64f;
+  --bw: #ffffff;
+  --lines-identation: #535353;
+  --tooltip-bg: rgba(223, 74, 22, 0.9);
+}
+
+/* === LIGHT MODE === */
+
+.theme-light {
+  --background-primary: #fff;
+  --background-primary-alt: #dedede;
+  --background-secondary: #dedede;
+  --background-secondary-alt: #dedede;
+  --background-modifier-border: #f7f7f7;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.85);
+  --text-accent: #df4a16;
+  --text-accent-hover: #df7a16;
+  --text-normal: #03050b;
+  --text-muted: #555;
+  --text-error: #ff3333;
+  --text-error-hover: #990000;
+  --text-matched: #dcddde;
+  --text-on-accent: #dcddde;
+  --text-selection: rgba(223, 74, 22, 0.8);
+  --text-highlight-bg: #df4a16;
+  --interactive-accent: #df4a16;
+  --interactive-accent-rgb: #df7a16;
+  --interactive-accent-hover: #df7a16;
+  --workspace-leaf-resize: #c1c1c1;
+  --accent-strong: #ec0d0d;
+  --accent-mild: #e6b64f;
+  --bw: #03050b;
+  --lines-identation: #dad8d8;
+  --tooltip-bg: rgba(223, 74, 22, 0.9);
+}
+
+/*=== Titlebar for v0.8.13+ ===*/
+.titlebar {
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--background-primary);
+}
+.titlebar-inner {
+  color: var(--text-normal);
+}
+.titlebar-text {
+  color: var(--text-normal);
+}
+
+/*for future editing maximize btn*/
+.titlebar-button.mod-maximize[aria-label="Maximize"] {
+}
+.titlebar-button.mod-maximize[aria-label="Restore down"] {
+}
+
+.titlebar-button.mod-close:hover {
+  background-color: transparent;
+  color: var(--text-accent);
+}
+
+
+/* change heading size in edit mode */
+/* for better looking after enable Clutter free edit mode */
+.cm-header-1 {
+  font-size: 30px;
+  color: var(--text-accent);
+}
+.cm-header-2 {
+  font-size: 26px;
+}
+.cm-header-3 {
+  font-size: 22px;
+}
+.cm-header-4 {
+  font-size: 20px;
+}
+.cm-header-5 {
+  font-size: 18px;
+}
+.cm-header-6 {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+/* === Clutter free edit mode === */
+/* inline formatting, link targets and [[ ]] disappears if not active line*/
+div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting {
+  display: none;
+}
+/* except list markers, links, images, urls and code blocks */
+span.cm-image,
+span.cm-link,
+span.cm-url,
+span.cm-formatting-list,
+span.cm-formatting-code-block.cm-hmd-codeblock {
+  /* header hashes -  span.cm-formatting-header */
+  display: inline !important;
+}
+
+/* hide all html tags -- IT IS COMMENTED OUT BY DEFAULT */
+/* div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-tag{ display: none; } */
+
+/* and task checkboxes */
+span.cm-formatting-task {
+  display: inline !important;
+  font-family: monospace;
+}
+
+/* remove borders in iframe */
+iframe {
+  border-width: 0;
+}
+
+/* Enlarge image on hover */
+.markdown-preview-view img {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; /*experiment with values*/
+  transition: transform 0.25s ease;
+}
+
+.markdown-preview-view img:hover {
+  -webkit-transform: scale(2); /* experiment with values */
+  transform: scale(2);
+}
+
+/* fix background of folder-collapse-indicator */
+body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
+  background: none;
+}
+
+/* change highlight h1 in text from outline panel or search */
+/* because color the same */
+
+.markdown-preview-view .mod-highlighted h1 {
+  color: white;
+}
+
+/* === Tooltip === */
+.tooltip {
+  background-color: var(--tooltip-bg);
+  color: #fff;
+  font-weight: bold;
+}
+.tooltip .tooltip-arrow {
+  border-bottom: 5px solid var(--tooltip-bg);
+}
+
+/* Make selected items in settings more visible */
+.horizontal-tab-nav-item.is-active,
+.vertical-tab-nav-item.is-active {
+  background-color: var(--background-primary);
+}
+.horizontal-tab-nav-item:hover,
+.vertical-tab-nav-item:hover {
+  background-color: var(--background-primary);
+  transition: all 0.3s ease;
+}
+
+/* Add border in settings page */
+.modal.mod-settings .vertical-tab-header {
+  border-right: 1px solid var(--background-primary);
+}
+
+/* fix local graph input range background */
+input[type="range"] {
+  background-color: var(--background-secondary);
+}
+
+/* add border radius in popup for suggestion  in tags etc */
+.suggestion {
+  border-radius: 4px;
+}
+
+/* change color of workspace when drag */
+.workspace-drop-overlay.mod-drag {
+  background-color: var(--text-accent);
+}
+
+/* markdown edit mode width */
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  max-width: 800px;
+}
+
+/* === Custom Checkbox === */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  border: 1px solid var(--text-faint);
+  padding: 0;
+}
+input[type="checkbox"]:focus {
+  outline: 0;
+}
+input[type="checkbox"]:checked {
+  background-color: var(--text-accent);
+  border: 1px solid var(--text-accent);
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23ffffff"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+}
+
+.markdown-preview-view .task-list-item-checkbox {
+  margin-left: -25px;
+  top: 5px;
+  cursor: pointer;
+  filter: none; /*remove default filter*/
+}
+.markdown-preview-view .task-list-item {
+  padding-inline-start: 25px;
+}
+
+/* code block: dark background */
+.theme-dark code[class*="language-"],
+.theme-dark pre[class*="language-"],
+.theme-light code[class*="language-"],
+.theme-light pre[class*="language-"] {
+  background: var(--background-secondary);
+}
+
+.markdown-preview-view code,
+.markdown-preview-view pre {
+  background: var(--background-secondary);
+  color: #b82b4e;
+}
+
+/* change color of selection text in code block, pre and links */
+.theme-light .markdown-preview-view code::selection,
+.theme-light .markdown-preview-view code > *::selection,
+.theme-light .markdown-preview-view pre::selection,
+.theme-light .markdown-preview-view pre > *::selection,
+.theme-dark .markdown-preview-view code::selection,
+.theme-dark .markdown-preview-view code > *::selection,
+.theme-dark .markdown-preview-view pre::selection,
+.theme-dark .markdown-preview-view pre > *::selection,
+*::selection {
+  color: #fff;
+  background-color: var(--text-selection);
+}
+
+/* change text selection background in edit mode, no way to change text color */
+.CodeMirror-focused .CodeMirror-selected,
+.CodeMirror-selected {
+  background-color: var(--text-selection);
+}
+
+/* FIXME : dropdown colors in settings page */
+
+/* code block:remove white bg on operators */
+.theme-light .token.operator {
+  background: hsla(0, 0%, 100%, 0);
+}
+
+/* === VIM Mode === */
+.cm-fat-cursor .CodeMirror-cursor {
+  background: var(--text-accent);
+}
+.cm-animate-fat-cursor {
+  background: var(--text-accent);
+}
+
+/* active line selection*/
+.CodeMirror-activeline .CodeMirror-linebackground {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+/* .theme-dark .CodeMirror-activeline .CodeMirror-linebackground {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+} */
+
+/* === Tag Pills === */
+
+.tag {
+  background-color: var(--text-accent);
+  border: none;
+  color: white !important;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.6em;
+  padding: 0px 7px 1px 7px;
+  text-align: center;
+  text-decoration: none !important;
+  display: inline-block;
+  margin: 0px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.tag[href^="#important"] {
+  background-color: red;
+}
+
+.tag[href^="#complete"] {
+  background-color: green;
+}
+
+.tag[href^="#inprogress"] {
+  background-color: orange;
+}
+
+.tag:hover {
+  color: white;
+  background-color: var(--text-accent-hover);
+}
+
+/* Tag pills in tag panel*/
+/* Thanks Klaas for idea and some realization */
+
+.tag-pane-tag-text {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  border: none;
+  font-size: 13px;
+  padding: 1px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.tag-pane-tag-count {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  border: none;
+  font-size: 13px;
+  padding: 2px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.tag-pane-tag:hover > .tag-pane-tag-count,
+.tag-pane-tag:hover > .tag-pane-tag-text {
+  background-color: var(--text-accent);
+  color: white;
+  font-weight: bold;
+}
+
+/*=== trace indentation lines === */
+
+.cm-hmd-list-indent .cm-tab,
+ul ul {
+  position: relative;
+}
+
+.cm-hmd-list-indent .cm-tab::before,
+ul ul::before {
+  content: "";
+  border-left: 1px solid var(--lines-identation);
+
+  position: absolute;
+}
+
+.cm-hmd-list-indent .cm-tab::before {
+  left: 0;
+  top: -5px;
+  bottom: -4px;
+}
+
+ul ul::before {
+  left: -15px;
+  top: 0;
+  bottom: 0;
+}
+
+/* === Settings Page: change buttons color === */
+.modal.mod-settings button:not(.mod-cta) {
+  background-color: var(--text-accent);
+  color: #fff;
+  font-weight: bold;
+}
+.modal.mod-settings button:not(.mod-cta):hover {
+  background-color: var(--text-accent-hover);
+}
+
+/* === Community Themes page: make responsive === */
+.community-theme-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.community-theme {
+  max-width: 600px;
+}
+
+/* ===TRANSCLUSION TWEAKS=== */
+
+.markdown-embed-title {
+  font-family: sans-serif;
+  font-size: 10px;
+  color: var(--text-accent);
+  line-height: 10px;
+  width: 100%;
+  text-align: left;
+  font-weight: 100;
+  margin: -4px 0px;
+}
+
+.markdown-preview-view .markdown-embed {
+  background-color: var(--background-primary);
+  border-radius: 0px;
+  border: 0;
+  border-left: 1px solid var(--text-selection);
+  margin: 0px -10px;
+}
+
+.markdown-embed {
+  display: block;
+  top: 0px;
+}
+
+.markdown-embed > .markdown-embed-content {
+  display: inline;
+  max-height: 100%;
+  max-width: 100%;
+  margin: -25px 0px -15px 0px;
+  padding: 0px 0px 5px 0px;
+}
+
+.markdown-embed-content > * {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 10px 0px 5px 0px;
+}
+
+.markdown-embed-link {
+  top: -3px;
+  left: -20px;
+  color: var(--accent-strong);
+  cursor: pointer;
+  position: absolute;
+}
+
+svg.link {
+  width: 12px;
+  height: 12px;
+}
+
+.file-embed-link {
+  top: 10px;
+  left: -10px;
+  color: var(--accent-strong);
+  cursor: pointer;
+  position: relative;
+}
+
+.internal-embed,
+.internal-embed > .markdown-embed > .markdown-embed-content {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  left: 0px;
+}
+
+.markdown-preview-view .file-embed {
+  background-color: var(--background-primary);
+  border-radius: 4px;
+  border: 2px solid var(--text-selection);
+  padding: 5px 20px 5px 20px;
+  margin: 10px 0px 10px 0px;
+}
+
+.file-embed-title {
+  font-size: 12px;
+  height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ==========headings=======*/
+h1 {
+  font-size: 34px;
+  line-height: 40px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--text-accent);
+  color: var(--text-accent);
+}
+h2 {
+  font-size: 26px;
+  line-height: 36px;
+  padding-top: 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--text-normal);
+}
+h3 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--text-muted);
+}
+h4 {
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--text-muted);
+}
+h5 {
+  padding-bottom: 3px;
+  border-bottom: 1px dotted var(--text-muted);
+}
+
+/* h1::before {
+    content: 'h1 ';
+    font-size: 12px;
+    color: var(--text-faint);
+}
+h2::before {
+    content: 'h2 ';
+    font-size: 12px;
+    color: var(--text-faint);
+}
+h3::before {
+    content: 'h3 ';
+    font-size: 12px;
+    color: var(--text-faint);
+}
+h4::before {
+    content: 'h4 ';
+    font-size: 12px;
+    color: var(--text-faint);
+}
+h5::before {
+    content: 'H5 ';
+    font-size: 12px;
+    color: var(--text-faint);
+}
+h6::before {
+    content: 'H6 ';
+    font-size: 12px;
+    color: var(--text-faint);
+} */
+
+/* ==========hr======*/
+.markdown-preview-view hr {
+  height: 1px;
+  border: none;
+  background-color: var(--text-accent);
+}
+
+/* ===========================*/
+/* ====== GUI tweaks =========*/
+/* ===========================*/
+
+.workspace-tab-header:hover {
+  color: var(--text-accent);
+  cursor: pointer;
+}
+/* ===== snappier animations ==== */
+
+.workspace-tab-header,
+.workspace-tab-header-inner,
+.workspace-tab-container-before,
+.workspace-tab-container-after {
+  transition: background-color 100ms linear;
+}
+
+/* =====  ribbon vertical =========*/
+
+.workspace-ribbon-collapse-btn {
+  margin-top: 0px;
+  padding: 10px 6px 4px 6px;
+  cursor: pointer;
+  color: var(--text-faint);
+  transform: none;
+  transition: transform 100ms ease-in-out;
+}
+
+.workspace-ribbon.is-collapsed {
+  background-color: var(--background-secondary-alt);
+}
+
+.workspace-ribbon.mod-left {
+  border-right: 1px solid var(--background-primary);
+}
+
+.workspace-ribbon.mod-left.is-collapsed {
+  border-right-color: transparent;
+}
+
+.workspace-ribbon.mod-right.is-collapsed {
+  border-left-color: var(--background-secondary-alt);
+}
+
+/* ===== thinner & snappier horiz resize handle =========*/
+
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  cursor: row-resize;
+}
+
+.workspace-leaf-resize-handle {
+  transition: background-color 80ms linear;
+}
+
+/* ==== align top tab header with header title ==== */
+
+.workspace-tab-header-container {
+  display: flex;
+  background-color: var(--background-secondary-alt);
+  height: 36px;
+  padding-top: 1px;
+  border-bottom: 1px solid var(--background-primary);
+}
+
+/* =====  left sidebar =========*/
+
+.workspace-tab-header-container {
+  display: flex;
+  background-color: var(--background-secondary-alt);
+  height: 36px; /* aligh tab header */
+  padding-top: 1px;
+}
+
+.nav-header {
+  padding: 10px 10px 4px 8px;
+}
+
+.nav-buttons-container {
+  display: flex;
+  justify-content: left;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  margin-bottom: 2px;
+}
+
+.nav-action-button > svg {
+  width: 14px;
+  height: 14px;
+}
+
+.nav-action-button {
+  color: var(--text-muted);
+  padding: 0 20px 0 10px;
+  cursor: pointer;
+}
+
+.nav-files-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-left: 7px; /* reduce to 0 for more space */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* == File Explorer === */
+.nav-file-title,
+.nav-folder-title {
+  padding: 0px 14px 0px 20px;
+}
+
+.nav-folder-title {
+  font-weight: bold;
+}
+
+.nav-folder.mod-root > .nav-folder-title {
+  padding-left: 6px;
+  font-size: 14px;
+  font-weight: bolder;
+  top: -6px;
+  cursor: default;
+}
+
+.nav-file.is-active > .nav-file-title,
+.nav-file.is-active > .nav-file-title:hover {
+  background-color: var(--background-primary);
+  border-radius: 2px;
+  font-weight: bold;
+  /* color: var(--text-accent); */
+  border-left: 2px solid var(--text-accent);
+  transition: all 0.5s ease;
+}
+.nav-file.is-active > .nav-file-title {
+  padding-left: 5px;
+  /* margin-left: 5px; */
+}
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  background-color: var(--background-primary);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.nav-file-tag {
+  background-color: var(--background-secondary-alt);
+  top: -1px;
+}
+
+/*-------search pane---------*/
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  padding: 5px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.search-input {
+  display: block;
+  margin: 0 auto 10px auto;
+  width: calc(100% - 20px);
+}
+
+/*---- nav arrows adjust location ----*/
+
+.nav-folder-collapse-indicator {
+  position: absolute;
+  left: 12px;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  transition: transform 50ms linear 0s;
+}
+
+.nav-folder.is-collapsed .nav-folder-collapse-indicator {
+  transform: translateX(-4px) translateY(1px) rotate(-90deg);
+}
+
+/* ===== smaller view-actions icons ===== */
+
+.view-action > svg {
+  width: 14px;
+  height: 14px;
+}
+
+.view-header-icon > svg {
+  width: 14px;
+  height: 14px;
+}
+
+.workspace-tab-header-inner-icon > svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ===== fix the selection highlight ==== */
+
+.suggestion-item.is-selected {
+  background-color: var(--text-accent);
+}
+.theme-light .suggestion-item.is-selected {
+  color: #fff;
+}
+
+/* ====== scrollbars =======*/
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  -webkit-border-radius: 4px;
+}
+
+/*==== tabs =====*/
+
+.workspace-tab-header-inner {
+  padding: 9px 20px;
+  height: 100%;
+  display: flex;
+}
+
+.workspace-tab-container-before,
+.workspace-tab-container-after {
+  width: 0px;
+  height: 100%;
+}
+
+/* ====== font size headers =========*/
+
+.view-header-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ===== view header color ==========*/
+
+.workspace-leaf.mod-active .view-header-icon {
+  padding: 5px 10px;
+  color: var(--interactive-accent);
+  cursor: grab;
+  position: relative;
+  top: 2px;
+}
+
+.workspace-leaf.mod-active .view-header {
+  background-color: var(--background-primary);
+  border-bottom: 2px solid var(--interactive-accent);
+}
+
+.view-header {
+  height: 36px;
+  display: flex;
+  border-top: 1px solid var(--background-secondary-alt);
+  border-bottom: 2px solid var(--background-secondary-alt);
+  background-color: var(--background-secondary-alt);
+  z-index: 1;
+}
+
+/* remove the gradient between title and icons */
+
+.workspace-leaf.mod-active .view-header-title-container:after {
+  background: var(--background-primary);
+}
+
+.view-header-title-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 32px;
+  background: var(--background-secondary-alt);
+  /*border-right: 1px solid var(--background-modifier-border);*/
+}
+
+/*==== separators =====*/
+
+.workspace-leaf-resize-handle {
+  background-color: var(--background-secondary-alt);
+}
+
+.workspace-leaf-resize-handle:hover {
+  background-color: var(--workspace-leaf-resize);
+}
+
+/* a bit more padding on the left side */
+
+.markdown-preview-view {
+  padding: 20px 30px 30px 45px;
+}
+
+/* fix color text in white theme and add some padding in mark text for readable */
+.theme-light .markdown-preview-view mark {
+  color: #fff;
+}
+.markdown-preview-view mark {
+  padding: 0 1px;
+}
+
+/*===== backlink pane smaller fonts=======*/
+
+.side-dock-collapsible-section-header {
+  font-size: 12px;
+  padding: 4px 14px 0 22px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+.side-dock-collapsible-section-header.is-collapsed
+  .side-dock-collapsible-section-header-indicator {
+  transform: translateX(-9px) translateY(7px) rotate(-90deg);
+}
+.search-result-container {
+  padding: 0px 4px 4px 4px;
+}
+
+.search-result-file-title {
+  font-size: 14px;
+  color: var(--text-accent);
+  border-radius: 0px;
+  border-top: 1px solid var(--background-modifier-border);
+  padding: 2px 12px 0px 18px;
+}
+
+.search-result-file-matches {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 16px;
+  padding: 2px 0px;
+  margin-bottom: -6px;
+  border-bottom: 0px;
+}
+.search-result-file-match {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 16px;
+  padding: 2px 0px;
+  margin-bottom: 4px;
+  border-bottom: 0px;
+}
+
+.search-result-file-match:not(:first-child) {
+  margin-top: 0px;
+}
+
+.search-result-file-matched-text {
+  color: var(--text-matched);
+  background-color: var(--text-highlight-bg);
+}
+
+.search-info-more-matches {
+  color: var(--text-faint);
+  text-decoration: overline;
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.search-empty-state {
+  color: var(--text-error);
+  font-size: 12px;
+  margin: 0 20px 15px 20px;
+}
+/* the small text ... and XX matches */
+
+/*========= remove rounded corners =======*/
+
+.workspace-tab-header.is-active {
+  border-radius: 0px;
+}
+
+.nav-folder-title {
+  border-radius: 0px;
+}
+
+.workspace-tab-container-before.is-before-active .workspace-tab-header-inner,
+.workspace-tab-header.is-before-active .workspace-tab-header-inner {
+  border-radius: 0px;
+}
+
+.workspace-tab-container-after.is-after-active .workspace-tab-header-inner,
+.workspace-tab-header.is-after-active .workspace-tab-header-inner {
+  border-bottom-left-radius: 0px;
+}
+
+.workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
+  border-top-left-radius: 0px;
+}
+
+.workspace-split.mod-right-split .workspace-tabs .workspace-leaf {
+  border-top-right-radius: 0px;
+}
+
+/*======= flat status bar ====*/
+
+.status-bar {
+  background-color: var(--background-secondary-alt);
+  border-top: 0px solid var(--background-modifier-border);
+}
+
+/* ======= graph view ==============*/
+
+.graph-view.color-fill {
+  color: var(--accent-strong);
+  /*var(--text-muted)if you want neutral color*/
+}
+
+.graph-view.color-circle {
+  color: var(--text-normal);
+}
+
+.graph-view.color-line {
+  color: var(--text-faint);
+}
+
+.graph-view.color-text {
+  color: var(--text-normal);
+}
+
+.graph-view.color-fill-highlight {
+  color: var(--interactive-accent);
+}
+
+.graph-view.color-line-highlight {
+  color: rgb(var(--interactive-accent-rgb));
+}
+
+/* code mirror change text color */
+.CodeMirror-lines {
+  color: var(--text-normal);
+}
+.CodeMirror-lines > *::selection {
+  color: white;
+}
+
+.theme-light .graph-view.color-fill-tag,
+.theme-dark .graph-view.color-fill-tag {
+  color: var(--text-accent);
+}
+
+.theme-light .graph-view.color-fill-attachment,
+.theme-dark .graph-view.color-fill-attachment {
+  color: var(--text-muted);
+}
+
+/*==== codemirror line numbers gutter edit mode ====*/
+
+.cm-s-obsidian .CodeMirror-linenumber {
+  color: var(--text-accent);
+  opacity: 0.5;
+  font-size: 14px;
+  font-family: Consolas, monospace;
+}
+
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+
+.CodeMirror-linenumber {
+  padding: 0 3px 0 0px;
+  min-width: 20px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* === show margins in editor mode === */
+.CodeMirror-lines {
+  border-right: 1px solid var(--background-secondary);
+  border-left: 1px solid var(--background-secondary);
+}
+
+/*============bigger link popup preview  ================*/
+
+.popover.hover-popover {
+  position: absolute;
+  z-index: var(--layer-popover);
+  transform: scale(0.85);
+  max-height: 600px; /* was 300 */
+  min-height: 100px;
+  width: 500px;
+  overflow: hidden;
+  padding: 0;
+  border-bottom: none;
+  transition: all 0.5s ease;
+  opacity: 0.95;
+}
+/* .popover.hover-popover.is-loaded {
+  transition: all 2s ease;
+  opacity: 1;
+} */
+
+.popover {
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-primary-alt);
+  box-shadow: 3px 3px 7px var(--background-modifier-box-shadow);
+  border-radius: 6px;
+  padding: 15px 20px 10px 20px;
+  position: relative;
+  font-weight: 500;
+  -webkit-text-stroke: 0.2px;
+  -webkit-font-smoothing: none;
+  color: var(--bw);
+}
+/* --- the bottom gradient ---*/
+.popover.hover-popover:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0px; /* 50px */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--background-primary) 80%,
+    var(--background-primary)
+  );
+}
+
+/* === footnotes === */
+
+.footnotes {
+  text-align: justify;
+  hyphens: auto;
+  font-size: 12px;
+}
+
+sup {
+  vertical-align: top;
+  font-size: 11px;
+  display: inline-block;
+  position: relative;
+  margin: -4px 0 0 3px;
+}
+sub {
+  vertical-align: bottom;
+  font-size: 11px;
+  display: inline-block;
+  position: relative;
+  margin: 0px 0 -4px 3px;
+}
+/* === Quote Block === */
+.markdown-preview-view blockquote {
+  border-radius: 4px;
+  border: 0px solid var(--background-modifier-border);
+  background-color: var(--background-secondary);
+  border-left: 5px solid var(--text-accent);
+  padding: 14px 10px 10px 10px;
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 1em;
+  margin-inline-start: 20px;
+  text-align: justify;
+  hyphens: auto;
+  /* margin-inline-start: 0; */
+}
+.markdown-preview-view blockquote p {
+  display: inline;
+  margin: 0;
+}
+/* Add quotation character before and after quote */
+.markdown-preview-view blockquote:before {
+  font: 14px/20px serif;
+  color: var(--text-accent);
+  content: "\201C";
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.3em;
+}
+.markdown-preview-view blockquote:after {
+  font: 14px/20px serif;
+  color: var(--text-accent);
+  content: "\201D";
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.3em;
+}
+
+/*=============== lists bullets ================*/
+ul {
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: disc;
+}
+ul ul ul {
+  list-style-type: circle;
+}
+
+/* ==== Table Styles ==== */
+.markdown-preview-view table,
+.markdown-preview-view th,
+.markdown-preview-view td {
+  border: 1px solid var(--text-faint);
+}
+
+.markdown-preview-view th {
+  background-color: var(--background-secondary-alt);
+}
+.theme-dark .markdown-preview-view tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+.theme-light .markdown-preview-view tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/*=============== tables align ================*/
+tbody {
+  display: table-row-group;
+  vertical-align: top;
+  border-color: inherit;
+}
+/*=============== add mods below ================*/
+/*=============== add mods below ================*/
+/*=============== add mods below ================*/
+
+/*----file explorer column view : slightly buggy ----*/
+.nav-folder-children {
+  column-width: 200px;
+  column-rule: 1px solid var(--background-modifier-border);
+}
+
+/* Wrap long nav text and some paddings */
+.nav-file-title,
+.nav-folder-title {
+  white-space: normal;
+  width: auto;
+  line-height: 1.1;
+}
+
+/* Indent wrapped nav text */
+/* .nav-file-title-content {
+  margin-left: 10px;
+  text-indent: -10px;
+} */
+
+/* Justify preview text */
+.markdown-preview-view p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* reduce size of embedded files */
+/* .markdown-preview-view img, */
+.markdown-preview-view audio,
+.markdown-preview-view video {
+  max-width: max(500px, 60%);
+  outline: none;
+}
+
+/*=============== add mods below ================*/
+
+/*=============== add mods below ================*/
+
+/*=============== add mods below ================*/
+
+/*===============================================*/
+/*                                    .__    .___*/
+/*  _____   ___________  _____ _____  |__| __| _/*/
+/* /     \_/ __ \_  __ \/     \\__  \ |  |/ __ | */
+/*|  Y Y  \  ___/|  | \/  Y Y  \/ __ \|  / /_/ | */
+/*|__|_|  /\___  >__|  |__|_|  (____  /__\____ | */
+/*      \/     \/            \/     \/        \/ */
+/*======== optionnal mermaid style below ========*/
+
+.label {
+  font-family: Segoe UI, "trebuchet ms", verdana, arial, Fira Code, consolas,
+    monospace !important;
+  color: var(--text-normal) !important;
+}
+
+.label text {
+  fill: var(--background-primary-alt) !important;
+}
+
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+.node path {
+  fill: var(--background-modifier-border) !important;
+  stroke: var(--text-normal) !important;
+  stroke-width: 0.5px !important;
+}
+
+.node .label {
+  text-align: center !important;
+}
+
+.node.clickable {
+  cursor: pointer !important;
+}
+
+.arrowheadPath {
+  fill: var(--text-faint) !important;
+}
+
+.edgePath .path {
+  stroke: var(--text-faint) !important;
+  stroke-width: 1.5px !important;
+}
+
+.flowchart-link {
+  stroke: var(--text-faint) !important;
+  fill: none !important;
+}
+
+.edgeLabel {
+  background-color: var(--background-primary) !important;
+  text-align: center !important;
+}
+
+.edgeLabel rect {
+  opacity: 0 !important;
+}
+
+.cluster rect {
+  fill: var(--background-primary-alt) !important;
+  stroke: var(--text-faint) !important;
+  stroke-width: 1px !important;
+}
+
+.cluster text {
+  fill: var(--background-primary) !important;
+}
+
+div.mermaidTooltip {
+  /* position: absolute !important;  fixed appear scrollbar*/
+  text-align: center !important;
+  max-width: 200px !important;
+  padding: 2px !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+  font-size: 10px !important;
+  background: var(--background-secondary) !important;
+  border: 1px solid var(--text-faint) !important;
+  border-radius: 2px !important;
+  pointer-events: none !important;
+  z-index: 100 !important;
+}
+
+/* Sequence Diagram variables */
+
+.actor {
+  stroke: var(--text-accent) !important;
+  fill: var(--background-secondary-alt) !important;
+}
+
+text.actor > tspan {
+  fill: var(--text-muted) !important;
+  stroke: none !important;
+}
+
+.actor-line {
+  stroke: var(--text-muted) !important;
+}
+
+.messageLine0 {
+  stroke-width: 1.5 !important;
+  stroke-dasharray: none !important;
+  stroke: var(--text-muted) !important;
+}
+
+.messageLine1 {
+  stroke-width: 1.5 !important;
+  stroke-dasharray: 2, 2 !important;
+  stroke: var(--text-muted) !important;
+}
+
+#arrowhead path {
+  fill: var(--text-muted) !important;
+  stroke: var(--text-muted) !important;
+}
+
+.sequenceNumber {
+  fill: var(--background-primary) !important;
+}
+
+#sequencenumber {
+  fill: var(--text-muted) !important;
+}
+
+#crosshead path {
+  fill: var(--text-muted) !important;
+  stroke: var(--text-muted) !important;
+}
+
+.messageText {
+  fill: var(--text-muted) !important;
+  stroke: var(--text-muted) !important;
+}
+
+.labelBox {
+  stroke: var(--text-accent) !important;
+  fill: var(--background-secondary-alt) !important;
+}
+
+.labelText,
+.labelText > tspan {
+  fill: var(--text-muted) !important;
+  stroke: none !important;
+}
+
+.loopText,
+.loopText > tspan {
+  fill: var(--text-muted) !important;
+  stroke: none !important;
+}
+
+.loopLine {
+  stroke-width: 2px !important;
+  stroke-dasharray: 2, 2 !important;
+  stroke: var(--text-accent) !important;
+  fill: var(--text-accent) !important;
+}
+
+.note {
+  stroke: var(--text-normal) !important;
+  fill: var(--text-accent) !important;
+}
+
+.noteText,
+.noteText > tspan {
+  fill: var(--background-secondary-alt) !important;
+  stroke: none !important;
+}
+
+/* Gantt chart variables */
+
+.activation0 {
+  fill: var(--background-secondary) !important;
+  stroke: var(--text-accent) !important;
+}
+
+.activation1 {
+  fill: var(--background-secondary) !important;
+  stroke: var(--text-accent) !important;
+}
+
+.activation2 {
+  fill: var(--background-secondary) !important;
+  stroke: var(--text-accent) !important;
+}
+
+/** Section styling */
+
+.mermaid-main-font {
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+.section {
+  stroke: none !important;
+  opacity: 0.2 !important;
+}
+
+.section0 {
+  fill: var(--text-faint) !important;
+}
+
+.section2 {
+  fill: var(--text-accent) !important;
+}
+
+.section1,
+.section3 {
+  fill: var(--text-normal) !important;
+  opacity: 0.2 !important;
+}
+
+.sectionTitle0 {
+  fill: var(--text-normal) !important;
+}
+
+.sectionTitle1 {
+  fill: var(--text-normal) !important;
+}
+
+.sectionTitle2 {
+  fill: var(--text-normal) !important;
+}
+
+.sectionTitle3 {
+  fill: var(--text-normal) !important;
+}
+
+.sectionTitle {
+  text-anchor: start !important;
+  font-size: 9px !important;
+  line-height: 14px !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+/* Grid and axis */
+
+.grid .tick {
+  stroke: var(--text-muted) !important;
+  opacity: 0.2 !important;
+  shape-rendering: crispEdges !important;
+}
+
+.grid .tick text {
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+.grid path {
+  stroke-width: 0 !important;
+}
+
+/* Today line */
+
+.today {
+  fill: none !important;
+  stroke: var(--background-modifier-error) !important;
+  stroke-width: 2px !important;
+}
+
+/* Task styling */
+
+/* Default task */
+
+.task {
+  stroke-width: 0.5px !important;
+}
+
+.taskText {
+  text-anchor: middle !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+.taskText:not([font-size]) {
+  font-size: 9px !important;
+}
+
+.taskTextOutsideRight {
+  fill: var(--text-normal) !important;
+  text-anchor: start !important;
+  font-size: 9px !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+.taskTextOutsideLeft {
+  fill: var(--text-normal) !important;
+  text-anchor: end !important;
+  font-size: 9px !important;
+}
+
+/* Special case clickable */
+
+.task.clickable {
+  cursor: pointer !important;
+}
+
+.taskText.clickable {
+  cursor: pointer !important;
+  fill: var(--interactive-accent_hover) !important;
+  font-weight: bold !important;
+}
+
+.taskTextOutsideLeft.clickable {
+  cursor: pointer !important;
+  fill: var(--interactive-accent_hover) !important;
+  font-weight: bold !important;
+}
+
+.taskTextOutsideRight.clickable {
+  cursor: pointer !important;
+  fill: var(--interactive-accent_hover) !important;
+  font-weight: bold !important;
+}
+
+/* Specific task settings for the sections*/
+
+.taskText0,
+.taskText1,
+.taskText2,
+.taskText3 {
+  fill: var(--text-normal) !important;
+}
+
+.task0,
+.task1,
+.task2,
+.task3 {
+  fill: var(--background-secondary-alt) !important;
+  stroke: var(--text-muted) !important;
+}
+
+.taskTextOutside0,
+.taskTextOutside2 {
+  fill: var(--text-muted) !important;
+}
+
+.taskTextOutside1,
+.taskTextOutside3 {
+  fill: var(--text-muted) !important;
+}
+
+/* Active task */
+
+.active0,
+.active1,
+.active2,
+.active3 {
+  fill: var(--text-accent) !important;
+  stroke: var(--text-muted) !important;
+}
+
+.activeText0,
+.activeText1,
+.activeText2,
+.activeText3 {
+  fill: var(--text-normal) !important;
+}
+
+/* Completed task */
+
+.done0,
+.done1,
+.done2,
+.done3 {
+  stroke: var(--text-muted) !important;
+  fill: var(--text-faint) !important;
+  stroke-width: 1 !important;
+}
+
+.doneText0,
+.doneText1,
+.doneText2,
+.doneText3 {
+  fill: var(--text-normal) !important;
+}
+
+/* Tasks on the critical line */
+
+.crit0,
+.crit1,
+.crit2,
+.crit3 {
+  stroke: var(--accent-strong) !important;
+  fill: var(--accent-strong) !important;
+  stroke-width: 1 !important;
+}
+
+.activeCrit0,
+.activeCrit1,
+.activeCrit2,
+.activeCrit3 {
+  stroke: var(--accent-strong) !important;
+  fill: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+.doneCrit0,
+.doneCrit1,
+.doneCrit2,
+.doneCrit3 {
+  stroke: var(--accent-strong) !important;
+  fill: var(--text-muted) !important;
+  stroke-width: 0.5 !important;
+  cursor: pointer !important;
+  shape-rendering: crispEdges !important;
+}
+
+.milestone {
+  transform: rotate(45deg) scale(0.8, 0.8) !important;
+}
+
+.milestoneText {
+  font-style: italic !important;
+}
+
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+  fill: var(--text-normal) !important;
+}
+
+.activeCritText0,
+.activeCritText1,
+.activeCritText2,
+.activeCritText3 {
+  fill: var(--text-normal) !important;
+}
+
+.titleText {
+  text-anchor: middle !important;
+  font-size: 16px !important;
+  fill: var(--text-normal) !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+g.classGroup text {
+  fill: var(--text-accent) !important;
+  stroke: none !important;
+  font-family: consolas, monospace, Segoe UI, "trebuchet ms", verdana, arial !important;
+  font-size: 8px !important;
+}
+
+g.classGroup text .title {
+  font-weight: bolder !important;
+}
+
+g.clickable {
+  cursor: pointer !important;
+}
+
+g.classGroup rect {
+  fill: var(--background-secondary-alt) !important;
+  stroke: var(--text-accent) !important;
+}
+
+g.classGroup line {
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+.classLabel .box {
+  stroke: none !important;
+  stroke-width: 0 !important;
+  fill: var(--background-secondary-alt) !important;
+  opacity: 0.2 !important;
+}
+
+.classLabel .label {
+  fill: var(--text-accent) !important;
+  font-size: 10px !important;
+}
+
+.relation {
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+  fill: none !important;
+}
+
+.dashed-line {
+  stroke-dasharray: 3 !important;
+}
+
+#compositionStart {
+  fill: var(--text-accent) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+#compositionEnd {
+  fill: var(--text-accent) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+#aggregationStart {
+  fill: var(--background-secondary-alt) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+#aggregationEnd {
+  fill: var(--background-secondary-alt) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+#dependencyStart {
+  fill: var(--text-accent) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+#dependencyEnd {
+  fill: var(--text-accent) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+#extensionStart {
+  fill: var(--text-accent) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+#extensionEnd {
+  fill: var(--text-accent) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+.commit-id,
+.commit-msg,
+.branch-label {
+  fill: var(--text-muted) !important;
+  color: var(--text-muted) !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+.pieTitleText {
+  text-anchor: middle !important;
+  font-size: 18px !important;
+  fill: var(--text-normal) !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+.slice {
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+g.stateGroup text {
+  fill: var(--text-accent) !important;
+  stroke: none !important;
+  font-size: 10px !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+g.stateGroup text {
+  fill: var(--text-accent) !important;
+  stroke: none !important;
+  font-size: 10px !important;
+}
+
+g.stateGroup .state-title {
+  font-weight: bolder !important;
+  fill: var(--background-secondary-alt) !important;
+}
+
+g.stateGroup rect {
+  fill: var(--background-secondary-alt) !important;
+  stroke: var(--text-accent) !important;
+}
+
+g.stateGroup line {
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+}
+
+.transition {
+  stroke: var(--text-accent) !important;
+  stroke-width: 1 !important;
+  fill: none !important;
+}
+
+.stateGroup .composit {
+  fill: var(--text-normal) !important;
+  border-bottom: 1px !important;
+}
+
+.stateGroup .alt-composit {
+  fill: #e0e0e0 !important;
+  border-bottom: 1px !important;
+}
+
+.state-note {
+  stroke: var(--text-faint) !important;
+  fill: var(--text-accent) !important;
+}
+
+.state-note text {
+  fill: black !important;
+  stroke: none !important;
+  font-size: 10px !important;
+}
+
+.stateLabel .box {
+  stroke: none !important;
+  stroke-width: 0 !important;
+  fill: var(--background-secondary-alt) !important;
+  opacity: 0.5 !important;
+}
+
+.stateLabel text {
+  fill: black !important;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  font-family: Segoe UI, "trebuchet ms", verdana, arial !important;
+}
+
+.node circle.state-start {
+  fill: black !important;
+  stroke: black !important;
+}
+
+.node circle.state-end {
+  fill: black !important;
+  stroke: var(--text-normal) !important;
+  stroke-width: 1.5 !important;
+}
+
+#statediagram-barbEnd {
+  fill: var(--text-accent) !important;
+}
+
+.statediagram-cluster rect {
+  fill: var(--background-secondary-alt) !important;
+  stroke: var(--text-accent) !important;
+  stroke-width: 1px !important;
+}
+
+.statediagram-cluster rect.outer {
+  rx: 5px !important;
+  ry: 5px !important;
+}
+
+.statediagram-state .divider {
+  stroke: var(--text-accent) !important;
+}
+
+.statediagram-state .title-state {
+  rx: 5px !important;
+  ry: 5px !important;
+}
+
+.statediagram-cluster.statediagram-cluster .inner {
+  fill: var(--text-normal) !important;
+}
+
+.statediagram-cluster.statediagram-cluster-alt .inner {
+  fill: #e0e0e0 !important;
+}
+
+.statediagram-cluster .inner {
+  rx: 0 !important;
+  ry: 0 !important;
+}
+
+.statediagram-state rect.basic {
+  rx: 5px !important;
+  ry: 5px !important;
+}
+
+.statediagram-state rect.divider {
+  stroke-dasharray: 10, 10 !important;
+  fill: #efefef !important;
+}
+
+.note-edge {
+  stroke-dasharray: 5 !important;
+}
+
+.statediagram-note rect {
+  fill: var(--text-accent) !important;
+  stroke: var(--text-muted) !important;
+  stroke-width: 1px !important;
+  rx: 0 !important;
+  ry: 0 !important;
+}
+
+:root {
+  --mermaid-font-family: '"trebuchet ms", verdana, arial' !important;
+  --mermaid-font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+}
+
+/* Classes common for multiple diagrams */
+
+.error-icon {
+  fill: var(--text-error) !important;
+}
+
+.error-text {
+  fill: var(--text-muted) !important;
+  stroke: var(--text-muted) !important;
+}
+
+.edge-thickness-normal {
+  stroke-width: 1px !important;
+}
+
+.edge-thickness-thick {
+  stroke-width: 3px !important;
+}
+
+.edge-pattern-solid {
+  stroke-dasharray: 0 !important;
+}
+
+.edge-pattern-dashed {
+  stroke-dasharray: 3 !important;
+}
+
+.edge-pattern-dotted {
+  stroke-dasharray: 2 !important;
+}
+
+.marker {
+  fill: var(--text-muted) !important;
+}
+
+.marker.cross {
+  stroke: var(--text-muted) !important;
+}
+
