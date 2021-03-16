@@ -10,7 +10,7 @@
 # OSCP
 We maintain this repo with the aim to gather all the info that we’d found useful and interesting for the OSCP. We also collect material from other resources (websites, courses, blogs, git repos, books, etc).
 
-**Before continue**: we are still working on this repo as we go on with our OSCP journey. This means we'll add or remove parts without giving notice.
+**Before continue**: we are still working on this repo as we go on with our OSCP journey. This means we'll add or remove parts without giving notice. Furthermore, this is not intended to be a comprehensive repo, cross-reference and information gathering are your friends.
 
 ## TOC
 - [How to navigate the repo](#how-to-navigate-the-repo)
@@ -100,18 +100,29 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Do Stack Bufferoverflow Good](https://github.com/justinsteven/dostackbufferoverflowgood)
 
 ## PrivEsc
+#### General
+- [PayloadAllTheThings - Linux Privilege Escalation methodology](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
+- [PayloadAllTheThings - Windows Privilege Escalation methodology](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
 - [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+#### YouTube
 - [Conda's YouTube Privilege Escalation playlist](https://www.youtube.com/watch?v=VpNaPAh93vE&list=PLDrNMcTNhhYrBNZ_FdtMq-gLFQeUZFzWV)
 - [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
 - [Privilege Escaltion FTW (Jake Williams)](https://www.youtube.com/watch?v=yXe4X-AIbps)
 - [Elevating your Windows Privileges Like a Boss! (Jake Williams)](https://www.youtube.com/watch?v=SHdM197sbIE)
+- [Weird PrivEsc Techinques](https://www.youtube.com/watch?v=wyeRPSjnNjY)
+#### Gamify Learning
 - [Tib3rius' Linux PrivEsc](https://tryhackme.com/room/linuxprivesc)
 - [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
-- [Weird PrivEsc Techinques](https://www.youtube.com/watch?v=wyeRPSjnNjY)
+####  Linux Capabilities
+- [Linux Privilege Escalation using Capabilities](https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/)
+- [Linux Capabilities](https://github.com/carlospolop/hacktricks/blob/master/linux-unix/privilege-escalation/linux-capabilities.md)
+- [Day 44: Linux Capabilities Privilege Escalation via OpenSSL with SELinux Enabled and Enforced](https://int0x33.medium.com/day-44-linux-capabilities-privilege-escalation-via-openssl-with-selinux-enabled-and-enforced-74d2bec02099)
+- [Privilege Escalation by abusing SYS\_PTRACE Linux Capability](https://blog.pentesteracademy.com/privilege-escalation-by-abusing-sys-ptrace-linux-capability-f6e6ad2a59cc)
 
 ## Methodologies
 - [CTF Series : Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html)
 - [Post Exploitation](https://n00bpentesting.wordpress.com/lessons/ptes-101/post-exploitation/)
+- [PayloadAllTheThings - Methodology and Resources](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Methodology%20and%20Resources)
 ## Automation scripts
 - [Autorecon](https://github.com/Tib3rius/AutoRecon)
 - [Onetwopunch](https://github.com/superkojiman/onetwopunch)

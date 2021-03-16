@@ -1,11 +1,15 @@
 # Privilege Escalation Methodology👽
-## ON-GO
+##  Few words before going on
 "**Slow is smooth, and smooth is fast**"
-Be methodical in what you do.
-So you're inside the system and you wanna pop that damn root shell? Calm down as you have to go deeper into the target.
+Be methodical in what you do or you will get lost. 
 
-We think that the mind map provived by Conda (please, go support him on his YouTube channel) is very useful and straightforward. So, we've decided to translate it into this checklist.
-You can find the mindmap created with Obsidian by us here ![[linux_privesc_mindmap.png]] and the Conda's original one (That is better in term of design) here. Go check his playlist on YouTube!, you can find the link under the PrivEsc section inside README.MD ([[README#PrivEsc]])
+Now we are inside the system as a low-privileged user, to obtain an elevated privileged user account we have to find a vector we can use to climb the privileges ladder.
+
+#### Mind map & checklist
+We think that the mind map provived by Conda (please, go support him on [his](https://www.youtube.com/channel/UCzK5oAENyQJcnH5SvEquo8A) YouTube channel) is very useful and straightforward. So, we've decided to translate it into this checklist. While the mind map gives you an immediate overview of what you should do, the checklist gives you the possibility to visualize what you already have done.
+You can find the mind map created with Obsidian by us here  ![[linux_privesc_mindmap.png]] and the Conda's original one (That is better in term of design) [here](https://github.com/C0nd4/OSCP-Priv-Esc). Go check his playlist on YouTube!, you can find the link under the PrivEsc section inside README.MD ([[README#PrivEsc]])
+
+_**Be aware**: our translation does not completely reflect the Conda's mind map as we added/modified some parts._
 
 ## Linux
 ### Credential Access
@@ -14,7 +18,7 @@ You can find the mindmap created with Obsidian by us here ![[linux_privesc_mindm
 > grep \--color\=auto \-rnw '/' \-ie "PASSWORD" \--color\=always 2> /dev/null
 > find . \-type f \-exec grep \-i \-I "PASSWORD" {} /dev/null
 > locate password | more
-- [ ] Search creds from local DBs:
+- [ ] Search creds from local DBs
 - [ ] Search creds from bash history:
 > history
 > cat ~/.bash_history
@@ -27,7 +31,7 @@ You can find the mindmap created with Obsidian by us here ![[linux_privesc_mindm
 > find / -name id_rsa 2> /dev/null
 - [ ] Sudo privileges:
 > sudo -l
-- [ ] Group privileges:
+- [ ] Group:
 > id
 > groups
 
@@ -35,12 +39,12 @@ You can find the mindmap created with Obsidian by us here ![[linux_privesc_mindm
 - [ ] Services running on localhost are vulnerable?
 > ps aux
 > ps aux | grep root
-- [ ] Kernel version, vulnerable?
+- [ ] Kernel version,  is it vulnerable?
 > uname -a
 > (cat /proc/version || uname -a ) 2>/dev/null
 > lsb_release -a 2>/dev/null
 - [ ] Binary file versions, vulnerable?
-> ff
+> sudo -V
 
 ### Misconfiguration
 - [ ] Cron job -> check for write permissions on the following files:
@@ -72,17 +76,18 @@ You can find the mindmap created with Obsidian by us here ![[linux_privesc_mindm
 - [ ] Find SUID:
 > find / -perm -4000 -type f -exec ls -la {} 2>/dev/null \\;
 > find / -uid 0 -perm -4000 -type f 2>/dev/null
+- [ ] Check SUID on [GTFOBins](https://gtfobins.github.io/)
 - [ ] Create SUID:
->
-- [ ] SGID:
 ```bash
 print 'int main(void){\\nsetresuid(0, 0, 0);\\nsystem("/bin/sh");\\n}' \> /tmp/suid.c   
 gcc -o /tmp/suid /tmp/suid.c  
 sudo chmod +x /tmp/suid # execute right
 sudo chmod +s /tmp/suid # setuid bit
 ```
-- [ ] Interesting capabilities on binary:
-> ff
+- [ ] SGID:
+> find / -perm -g=s -type f 2>/dev/null
+> find / -perm +2000 -user root -type f -print
+- [ ] Interesting capabilities on binary
 - [ ] Any accessible sensitive file?
 	- [ ] /etc/passwd
 	- [ ] /etc/shadow
@@ -97,13 +102,8 @@ sudo chmod +s /tmp/suid # setuid bit
 	- [ ] Root $PATH writeable
 	- [ ] Directory in PATH writeable
 - [ ] LD_PRELOAD set in /etc/sudoers
-
+- [ ] Nothing yet? Google-Fu the web to look for other checklists
 ## Windows
-### System Enumeration
-- [ ] uname -a
-- [ ] ca
-### User Enumeration
-### Network Enumeration
-### Password Hunting
-
-
+### Credential Access
+### Exploit
+### Misconfiguration
