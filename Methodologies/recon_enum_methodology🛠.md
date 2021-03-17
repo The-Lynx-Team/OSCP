@@ -235,13 +235,13 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 
 	>  enum4linux -a $IP
 	
-	>  nmap --script=smb-enum* --script-args=unsafe=1 -T5 $IP
+	>  nmap --script="smb-enum*" --script-args=unsafe=1 -T5 $IP
 	
-	> nmap -script smb-enum-shares.nse --script-args=unsafe=1 -p445 $IP
+	> nmap --script smb-enum-shares.nse --script-args=unsafe=1 -p445 $IP
 
-	> nmap -script smb-enum-users.nse --script-args=unsafe=1 -p445 $IP
+	> nmap --script smb-enum-users.nse --script-args=unsafe=1 -p445 $IP
 
-	> nmap -script smb-protocols $IP
+	> nmap --script smb-protocols $IP
 - [ ] nbtscan
 - [ ] enum4linux
 - [ ] Manual browsing (Prefer it whenever possible):
