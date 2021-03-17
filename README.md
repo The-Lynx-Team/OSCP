@@ -110,7 +110,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Privilege Escaltion FTW (Jake Williams)](https://www.youtube.com/watch?v=yXe4X-AIbps)
 - [Elevating your Windows Privileges Like a Boss! (Jake Williams)](https://www.youtube.com/watch?v=SHdM197sbIE)
 - [Weird PrivEsc Techinques](https://www.youtube.com/watch?v=wyeRPSjnNjY)
-#### Gamify Learning
+#### Gamified Learning
 - [Tib3rius' Linux PrivEsc](https://tryhackme.com/room/linuxprivesc)
 - [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
 ####  Linux Capabilities
