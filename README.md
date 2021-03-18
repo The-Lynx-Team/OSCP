@@ -131,7 +131,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Parser Nmap](https://github.com/shifty0g/ultimate-nmap-parser)
 - [SUDO KILLER](https://github.com/TH3xACE/SUDO_KILLER)
 - [mgeeky's Penetration Testing Tools](https://github.com/mgeeky/Penetration-Testing-Tools)
-
+- [A @TomNomNom Recon Tools Primer](https://danielmiessler.com/blog/a-tomnomnom-tools-primer/)
 ## Cheat sheets and Wordlists
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
 - [OSCP-Prep-cheatsheet](https://github.com/evets007/OSCP-Prep-cheatsheet)
