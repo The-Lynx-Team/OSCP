@@ -129,6 +129,8 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 
 ## Tools
 - [Parser Nmap](https://github.com/shifty0g/ultimate-nmap-parser)
+- [SUDO KILLER](https://github.com/TH3xACE/SUDO_KILLER)
+- [mgeeky's Penetration Testing Tools](https://github.com/mgeeky/Penetration-Testing-Tools)
 
 ## Cheat sheets
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
@@ -143,6 +145,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 
 ## Reporting
 - [Reporting * ptestmethod.readthedocs.io](https://ptestmethod.readthedocs.io/en/latest/LFF-IPS-P5-Reporting.html)
+- [Offensive Security Exam Report Template in Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown)
 
 ## Mental and Physical Health
 Ok, this is not about popping shells, cracking codes, and launching exploits. Your health is more important than knowing how to pop a shell. If you are under burnout, if you can’t concentrate, if you can’t free your minds and visualize your target, all the above stuff is useless. You should find a spot to read the below links and do your own research.
