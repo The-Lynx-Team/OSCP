@@ -132,10 +132,11 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [SUDO KILLER](https://github.com/TH3xACE/SUDO_KILLER)
 - [mgeeky's Penetration Testing Tools](https://github.com/mgeeky/Penetration-Testing-Tools)
 
-## Cheat sheets
+## Cheat sheets and Wordlists
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
 - [OSCP-Prep-cheatsheet](https://github.com/evets007/OSCP-Prep-cheatsheet)
 - [Immunity Debugger](https://psyl0ckediary.tumblr.com/post/148689728108/4-immunity-debugger-first-steps)
+- [SecLists](https://github.com/danielmiessler/SecLists)
 
 ## HackTheBox
 - [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120)
