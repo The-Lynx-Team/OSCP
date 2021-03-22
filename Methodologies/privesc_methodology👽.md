@@ -11,6 +11,8 @@ You can find the mind map created with Obsidian by us here  ![[linux_privesc_min
 
 _**Be aware**: our translation does not completely reflect the Conda's mind map as we added/modified some parts._
 
+## General thoughts to bear in mind
+If you are still trying to gain an initial foothold but you can access local files, try to look for firewall's rules. So you won't become mad to figure it out by "brute forcing" the ports for a reverse shell 🙃
 ## Linux
 ### Credential Access
 - [ ] Try known passwords
@@ -103,6 +105,14 @@ sudo chmod +s /tmp/suid # setuid bit
 	- [ ] Directory in PATH writeable
 - [ ] LD_PRELOAD set in /etc/sudoers
 - [ ] Nothing yet? Google-Fu the web to look for other checklists
+### Automation
+If you are running out of time, automation could save you, but bear in mind that it's not stealthy at all (not this time).
+This is a non comprehensive list of linux privesc automated script, to gain a better result try run different scripts on the same target:
+- [ ] [LinPEAS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite) (Linux local privilege Escalation Awesome Script)
+- [ ] [LinEnum](https://github.com/rebootuser/LinEnum)
+- [ ] [LES2](https://github.com/jondonas/linux-exploit-suggester-2) (Linux Exploit Suggester 2)
+- [ ] [LinuxPrivChecker](https://github.com/sleventyeleven/linuxprivchecker)
+- [ ] [Linux Smart Enumeration](https://github.com/diego-treitos/linux-smart-enumeration)	
 ## Windows
 ### Credential Access
 ### Exploit
