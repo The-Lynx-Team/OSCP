@@ -27,8 +27,9 @@
 	- [ ] Password bruteforce
 	- [ ] Default credentials (Google them)
 - [ ] revert the machine
-- [ ] Defcon 5 try:
+- [ ] Defcon 1 try:
 > nmap --script exploit -Pn $IP
+- [ ] Check if the hostname/target's name is meaningful for the assessment (E.g.: google its name for product, technology, etc)
 ## Grab the damn banner!
 - [ ] nc -v $IP \<PORT\>
 - [ ] telnet $IP \<PORT\>
@@ -45,15 +46,17 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > netdiscover -r 10.x.x.x/24
 - [ ] smbtree
 ### Go small (Individual host scanning)
+- [ ] Run a fast TCP port scan:
+> nmap -F -T4 -oN nmap/fastTCPScan $IP
 - [ ] Run a simple TCP port scan to uncover open ports
-> nmap -p- -T4 -oA nmap/ezTCPScan $IP
+> nmap -p- -T4 -oN nmap/ezTCPScan $IP
 - [ ] Run a simple UDP port scan to uncover open ports
-> nmap -sU -n -p- -T4 -oA nmap/ezUDPScan $IP
+> nmap -sU -n -p- -T4 -oN nmap/ezUDPScan $IP
 - [ ] If lazy do an Aggressive scan on open ports (A = O+sC+sV)
-> nmap -A -T4 -px,y,z -v -oA nmap/aggressiveScan $IP
+> nmap -A -T4 -px,y,z -v -oN nmap/aggressiveScan $IP
 - [ ] Do a version detection on TCP ports
 > nmap -sV --reason -O -p- $IP
-- [x] Do a version detection on UDP ports
+- [ ] Do a version detection on UDP ports
 > nmap -sU -sV -n $IP
 - [ ] Vulnerable to heartbleed?
 > nmap --script ssl-heartbleed $IP
@@ -65,20 +68,20 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > nmap -sS -sV --script=/path/to/your/vulnscan.nse -oN nmap/vulnScan $IP
 ## Service enumeration
 ### FTP (TCP 21) | TFTP (UDP 21)
-- [ ]  [Banner grabbing](Box%20template/recon_enum_methodology%F0%9F%9B%A0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
-- [x] Any known vulnerability?
+- [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
 	- [ ] Check https://www.cvedetails.com/
 	- [ ] Check https://nvd.nist.gov/
 	- [ ] Check on google
 	> site:github.com *Service version.release*
 	- [ ] Check with nmap
-	> nmap –script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -Pn -oN nmap/ftpVuln -p 21 $IP
+	> nmap --script ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -Pn -oN nmap/ftpVuln -p 21 $IP
 - [ ] Default credentials check
 > hydra -s \<PORT\> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ft  
 ### SSH (TCP 22)
-- [ ]  [Banner grabbing](Box%20template/recon_enum_methodology%F0%9F%9B%A0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](#grab-the-damn-banner)
 - [ ] User enumeration
 	> msf > use auxiliary/scanner/ssh/ssh_enumusers
 
@@ -95,8 +98,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 > ssh user@$IP -m {MAC}
 ### SMTP (TCP 25)
 - [ ] Enumeration with nmap
->  nmap –script smtp-commands,smtp-enum-users,smtp-ntlm-info,smtp-open-relay -Pn -oN nmap/smtpEnum -p 25,465,587 $IP
-- [ ] nmap –script smtp-commands,smtp-enum-users,smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -p 25 $IP
+>  nmap --script smtp-commands,smtp-enum-users,smtp-ntlm-info,smtp-open-relay -Pn -oN nmap/smtpEnum -p 25,465,587 $IP
 - [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
 	- [ ] Check https://www.cvedetails.com/
@@ -104,7 +106,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Check on google
 	> site:github.com *Service version.release*
 	- [ ] Check with nmap
-	> nmap –script smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -Pn -p 25,465,587 -oN nmap/smtpVuln $IP
+	> nmap --script smtp-vuln-cve2010-4344,smtp-vuln-cve2011-1720,smtp-vuln-cve2011-1764 -Pn -p 25,465,587 -oN nmap/smtpVuln $IP
 - [ ] nc -nvv $IP
 - [ ] manual testing with **telnet** and VRFY / EXPN
 ### Finger (TCP 79)
@@ -230,20 +232,19 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] rpcinfo -p $IP
 ### RPC (TCP 135)
 - [ ] rpcinfo -p $IP
-- [ ] 
 ### SMB (TCP 139/445)
 - [ ] Enumeration
 	> nmblookup -A $IP
 
 	>  enum4linux -a $IP
 	
-	>  nmap --script=smb-enum* --script-args=unsafe=1 -T5 $IP
+	>  nmap --script="smb-enum*" --script-args=unsafe=1 -T5 $IP
 	
-	> nmap -script smb-enum-shares.nse –script-args=unsafe=1 -p445 $IP
+	> nmap --script smb-enum-shares.nse --script-args=unsafe=1 -p445 $IP
 
-	> nmap -script smb-enum-users.nse –script-args=unsafe=1 -p445 $IP
+	> nmap --script smb-enum-users.nse --script-args=unsafe=1 -p445 $IP
 
-	> nmap -script smb-protocols $IP
+	> nmap --script smb-protocols $IP
 - [ ] nbtscan
 - [ ] enum4linux
 - [ ] Manual browsing (Prefer it whenever possible):
@@ -261,8 +262,8 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> site:github.com *Service version.release*
 	- [ ] Check with nmap
 	> nmap -n -v --script="smb-vuln*" -oN nmap/smbAllVulns  -p 139,445 $IP
-	> nmap -n -v -script smb-os-discovery.nse –script-args=unsafe=1 -oN nmap/smbOS -p 445 $IP
-	> nmap -n -v script smb-check-vulns –script-args=unsafe=1 -oN nmap/smbCehckVulns -p445 $IP
+	> nmap -n -v --script smb-os-discovery.nse --script-args=unsafe=1 -oN nmap/smbOS -p 445 $IP
+	> nmap -n -v --script smb-check-vulns --script-args=unsafe=1 -oN nmap/smbCehckVulns -p445 $IP
 ### SNMP (UDP 161)
 - [ ] Enumeration
 	> for community in public private manager; do snmpwalk -c $community -v1 $IP; done
@@ -335,7 +336,34 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	> site:github.com *Service version.release*
 	- [ ] Check with nmap
 	> nmap -sV -Pn -vv --script mysql-audit,mysql-databases,mysql-dump-hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql-variables,mysql-vuln-cve2012-2122 -p 3306 $IP
-
+### PostgreSQL (TCP 5432)
+- [ ] Try default credentials:
+	>  postgres : postgres  
+	>  postgres : password  
+	>  postgres : admin
+	>  admin : admin
+	>  admin : password
+- [ ] [Pentest wiki](https://github.com/nixawk/pentest-wiki/blob/master/2.Vulnerability-Assessment/Database-Assessment/postgresql/postgresql_hacking.md) will save you time
+- [ ] [HackTricks PSQL ](https://book.hacktricks.xyz/pentesting/pentesting-postgresql)
+- [ ] [Hacking Articles PSQL](https://www.hackingarticles.in/penetration-testing-on-postgresql-5432/)
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
+### Redis (TCP 6379)
+- [ ] https://redis.io/documentation
+- [ ] Interesting [article](http://antirez.com/news/96) by Antirez on Redis security
+- [ ] HackTricks' [guide](https://book.hacktricks.xyz/pentesting/6379-pentesting-redis)
+- [ ] ProgrammerSought's [guide](https://www.programmersought.com/article/8758132629/)
+- [ ] Google-Fu
+- [ ] Any known vulnerability?
+	- [ ] Check https://www.exploit-db.com/
+	- [ ] Check https://www.cvedetails.com/
+	- [ ] Check https://nvd.nist.gov/
+	- [ ] Check on google
+	> site:github.com *Service version.release*
 ### RDP (TCP/UDP 3389)
 - [ ] Use rpd-sec-check to enumerate security settings:
 > perl ./scripts/rdp-sec-check.pl $IP:\<PORT\>
@@ -382,17 +410,9 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ] Show NFS shares
 > showmount -e $IP \<PORT\>
 
-
-### Linux/Windows
-- [ ] smbclient -L //$IP
-- [ ] rpcinfo
-- [ ] enum4linux
-
-
 ### Packet inspection
 - [ ] Wireshark
 - [ ] tcpdump tcp port \<PORT\> -w output.pcap -i \<INTERFACE\>
-
 
 ### Anything else
 - [ ] nmap scripts (locate *nse* | grep servicename)
@@ -400,7 +420,6 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 - [ ]  MSF auxiliary modules
 - [ ]  Download the software and investigate it locally
 - [ ]  Try enumeration scripts for specific services
-
 
 
 [vulnscan.nse]: https://github.com/scipag/vulscan
