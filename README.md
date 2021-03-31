@@ -25,7 +25,7 @@ We maintain this repo with the aim to gather all the info that we’d found usef
 - [Methodologies](#methodologies)
 - [Automation scripts](#automation-scripts)
 - [Tools](#tools)
-- [Cheat sheets](#cheat-sheets)
+- [Cheat sheets](#cheat-sheets-and-wordlists)
 - [HackTheBox](#hackthebox)
 - [VulnHub](#vulnhub)
 - [Reporting](#reporting)
@@ -65,7 +65,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [My Fight for the OSCP](https://alphacybersecurity.tech/my-fight-for-the-oscp/)
 - [Passing the OSCP while working full time](https://medium.com/@galolbardes/passing-the-oscp-while-working-full-time-29cb22d622e0)
 - [Not your standard OSCP guide](https://blog.thehackingnomad.com/)
-
+- [How to pass the OSCP in 30 days.](https://achrafj.medium.com/how-to-pass-the-oscp-in-30-days-dc9207d09f2b)
 ## Reddit
 - [First Attempt ... Discouraged](https://www.reddit.com/r/oscp/comments/l7x5gq/first_attempt_discouraged/)
 - [1 attempt 1 fail with 55 points](https://www.reddit.com/r/oscp/comments/l5sett/1_attempt_1_fail_with_55_points/)
@@ -80,6 +80,8 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Second Attempt Failure](https://www.reddit.com/r/oscp/comments/la0xzk/second_attempt_failure/)
 - [Access to machines for report writing?](https://www.reddit.com/r/oscp/comments/lbntjv/access_to_machines_for_report_writing/)
 - [OSCP Practical Advice for Success](https://www.reddit.com/r/oscp/comments/m29gx4/oscp_practical_advice_for_success/)
+- [Failed this morning, a feels dump](https://www.reddit.com/r/oscp/comments/m9bsxf/failed_this_morning_a_feels_dump/?utm_source=amp&utm_medium=&utm_content=tp_title)
+- [Proving Grounds Practice Review](https://www.reddit.com/r/oscp/comments/mceeqy/proving_grounds_practice_review/)
 
 ## GitHub repos
 - [Awesome OSCP](https://github.com/The-Lynx-Team/awesome-oscp)
