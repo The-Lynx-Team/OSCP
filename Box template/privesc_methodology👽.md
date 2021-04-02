@@ -115,5 +115,51 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 - [ ] [Linux Smart Enumeration](https://github.com/diego-treitos/linux-smart-enumeration)	
 ## Windows
 ### Credential Access
+- [ ] Try known passwords
+- [ ] Creds from config files (Try different word other the PASSWORD, e.g: pass, passwd, pwd, user, usr, username, secret, cred, credential, auth):
+- [ ] Creds from local DBs
+- [ ] Creds from  **cmdkey**:
+> cmdkey /list
+- [ ] Creds from Registry:
+- [ ] Creds from Unattend or Sysprep Files
+- [ ] Creds from Log Files
+### User
+- [ ] General users enum
+> whoami /all
+>  net users %username%
+>  net users
+>  Get-WmiObject -Class Win32\_UserAccount
+>  Get-LocalUser | ft Name,Enabled,LastLogon
+>  Get-ChildItem C:\\Users -Force | select Name
+>  Get-LocalGroupMember Administrators | ft Name, PrincipalSource
+- [ ] General groups enum
+> net localgroup
+> net localgroup Administrators
+- [ ] Check if current user has these tokens:
+> SeImpersonatePrivilege
+> SeAssignPrimaryPrivilege
+> SeTcbPrivilege
+> SeBackupPrivilege
+> SeRestorePrivilege
+> SeCreateTokenPrivilege
+> SeLoadDriverPrivilege
+> SeTakeOwnershipPrivilege
+> SeDebugPrivilege
 ### Exploit
+- [ ] Services running on localhost
+- [ ] Kernel version
+- [ ] Software versions
+- [ ] Service versions
 ### Misconfiguration
+- [ ] Services
+	- [ ] Unquoted Service Path
+	- [ ] Change service binary location
+	- [ ] Overwrite service binary
+	- [ ] DLL Hijacking
+- [ ] AlwaysInstallElevated set in Registry
+- [ ] Scheduled tasks
+	- [ ] Executable file writeable
+	- [ ] Dependency writeable
+- [ ] Sensitive files readable
+	- [ ] SAM Hive
+	- [ ] SYSTEM Hive

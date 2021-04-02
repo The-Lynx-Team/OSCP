@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "5e62401e1d6d7ea8",
+        "id": "5000bb4bfcbb9afa",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Methodologies/post_exploitation⛏.md",
-            "mode": "source"
+            "file": "Box template/privesc_methodology👽.md",
+            "mode": "preview"
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Methodologies/post_exploitation⛏.md",
+                "file": "Box template/privesc_methodology👽.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,15 +86,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Methodologies/post_exploitation⛏.md",
-    "Methodologies/privesc_methodology👽.md",
-    "README.md",
-    "Methodologies/linux_privesc_mindmap.png",
-    "Methodologies/ff.png",
-    "Methodologies/recon_enum_methodology🛠.md",
-    "Methodologies/webapp_testing_methodology🌐.md",
-    "Methodologies/Untitled.md",
-    "Methodologies/Pasted image 20210316101428.png",
-    "Pasted image 20210316101428.png"
+    "Box template/privesc_methodology👽.md",
+    "Box template/x.x.x.x.md",
+    "Box template/4. post_exploitation.md",
+    "Box template/5. privilege escalation.md",
+    "4. privilege escalation.md",
+    "Box template/recon_enum_methodology🛠.md",
+    "Box template/webapp_testing_methodology🌐.md",
+    "Box template/post_exploitation⛏.md",
+    "Box template/1. reconnaissance.md",
+    "Box template/2. services_enumeration.md"
   ]
 }
