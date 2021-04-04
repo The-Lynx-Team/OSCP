@@ -144,7 +144,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [MSSQL Practical Injection Cheat Sheet](https://perspectiverisk.com/mssql-practical-injection-cheat-sheet/)
 - [c0deman's Cave MSSQL Injection Cheat Sheet](https://c0deman.wordpress.com/2013/06/25/mssql-injection-cheat-sheet/)
 ## HackTheBox
-- [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120)
+- [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120) 
 
 ## VulnHub
 - [OSCP-Like VulnHub boxes](https://www.abatchy.com/2017/02/oscp-like-vulnhub-vms.html) 
