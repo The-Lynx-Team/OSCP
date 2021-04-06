@@ -4,16 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "5000bb4bfcbb9afa",
-        "type": "leaf",
-        "active": true,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Box template/privesc_methodology👽.md",
-            "mode": "preview"
+        "id": "ea223c2c75b44b84",
+        "type": "split",
+        "children": [
+          {
+            "id": "7e75f0cc30ff42ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Box template/privesc_methodology👽.md",
+                "mode": "preview"
+              }
+            },
+            "group": "3cf1223e9a154433"
+          },
+          {
+            "id": "812372a4c0433a8c",
+            "type": "leaf",
+            "active": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Box template/privesc_methodology👽.md",
+                "mode": "source"
+              }
+            },
+            "group": "3cf1223e9a154433"
           }
-        }
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -53,7 +73,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9948ca006642140a",
