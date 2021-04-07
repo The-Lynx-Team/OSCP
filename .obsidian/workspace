@@ -9,23 +9,23 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Box template/x.x.x.x.md",
+            "file": "Methodologies/ExTr_methodology🚁.md",
             "mode": "source"
           }
         },
-        "group": "ef5eada07c3bf53d"
+        "group": "ea7393dac831016d"
       },
       {
-        "id": "5399c63cadaff2c6",
+        "id": "40f2fd26404e8fe4",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Box template/x.x.x.x.md",
-            "mode": "preview"
+            "file": "Methodologies/ExTr_methodology🚁.md",
+            "mode": "source"
           }
         },
-        "group": "ef5eada07c3bf53d"
+        "group": "ea7393dac831016d"
       }
     ],
     "direction": "vertical"
@@ -81,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Box template/x.x.x.x.md",
+                "file": "Methodologies/ExTr_methodology🚁.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,15 +101,15 @@
   },
   "active": "812372a4c0433a8c",
   "lastOpenFiles": [
-    "Box template/x.x.x.x.md",
+    "Methodologies/ExTr_methodology🚁.md",
+    "Methodologies/linux_privesc_mindmap.png",
+    "Methodologies/exfil_methodology🚁.md",
+    "Box template/post_exploitation🛠.md",
+    "Box template/recon_enum_methodology🛰.md",
     "Box template/webapp_testing_methodology🌐.md",
+    "Box template/privesc_methodology🪂.md",
     "Box template/post_exploitation⛏.md",
     "Box template/privesc_methodology👽.md",
-    "Box template/recon_enum_methodology🛠.md",
-    "Box template/4. post_exploitation.md",
-    "Box template/5. privilege escalation.md",
-    "4. privilege escalation.md",
-    "Box template/1. reconnaissance.md",
-    "Box template/2. services_enumeration.md"
+    "Box template/recon_enum_methodology🛠.md"
   ]
 }

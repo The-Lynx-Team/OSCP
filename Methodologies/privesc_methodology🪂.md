@@ -1,4 +1,4 @@
-# Privilege Escalation Methodology👽
+# Privilege Escalation Methodology🪂
 ##  Few words before going on
 "**Slow is smooth, and smooth is fast**"
 Be methodical in what you do or you will get lost. 
@@ -9,11 +9,96 @@ Now we are inside the system as a low-privileged user, to obtain an elevated pri
 We think that the mind map provived by Conda (please, go support him on [his](https://www.youtube.com/channel/UCzK5oAENyQJcnH5SvEquo8A) YouTube channel) is very useful and straightforward. So, we've decided to translate it into this checklist. While the mind map gives you an immediate overview of what you should do, the checklist gives you the possibility to visualize what you already have done.
 You can find the mind map created with Obsidian by us here  ![[linux_privesc_mindmap.png]] and the Conda's original one (That is better in term of design) [here](https://github.com/C0nd4/OSCP-Priv-Esc). Go check his playlist on YouTube!, you can find the link under the PrivEsc section inside README.MD ([[README#PrivEsc]])
 
-_**Be aware**: our translation does not completely reflect the Conda's mind map as we added/modified some parts._
+_**Be aware**: our translation does not completely reflect the Conda's mind map as we added/modified some parts. At this moment the mind map is not aligned with the following cheat sheet._
 
 ## General thoughts to bear in mind
 If you are still trying to gain an initial foothold but you can access local files, try to look for firewall's rules. So you won't become mad to figure it out by "brute forcing" the ports for a reverse shell 🙃
 ## Linux
+### User Enumeration
+- [ ] General users enum
+	```bash
+	whoami
+	id
+	
+	cat /etc/passwd | cut -d: -f1
+	```
+- [ ] General groups enum
+	```bash
+	groups username
+	cat /etc/groups
+	```
+- [ ] Check for super users
+	```bash
+	grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}' \
+	awk -F: '($3 == "0") {print}' /etc/passwd \
+	cat /etc/sudoers
+	```
+- [ ] Sudo privileges:
+	```bash
+	sudo -l
+	```
+- [ ] Groups:
+	```bash
+	id
+	groups
+	```
+- [ ] Logged in at the moment
+	```bash
+	# show who is logged on
+	who
+	# show who is logged on and what he/she's doing
+	w
+	```
+- [ ] Last logged in
+	```bash
+	last
+	```
+### System Enumeration
+- [ ] Kernel version & architecture
+	```bash
+	uname -a
+	(cat /proc/version || uname -a ) 2>/dev/null
+	lsb_release -a 2>/dev/null
+	lscpu
+	```
+- [ ] Distribution
+	```bash
+	cat /etc/issue
+	```
+- [ ] Sudo version
+	```bash
+	sudo -V
+	```
+- [ ] Service running
+	```bash
+	ps aux
+	ps aux | grep root
+	```
+### Network Enumeration
+- [ ] Retrieve the machine hostname
+	```bash
+	hostname
+	cat /etc/hostname
+	```
+- [ ] Network configuration
+	```bash
+	ifconfig
+	ip -c a
+	```
+- [ ] Show route table
+	```bash
+	route
+	ip -c route
+	```
+- [ ] Show ARP table
+	```bash
+	arp -a
+	ip -c neigh
+	```
+- [ ] Check open ports not available from the outside and if the target is communicating with someone else
+	```bash
+	netstat -ano
+	```
 ### Credential Access
 - [ ] Try known passwords
 - [ ] Search creds from config files (Try different word other the PASSWORD, e.g: pass, passwd, pwd, user, usr, username, secret, cred, credential, auth):
@@ -39,59 +124,39 @@ If you are still trying to gain an initial foothold but you can access local fil
 	find / -name authorized_keys 2> /dev/null
 	find / -name id_rsa 2> /dev/null
 	```
-- [ ] Sudo privileges:
-	```bash
-	sudo -l
-	```
-- [ ] Groups:
-	```bash
-	id
-	groups
-	```
 ### Exploit
+- [ ] Kernel  is  vulnerable to known exploit?
+- [ ] Sudo is vulnerable to known exploit?
 - [ ] Services running on localhost are vulnerable?
-```bash
-ps aux
-ps aux | grep root
-```
-- [ ] Kernel version,  is it vulnerable?
-```bash
-uname -a
-(cat /proc/version || uname -a ) 2>/dev/null
-lsb_release -a 2>/dev/null
-```
-- [ ] Binary file versions, vulnerable?
-```bash
-sudo -V
-```
+	
 ### Misconfiguration
 - [ ] Cron job -> check for write permissions on the following files:
-```bash
-/etc/init.d
-/etc/cron\*
-/etc/crontab
-/etc/cron.allow
-/etc/cron.d 
-/etc/cron.deny
-/etc/cron.daily
-/etc/cron.hourly
-/etc/cron.monthly
-/etc/cron.weekly
-/etc/sudoers
-/etc/exports
-/etc/anacrontab
-/var/spool/cron
-/var/spool/cron/crontabs/root
-crontab \-l
-ls \-alh /var/spool/cron;
-ls \-al /etc/ | grep cron
-ls \-al /etc/cron\*
-cat /etc/cron\*
-cat /etc/at.allow
-cat /etc/at.deny
-cat /etc/cron.allow
-cat /etc/cron.deny\*
-```
+	```bash
+	/etc/init.d
+	/etc/cron\*
+	/etc/crontab
+	/etc/cron.allow
+	/etc/cron.d 
+	/etc/cron.deny
+	/etc/cron.daily
+	/etc/cron.hourly
+	/etc/cron.monthly
+	/etc/cron.weekly
+	/etc/sudoers
+	/etc/exports
+	/etc/anacrontab
+	/var/spool/cron
+	/var/spool/cron/crontabs/root
+	crontab \-l
+	ls \-alh /var/spool/cron;
+	ls \-al /etc/ | grep cron
+	ls \-al /etc/cron\*
+	cat /etc/cron\*
+	cat /etc/at.allow
+	cat /etc/at.deny
+	cat /etc/cron.allow
+	cat /etc/cron.deny\*
+	```
 - [ ] Writeable cron job dependecy (File, Python library, etc)
 - [ ] Find SUID:
 	```bash
@@ -100,17 +165,17 @@ cat /etc/cron.deny\*
 	```
 - [ ] Check SUID on [GTFOBins](https://gtfobins.github.io/)
 - [ ] Create SUID:
-```bash
-print 'int main(void){\nsetresuid(0, 0, 0);\\nsystem("/bin/sh");\\n}' \> /tmp/suid.c   
-gcc -o /tmp/suid /tmp/suid.c  
-sudo chmod +x /tmp/suid # execute right
-sudo chmod +s /tmp/suid # setuid bit
-```
+	```bash
+	print 'int main(void){\nsetresuid(0, 0, 0);\\nsystem("/bin/sh");\\n}' \> /tmp/suid.c   
+	gcc -o /tmp/suid /tmp/suid.c  
+	sudo chmod +x /tmp/suid # execute right
+	sudo chmod +s /tmp/suid # setuid bit
+	```
 - [ ] SGID:
-```bash
-find / -perm -g=s -type f 2>/dev/null
-find / -perm +2000 -user root -type f -print
-```
+	```bash
+	find / -perm -g=s -type f 2>/dev/null
+	find / -perm +2000 -user root -type f -print
+	```
 - [ ] Interesting capabilities on binary
 - [ ] Any accessible sensitive file?
 	- [ ] /etc/passwd
