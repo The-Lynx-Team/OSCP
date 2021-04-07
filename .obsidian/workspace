@@ -102,14 +102,8 @@
   "active": "812372a4c0433a8c",
   "lastOpenFiles": [
     "Methodologies/ExTr_methodology🚁.md",
-    "Methodologies/linux_privesc_mindmap.png",
-    "Methodologies/exfil_methodology🚁.md",
-    "Box template/post_exploitation🛠.md",
-    "Box template/recon_enum_methodology🛰.md",
-    "Box template/webapp_testing_methodology🌐.md",
-    "Box template/privesc_methodology🪂.md",
-    "Box template/post_exploitation⛏.md",
-    "Box template/privesc_methodology👽.md",
-    "Box template/recon_enum_methodology🛠.md"
+    "README.md",
+    "Methodologies/post_exploitation⛏.md",
+    "Methodologies/privesc_methodology👽.md",
   ]
 }

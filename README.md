@@ -91,6 +91,8 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 ## Webbing
 - [Web vulnerabilities to gain access to the system](https://www.exploit-db.com/papers/13017)
 - [Basic Shellshock Exploitation](https://blog.knapsy.com/blog/2014/10/07/basic-shellshock-exploitation/)
+- [Full MSSQL Injection PWNage](https://www.exploit-db.com/papers/12975)
+- 
 
 ## Genereal useful resources
 - [Explain shell](https://explainshell.com/)
@@ -139,9 +141,10 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [OSCP-Prep-cheatsheet](https://github.com/evets007/OSCP-Prep-cheatsheet)
 - [Immunity Debugger](https://psyl0ckediary.tumblr.com/post/148689728108/4-immunity-debugger-first-steps)
 - [SecLists](https://github.com/danielmiessler/SecLists)
-
+- [MSSQL Practical Injection Cheat Sheet](https://perspectiverisk.com/mssql-practical-injection-cheat-sheet/)
+- [c0deman's Cave MSSQL Injection Cheat Sheet](https://c0deman.wordpress.com/2013/06/25/mssql-injection-cheat-sheet/)
 ## HackTheBox
-- [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120)
+- [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120) 
 
 ## VulnHub
 - [OSCP-Like VulnHub boxes](https://www.abatchy.com/2017/02/oscp-like-vulnhub-vms.html) 
