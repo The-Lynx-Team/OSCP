@@ -4,36 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "ea223c2c75b44b84",
-        "type": "split",
-        "children": [
-          {
-            "id": "7e75f0cc30ff42ef",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Box template/privesc_methodology👽.md",
-                "mode": "preview"
-              }
-            },
-            "group": "3cf1223e9a154433"
-          },
-          {
-            "id": "812372a4c0433a8c",
-            "type": "leaf",
-            "active": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Box template/privesc_methodology👽.md",
-                "mode": "source"
-              }
-            },
-            "group": "3cf1223e9a154433"
+        "id": "812372a4c0433a8c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Box template/x.x.x.x.md",
+            "mode": "source"
           }
-        ],
-        "direction": "horizontal"
+        },
+        "group": "ef5eada07c3bf53d"
+      },
+      {
+        "id": "5399c63cadaff2c6",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Box template/x.x.x.x.md",
+            "mode": "preview"
+          }
+        },
+        "group": "ef5eada07c3bf53d"
       }
     ],
     "direction": "vertical"
@@ -73,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9948ca006642140a",
@@ -90,10 +81,12 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Box template/privesc_methodology👽.md",
+                "file": "Box template/x.x.x.x.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
                 "backlinkCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -106,15 +99,16 @@
     "width": 300,
     "collapsed": true
   },
+  "active": "812372a4c0433a8c",
   "lastOpenFiles": [
-    "Box template/privesc_methodology👽.md",
     "Box template/x.x.x.x.md",
+    "Box template/webapp_testing_methodology🌐.md",
+    "Box template/post_exploitation⛏.md",
+    "Box template/privesc_methodology👽.md",
+    "Box template/recon_enum_methodology🛠.md",
     "Box template/4. post_exploitation.md",
     "Box template/5. privilege escalation.md",
     "4. privilege escalation.md",
-    "Box template/recon_enum_methodology🛠.md",
-    "Box template/webapp_testing_methodology🌐.md",
-    "Box template/post_exploitation⛏.md",
     "Box template/1. reconnaissance.md",
     "Box template/2. services_enumeration.md"
   ]

@@ -17,67 +17,87 @@ If you are still trying to gain an initial foothold but you can access local fil
 ### Credential Access
 - [ ] Try known passwords
 - [ ] Search creds from config files (Try different word other the PASSWORD, e.g: pass, passwd, pwd, user, usr, username, secret, cred, credential, auth):
-> grep \--color\=auto \-rnw '/' \-ie "PASSWORD" \--color\=always 2> /dev/null
-> find . \-type f \-exec grep \-i \-I "PASSWORD" {} /dev/null
-> locate password | more
+	```bash
+	grep \--color\=auto \-rnw '/' \-ie "PASSWORD" \--color\=always 2> /dev/null
+	find . \-type f \-exec grep \-i \-I "PASSWORD" {} /dev/null
+	locate password | more
+	```
 - [ ] Search creds from local DBs
 - [ ] Search creds from bash history:
-> history
-> cat ~/.bash_history
+	```bash
+	history
+	cat ~/.bash_history
+	```
 - [ ] Search creds from memory:
-> strings /dev/mem \-n10 | grep \-i PASS
+	```bash
+	strings /dev/mem \-n10 | grep \-i PASS
+	```
 - [ ] SSH keys:
-> cat ~/.ssh/id_rsa
-> ls ~/.ssh/\*
-> find / -name authorized_keys 2> /dev/null
-> find / -name id_rsa 2> /dev/null
+	```bash
+	cat ~/.ssh/id_rsa
+	ls ~/.ssh/\*
+	find / -name authorized_keys 2> /dev/null
+	find / -name id_rsa 2> /dev/null
+	```
 - [ ] Sudo privileges:
-> sudo -l
-- [ ] Group:
-> id
-> groups
-
+	```bash
+	sudo -l
+	```
+- [ ] Groups:
+	```bash
+	id
+	groups
+	```
 ### Exploit
 - [ ] Services running on localhost are vulnerable?
-> ps aux
-> ps aux | grep root
+```bash
+ps aux
+ps aux | grep root
+```
 - [ ] Kernel version,  is it vulnerable?
-> uname -a
-> (cat /proc/version || uname -a ) 2>/dev/null
-> lsb_release -a 2>/dev/null
+```bash
+uname -a
+(cat /proc/version || uname -a ) 2>/dev/null
+lsb_release -a 2>/dev/null
+```
 - [ ] Binary file versions, vulnerable?
-> sudo -V
-
+```bash
+sudo -V
+```
 ### Misconfiguration
 - [ ] Cron job -> check for write permissions on the following files:
-> /etc/init.d
-> /etc/cron\*
-> /etc/crontab
-> /etc/cron.allow
-> /etc/cron.d 
-> /etc/cron.deny
-> /etc/cron.daily
-> /etc/cron.hourly
-> /etc/cron.monthly
-> /etc/cron.weekly
-> /etc/sudoers
-> /etc/exports
-> /etc/anacrontab
-> /var/spool/cron
-> /var/spool/cron/crontabs/root
-> crontab \-l
-> ls \-alh /var/spool/cron;
-> ls \-al /etc/ | grep cron
-> ls \-al /etc/cron\*
-> cat /etc/cron\*
-> cat /etc/at.allow
-> cat /etc/at.deny
-> cat /etc/cron.allow
-> cat /etc/cron.deny\*
+```bash
+/etc/init.d
+/etc/cron\*
+/etc/crontab
+/etc/cron.allow
+/etc/cron.d 
+/etc/cron.deny
+/etc/cron.daily
+/etc/cron.hourly
+/etc/cron.monthly
+/etc/cron.weekly
+/etc/sudoers
+/etc/exports
+/etc/anacrontab
+/var/spool/cron
+/var/spool/cron/crontabs/root
+crontab \-l
+ls \-alh /var/spool/cron;
+ls \-al /etc/ | grep cron
+ls \-al /etc/cron\*
+cat /etc/cron\*
+cat /etc/at.allow
+cat /etc/at.deny
+cat /etc/cron.allow
+cat /etc/cron.deny\*
+```
 - [ ] Writeable cron job dependecy (File, Python library, etc)
 - [ ] Find SUID:
-> find / -perm -4000 -type f -exec ls -la {} 2>/dev/null \;
-> find / -uid 0 -perm -4000 -type f 2>/dev/null
+	```bash
+	find / -perm -4000 -type f -exec ls -la {} 2>/dev/null \;
+	find / -uid 0 -perm -4000 -type f 2>/dev/null
+	```
 - [ ] Check SUID on [GTFOBins](https://gtfobins.github.io/)
 - [ ] Create SUID:
 ```bash
@@ -87,8 +107,10 @@ sudo chmod +x /tmp/suid # execute right
 sudo chmod +s /tmp/suid # setuid bit
 ```
 - [ ] SGID:
-> find / -perm -g=s -type f 2>/dev/null
-> find / -perm +2000 -user root -type f -print
+```bash
+find / -perm -g=s -type f 2>/dev/null
+find / -perm +2000 -user root -type f -print
+```
 - [ ] Interesting capabilities on binary
 - [ ] Any accessible sensitive file?
 	- [ ] /etc/passwd
@@ -98,8 +120,10 @@ sudo chmod +s /tmp/suid # setuid bit
 	- [ ] /root/.ssh/id_rsa
 	- [ ] entire root folder
 	- [ ] Check env info
-	 > (env || set) 2>/dev/null
-	 > echo $PATH
+		 ```bash
+		 (env || set) 2>/dev/null
+		 echo $PATH
+		 ```
 - [ ] Writeable PATH
 	- [ ] Root $PATH writeable
 	- [ ] Directory in PATH writeable
@@ -217,6 +241,11 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 	Get-ChildItem \-path HKLM:\\SYSTEM\\CurrentControlSet\\Services\\SNMP \-Recurse
 	```
 ### Credential Access
+- [ ]  Go from **medium mandatory level** to **high mandatory level**
+	```powershell
+	# using powershell
+	powershell.exe Start-Process cmd.exe -Verb runAs
+	```
 - [ ] **TRY KNOWN PASSWORDS!**
 	```powershell
 	# check also with runas
