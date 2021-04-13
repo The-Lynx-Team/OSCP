@@ -26,8 +26,7 @@ We maintain this repo with the aim to gather all the info that we’d found usef
 - [Automation scripts](#automation-scripts)
 - [Tools](#tools)
 - [Cheat sheets](#cheat-sheets-and-wordlists)
-- [HackTheBox](#hackthebox)
-- [VulnHub](#vulnhub)
+- [Gamified Learning](#gamified-learning)
 - [Reporting](#reporting)
 - [Mental and Physical Health](#mental-and-physical-health)
 
@@ -115,7 +114,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Elevating your Windows Privileges Like a Boss! (Jake Williams)](https://www.youtube.com/watch?v=SHdM197sbIE)
 - [Weird PrivEsc Techinques](https://www.youtube.com/watch?v=wyeRPSjnNjY)
 - [Level Up! Practical Windows Privilege Escalation - Andrew Smith](https://www.youtube.com/watch?v=PC_iMqiuIRQ)
-#### Gamified Learning
+#### Gamified Learning for PrivEsc
 - [Tib3rius' Linux PrivEsc](https://tryhackme.com/room/linuxprivesc)
 - [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
 ####  Linux Capabilities
@@ -144,11 +143,12 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [SecLists](https://github.com/danielmiessler/SecLists)
 - [MSSQL Practical Injection Cheat Sheet](https://perspectiverisk.com/mssql-practical-injection-cheat-sheet/)
 - [c0deman's Cave MSSQL Injection Cheat Sheet](https://c0deman.wordpress.com/2013/06/25/mssql-injection-cheat-sheet/)
-## HackTheBox
-- [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120) 
 
-## VulnHub
+## Gamified Learning
+- [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120) 
 - [OSCP-Like VulnHub boxes](https://www.abatchy.com/2017/02/oscp-like-vulnhub-vms.html) 
+- [OverTheWire (Linux wargames)](https://overthewire.org/)
+- [UnderTheWire (Powershell wargames)](https://underthewire.tech/)
 
 ## Reporting
 - [Reporting * ptestmethod.readthedocs.io](https://ptestmethod.readthedocs.io/en/latest/LFF-IPS-P5-Reporting.html)
