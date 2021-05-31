@@ -98,7 +98,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Powershell basics](https://www.darkoperator.com/powershellbasics)
 - [Pentest Tips and Tricks](https://jivoi.github.io/2015/07/01/pentest-tips-and-tricks/)
 - [Big list with tips, tricks and cheat sheets](https://guif.re/)
-
+- [Attacking Active Directory: 0 to 0.9](https://zer1t0.gitlab.io/posts/attacking_ad/?s=09)
 ## Buffer Overflow
 - [Do Stack Bufferoverflow Good](https://github.com/justinsteven/dostackbufferoverflowgood)
 
@@ -107,6 +107,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [PayloadAllTheThings - Linux Privilege Escalation methodology](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
 - [PayloadAllTheThings - Windows Privilege Escalation methodology](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
 - [Basic Linux Privilege Escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
+
 #### YouTube
 - [Conda's YouTube Privilege Escalation playlist](https://www.youtube.com/watch?v=VpNaPAh93vE&list=PLDrNMcTNhhYrBNZ_FdtMq-gLFQeUZFzWV)
 - [Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html)
