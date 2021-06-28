@@ -161,6 +161,12 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Offensive Pentesting](https://tryhackme.com/paths)
 - [SQL Injection Lab](https://tryhackme.com/room/sqlilab)
 - [SQHell](https://tryhackme.com/room/sqhell)
+#### Room OSCP-Like
+- [Skynet](https://tryhackme.com/room/skynet)
+- [Steelmountain](https://tryhackme.com/room/steelmountain)
+- [Alfred](https://tryhackme.com/room/alfred)
+#### Buffer Overflow
+- [Buffer Overflow](https://tryhackme.com/room/bufferoverflowprep)
 ### Offensive Security Proving Grounds
 - [OSCP-Like PG Practice boxes](https://twitter.com/tj_null/status/1380574306976026628)
 ### HackTheBox
