@@ -150,9 +150,12 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Windows Fundamentals](https://tryhackme.com/module/hacking-windows-1)
 - [Networking Fundamentals](https://tryhackme.com/module/intro-to-networking)
 - [Web Hacking Fundamentals](https://tryhackme.com/module/web-hacking-1)
+- [Web Fundamentals](https://tryhackme.com/room/webfundamentals)
 #### PrivEsc
 - [Shells and Privilege Escalation](https://tryhackme.com/module/privilege-escalation-and-shells)
+- [Common Linux Privilege Escalation](https://tryhackme.com/room/commonlinuxprivesc)
 - [Tib3rius' Linux PrivEsc](https://tryhackme.com/room/linuxprivesc)
+- [Privilege Escalation OverlayFS](https://tryhackme.com/room/overlayfs)
 - [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
 #### Intermediate stuff
 - [Offensive Pentesting](https://tryhackme.com/paths)
