@@ -156,6 +156,8 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
 #### Intermediate stuff
 - [Offensive Pentesting](https://tryhackme.com/paths)
+- [SQL Injection Lab](https://tryhackme.com/room/sqlilab)
+- [SQHell](https://tryhackme.com/room/sqhell)
 ### Offensive Security Proving Grounds
 - [OSCP-Like PG Practice boxes](https://twitter.com/tj_null/status/1380574306976026628)
 ### HackTheBox
