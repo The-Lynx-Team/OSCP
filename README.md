@@ -91,7 +91,6 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Web vulnerabilities to gain access to the system](https://www.exploit-db.com/papers/13017)
 - [Basic Shellshock Exploitation](https://blog.knapsy.com/blog/2014/10/07/basic-shellshock-exploitation/)
 - [Full MSSQL Injection PWNage](https://www.exploit-db.com/papers/12975)
-- 
 
 ## Genereal useful resources
 - [Explain shell](https://explainshell.com/)
@@ -115,9 +114,6 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Elevating your Windows Privileges Like a Boss! (Jake Williams)](https://www.youtube.com/watch?v=SHdM197sbIE)
 - [Weird PrivEsc Techinques](https://www.youtube.com/watch?v=wyeRPSjnNjY)
 - [Level Up! Practical Windows Privilege Escalation - Andrew Smith](https://www.youtube.com/watch?v=PC_iMqiuIRQ)
-#### Gamified Learning for PrivEsc
-- [Tib3rius' Linux PrivEsc](https://tryhackme.com/room/linuxprivesc)
-- [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
 ####  Linux Capabilities
 - [Linux Privilege Escalation using Capabilities](https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/)
 - [Linux Capabilities](https://github.com/carlospolop/hacktricks/blob/master/linux-unix/privilege-escalation/linux-capabilities.md)
@@ -129,6 +125,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Post Exploitation](https://n00bpentesting.wordpress.com/lessons/ptes-101/post-exploitation/)
 - [PayloadAllTheThings - Methodology and Resources](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Methodology%20and%20Resources)
 ## Automation scripts
+- [nmapAutomator](https://github.com/21y4d/nmapAutomator)
 - [Autorecon](https://github.com/Tib3rius/AutoRecon)
 - [Onetwopunch](https://github.com/superkojiman/onetwopunch)
 
@@ -146,8 +143,25 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [c0deman's Cave MSSQL Injection Cheat Sheet](https://c0deman.wordpress.com/2013/06/25/mssql-injection-cheat-sheet/)
 
 ## Gamified Learning
+### TryHackMe
+#### Back to basics
+- [How The Web Works](https://tryhackme.com/module/how-the-web-works)
+- [Linux Fundamentals](https://tryhackme.com/module/linux-fundamentals)
+- [Windows Fundamentals](https://tryhackme.com/module/hacking-windows-1)
+- [Networking Fundamentals](https://tryhackme.com/module/intro-to-networking)
+- [Web Hacking Fundamentals](https://tryhackme.com/module/web-hacking-1)
+#### PrivEsc
+- [Shells and Privilege Escalation](https://tryhackme.com/module/privilege-escalation-and-shells)
+- [Tib3rius' Linux PrivEsc](https://tryhackme.com/room/linuxprivesc)
+- [Tib3rius' Windows PrivEsc](https://tryhackme.com/room/windows10privesc)
+#### Intermediate stuff
+- [Offensive Pentesting](https://tryhackme.com/paths)
+### HackTheBox
 - [OSCP-Like HTB boxes](https://twitter.com/TJ_Null/status/1162419643283333120) 
+### VulnHub
 - [OSCP-Like VulnHub boxes](https://www.abatchy.com/2017/02/oscp-like-vulnhub-vms.html) 
+### Others from the web
+- [WebSecurity Academy by PortSwigger](https://portswigger.net/web-security)
 - [OverTheWire (Linux wargames)](https://overthewire.org/)
 - [UnderTheWire (Powershell wargames)](https://underthewire.tech/)
 
