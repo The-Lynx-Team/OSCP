@@ -102,7 +102,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	```
 ## Service enumeration
 ### FTP (TCP 21) | TFTP (UDP 21)
-- [ ]  [Banner grabbing](recon_enum_methodology%F0%9F%9B%B0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](Methodologies/recon_enum_methodology🛰.md#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
 - [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
@@ -121,7 +121,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	hydra -s <PORT> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ftp
 	```
 ### SSH (TCP 22)
-- [ ]  [Banner grabbing](recon_enum_methodology%F0%9F%9B%B0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](Methodologies/recon_enum_methodology🛰.md#grab-the-damn-banner)
 - [ ] User enumeration
 	```bash
 	# using msf

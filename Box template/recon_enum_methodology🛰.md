@@ -90,11 +90,11 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	```
 - [ ] Version/OS detection using other DNS servers
 	```bash
-	nmap -v --dns-server \<DNS\> -sV --reason -O --open -Pn $IP
+	nmap -v --dns-server <DNS> -sV --reason -O --open -Pn $IP
 	```
 - [ ] Try identify unknown services
 	```bash
-	amap -d $IP \<PORT\>
+	amap -d $IP <PORT>
 	```
 - [ ] Full vulnerability scanning with [vulnscan.nse]
 	```bash
@@ -102,7 +102,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	```
 ## Service enumeration
 ### FTP (TCP 21) | TFTP (UDP 21)
-- [ ]  [Banner grabbing](recon_enum_methodology%F0%9F%9B%B0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](Box%20template/recon_enum_methodology%F0%9F%9B%B0.md#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
 - [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
@@ -121,7 +121,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	hydra -s <PORT> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ftp
 	```
 ### SSH (TCP 22)
-- [ ]  [Banner grabbing](recon_enum_methodology%F0%9F%9B%B0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](Box%20template/recon_enum_methodology%F0%9F%9B%B0.md#grab-the-damn-banner)
 - [ ] User enumeration
 	```bash
 	# using msf
@@ -212,7 +212,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] cadevar
 	- [ ] Use nmap to detect WebDAV installations & listings:
 		```bash
-		nmap --script http-webdav-scan -p80,8080 $IP
+		nmap -p80 --script http-webdav-scan $IP
 		```
 - [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
@@ -238,7 +238,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Look at the application from a bad guy perspective, what does it do? what is the most valuable part? Some applications will value things more than others, for example a premium website might be more concerned about users being able to bypass the pay wall than they are of say cross-site scripting
 	- [ ] Look at the application logic too, how is business conducted?
 #### Phase Bravo - go deeper
-- [ ] Follow webapp testing methodology [[webapp_testing_methodology🌐]]
+- [ ] Follow webapp testing methodology [[Box template/webapp_testing_methodology🌐]]
 - [ ] LFI / RFI test
 - [ ] cgi-bin found? try shellshock [https://www.exploit-db.com/exploits/34900]
 - [ ] Check every input field for SQLi
@@ -303,7 +303,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	USER user@IP
 	PASS admin
 	LIST - once logged in list messages
-	RETR \<MSG NUMBER\> - retrieve message
+	RETR <MSG NUMBER> - retrieve message
 	QUIT
 	```
 - [ ] Bruteforce with nmap

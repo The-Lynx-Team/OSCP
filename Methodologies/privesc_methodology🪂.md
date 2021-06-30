@@ -7,9 +7,9 @@ Now we are inside the system as a low-privileged user, to obtain an elevated pri
 
 #### Mind map & checklist
 We think that the mind map provived by Conda (please, go support him on [his](https://www.youtube.com/channel/UCzK5oAENyQJcnH5SvEquo8A) YouTube channel) is very useful and straightforward. So, we've decided to translate it into this checklist. While the mind map gives you an immediate overview of what you should do, the checklist gives you the possibility to visualize what you already have done.
-You can find the mind map created with Obsidian by us here  ![[linux_privesc_mindmap.png]] and the Conda's original one (That is better in term of design) [here](https://github.com/C0nd4/OSCP-Priv-Esc). Go check his playlist on YouTube!, you can find the link under the PrivEsc section inside README.MD ([[README#PrivEsc]])
+You can find the mind map created by Conda's [here](https://github.com/C0nd4/OSCP-Priv-Esc). Go check his playlist on YouTube!, you can find the link under the PrivEsc section inside README.MD ([[README#PrivEsc]])
 
-_**Be aware**: our translation does not completely reflect the Conda's mind map as we added/modified some parts. At this moment the mind map is not aligned with the following cheat sheet._
+_**Be aware**: our translation does not completely reflect the Conda's mind map as we added/modified some parts._
 
 ## General thoughts to bear in mind
 If you are still trying to gain an initial foothold but you can access local files, try to look for firewall's rules. So you won't become mad to figure it out by "brute forcing" the ports for a reverse shell 🙃

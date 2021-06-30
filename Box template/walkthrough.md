@@ -1,5 +1,5 @@
 # Reconnaissance
-**[Follow the recon/enum cheat sheet!](Box%20template%20slim/recon_enum_methodology%F0%9F%9B%B0.md)**
+**[Follow the recon/enum cheat sheet!](Box%20template/recon_enum_methodology🛰.md)**
 
 | IP  | hostname | OS & version |
 | --- | -------- | ------- |
@@ -21,7 +21,7 @@
 
 ---
 # Services enumeration
-**[Follow the recon/enum cheat sheet!](Box%20template%20slim/recon_enum_methodology%F0%9F%9B%B0.md)**
+**[Follow the recon/enum cheat sheet!](Box%20template/recon_enum_methodology🛰.md)**
 
 *Populate this if you want to have an immediate visualization:*
 

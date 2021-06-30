@@ -1,5 +1,1 @@
- [[1. reconnaissance]]
- [[2. services_enumeration]]
- [[3. exploitation]]
- [[5. privilege escalation]]
- [[6. loot]]
+[[walkthrough]]
