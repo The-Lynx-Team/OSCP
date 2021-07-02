@@ -88,9 +88,13 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [PimpMyKali](https://github.com/Dewalt-arch/pimpmykali)
 
 ## Webbing
+### General
 - [Web vulnerabilities to gain access to the system](https://www.exploit-db.com/papers/13017)
 - [Basic Shellshock Exploitation](https://blog.knapsy.com/blog/2014/10/07/basic-shellshock-exploitation/)
+### Playing with SQL
+- [NetSPI SQL Injection Wiki](https://sqlwiki.netspi.com/)
 - [Full MSSQL Injection PWNage](https://www.exploit-db.com/papers/12975)
+- [MySQL Error Based SQL Injection Using EXP](https://www.exploit-db.com/docs/english/37953-mysql-error-based-sql-injection-using-exp.pdf)
 
 ## Genereal useful resources
 - [Explain shell](https://explainshell.com/)
