@@ -65,6 +65,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Passing the OSCP while working full time](https://medium.com/@galolbardes/passing-the-oscp-while-working-full-time-29cb22d622e0)
 - [Not your standard OSCP guide](https://blog.thehackingnomad.com/)
 - [How to pass the OSCP in 30 days.](https://achrafj.medium.com/how-to-pass-the-oscp-in-30-days-dc9207d09f2b)
+- [Unofficial OSCP Approved Tools](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
 ## Reddit
 - [First Attempt ... Discouraged](https://www.reddit.com/r/oscp/comments/l7x5gq/first_attempt_discouraged/)
 - [1 attempt 1 fail with 55 points](https://www.reddit.com/r/oscp/comments/l5sett/1_attempt_1_fail_with_55_points/)
@@ -102,6 +103,8 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Pentest Tips and Tricks](https://jivoi.github.io/2015/07/01/pentest-tips-and-tricks/)
 - [Big list with tips, tricks and cheat sheets](https://guif.re/)
 - [Attacking Active Directory: 0 to 0.9](https://zer1t0.gitlab.io/posts/attacking_ad/?s=09)
+- [How to PASS the OSCP Exam - You're probably not preparing like you should be!](https://www.youtube.com/watch?v=eLNYc-1ScdU)
+
 ## Buffer Overflow
 - [Do Stack Bufferoverflow Good](https://github.com/justinsteven/dostackbufferoverflowgood)
 
