@@ -188,6 +188,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 ## Reporting
 - [Reporting * ptestmethod.readthedocs.io](https://ptestmethod.readthedocs.io/en/latest/LFF-IPS-P5-Reporting.html)
 - [Offensive Security Exam Report Template in Markdown](https://github.com/noraj/OSCP-Exam-Report-Template-Markdown)
+- [OSCP Report Templates](https://github.com/whoisflynn/OSCP-Exam-Report-Template)
 
 ## Mental and Physical Health
 Ok, this is not about popping shells, cracking codes, and launching exploits. Your health is more important than knowing how to pop a shell. If you are under burnout, if you can’t concentrate, if you can’t free your minds and visualize your target, all the above stuff is useless. You should find a spot to read the below links and do your own research.
