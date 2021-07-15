@@ -52,6 +52,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Proctored Exam Information](https://help.offensive-security.com/hc/en-us/sections/360008126631)
 - [Proctoring Tool Student Manual](https://help.offensive-security.com/hc/en-us/articles/360050299352)
 - [Upload Exam Report](https://upload.offsec.com/)
+- [Student Forum](https://forums.offensive-security.com/)
 
 ## Blog
 - [the-oscp-preperation-guide-2020](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
