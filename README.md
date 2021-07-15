@@ -110,6 +110,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 
 ## Buffer Overflow
 - [Do Stack Bufferoverflow Good](https://github.com/justinsteven/dostackbufferoverflowgood)
+- [OSCP Prep - x86 Windows Stack-Based Buffer Overflow Full Tutorial - War-FTP 1.65](https://www.youtube.com/watch?v=Z2pQuGmFNrM)
 
 ## PrivEsc
 #### General
