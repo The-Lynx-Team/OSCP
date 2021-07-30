@@ -5,19 +5,21 @@
 | --- | -------- | ------- |
 |     |          |         |
 ## Nmap results
-
-1. nmap script 1
-	```bash
-	```
-1. nmap script 2
-	```bash
-	```
-1. nmap script 3
-	```bash
-	```
-1. nmap script 4
-	```bash
-	```
+1. nmap TCP full scan
+```bash
+```
+2. nmap default script and version
+```bash
+```
+3. nmap UDP scan
+```bash
+```
+4. nmap script vuln
+```bash
+```
+5. nmap script CVEs
+```bash
+```
 
 ---
 # Services enumeration

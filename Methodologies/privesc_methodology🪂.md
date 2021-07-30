@@ -1,16 +1,7 @@
 # Privilege Escalation Methodology🪂
 ##  Few words before going on
 "**Slow is smooth, and smooth is fast**"
-Be methodical in what you do or you will get lost. 
-
-Now we are inside the system as a low-privileged user, to obtain an elevated privileged user account we have to find a vector we can use to climb the privileges ladder.
-
-#### Mind map & checklist
-We think that the mind map provived by Conda (please, go support him on [his](https://www.youtube.com/channel/UCzK5oAENyQJcnH5SvEquo8A) YouTube channel) is very useful and straightforward. So, we've decided to translate it into this checklist. While the mind map gives you an immediate overview of what you should do, the checklist gives you the possibility to visualize what you already have done.
-You can find the mind map created by Conda's [here](https://github.com/C0nd4/OSCP-Priv-Esc). Go check his playlist on YouTube!, you can find the link under the PrivEsc section inside README.MD ([[README#PrivEsc]])
-
-_**Be aware**: our translation does not completely reflect the Conda's mind map as we added/modified some parts._
-
+Be methodical in what you do or you will get lost.
 ## General thoughts to bear in mind
 If you are still trying to gain an initial foothold but you can access local files, try to look for firewall's rules. So you won't become mad to figure it out by "brute forcing" the ports for a reverse shell 🙃
 ## Linux
@@ -27,7 +18,7 @@ If you are still trying to gain an initial foothold but you can access local fil
 	groups username
 	cat /etc/groups
 	```
-- [ ] Check for super users
+- [x] Check for super users
 	```bash
 	grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}' \
 	awk -F: '($3 == "0") {print}' /etc/passwd \
@@ -49,7 +40,7 @@ If you are still trying to gain an initial foothold but you can access local fil
 	# show who is logged on and what he/she's doing
 	w
 	```
-- [ ] Last logged in
+- [x] Last logged in
 	```bash
 	last
 	```
@@ -103,8 +94,8 @@ If you are still trying to gain an initial foothold but you can access local fil
 - [ ] Try known passwords
 - [ ] Search creds from config files (Try different word other the PASSWORD, e.g: pass, passwd, pwd, user, usr, username, secret, cred, credential, auth):
 	```bash
-	grep \--color\=auto \-rnw '/' \-ie "PASSWORD" \--color\=always 2> /dev/null
-	find . \-type f \-exec grep \-i \-I "PASSWORD" {} /dev/null
+	grep --color=auto -rnw '/' -ie "PASSWORD" --color=always 2> /dev/null
+	find . -type f -exec grep -i -I "PASSWORD" {} /dev/null
 	locate password | more
 	```
 - [ ] Search creds from local DBs
@@ -115,12 +106,12 @@ If you are still trying to gain an initial foothold but you can access local fil
 	```
 - [ ] Search creds from memory:
 	```bash
-	strings /dev/mem \-n10 | grep \-i PASS
+	strings /dev/mem -n10 | grep -i PASS
 	```
 - [ ] SSH keys:
 	```bash
 	cat ~/.ssh/id_rsa
-	ls ~/.ssh/\*
+	ls ~/.ssh/*
 	find / -name authorized_keys 2> /dev/null
 	find / -name id_rsa 2> /dev/null
 	```
@@ -133,7 +124,7 @@ If you are still trying to gain an initial foothold but you can access local fil
 - [ ] Cron job -> check for write permissions on the following files:
 	```bash
 	/etc/init.d
-	/etc/cron\*
+	/etc/cron*
 	/etc/crontab
 	/etc/cron.allow
 	/etc/cron.d 
@@ -147,15 +138,15 @@ If you are still trying to gain an initial foothold but you can access local fil
 	/etc/anacrontab
 	/var/spool/cron
 	/var/spool/cron/crontabs/root
-	crontab \-l
-	ls \-alh /var/spool/cron;
-	ls \-al /etc/ | grep cron
-	ls \-al /etc/cron\*
-	cat /etc/cron\*
+	crontab -l
+	ls -alh /var/spool/cron;
+	ls -al /etc/ | grep cron
+	ls -al /etc/cron*
+	cat /etc/cron*
 	cat /etc/at.allow
 	cat /etc/at.deny
 	cat /etc/cron.allow
-	cat /etc/cron.deny\*
+	cat /etc/cron.deny*
 	```
 - [ ] Writeable cron job dependecy (File, Python library, etc)
 - [ ] Find SUID:
@@ -177,6 +168,17 @@ If you are still trying to gain an initial foothold but you can access local fil
 	find / -perm +2000 -user root -type f -print
 	```
 - [ ] Interesting capabilities on binary
+	```bash
+	getcap -r / 2>/dev/null
+	```
+- [ ] Any writable file
+	```bash
+	# look for any writable file
+	find / -type f -writable 2> /dev/null
+
+	# look for writable configuration file
+	find /etc -type f -writable 2> /dev/null
+	```
 - [ ] Any accessible sensitive file?
 	- [ ] /etc/passwd
 	- [ ] /etc/shadow
@@ -242,7 +244,7 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 	```
 - [ ] Architecture
 	```powershell
-	wmic os get osarchitecture || echo %PROCESSOR\_ARCHITECTURE%
+	wmic os get osarchitecture || echo %PROCESSOR_ARCHITECTURE%
 	```
 - [ ] Environment variables
 	```powershell
@@ -253,28 +255,28 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 	```powershell
 	wmic logicaldisk get caption || fsutil fsinfo drives
 	wmic logicaldisk get caption,description,providername
-	Get-PSDrive | where {$\_.Provider \-like "Microsoft.PowerShell.Core\\FileSystem"}| ft Name,Root
+	Get-PSDrive | where {$_.Provider -like "Microsoft.PowerShell.Core\\FileSystem"}| ft Name,Root
 	```
 ### Network Enumeration
 - [ ] List all NICs, IP and DNS
 	```powershell
 	ipconfig /all
 	Get-NetIPConfiguration | ft InterfaceAlias,InterfaceDescription,IPv4Address
-	Get-DnsClientServerAddress \-AddressFamily IPv4 | ft
+	Get-DnsClientServerAddress -AddressFamily IPv4 | ft
 	```
 - [ ] List routing table
 	```powershell
 	route print
-	Get-NetRoute \-AddressFamily IPv4 | ft DestinationPrefix,NextHop,RouteMetric,ifIndex
+	Get-NetRoute -AddressFamily IPv4 | ft DestinationPrefix,NextHop,RouteMetric,ifIndex
 	```
 - [ ] List ARP table
 	```powershell
-	arp \-A
-	Get-NetNeighbor \-AddressFamily IPv4 | ft ifIndex,IPAddress,LinkLayerAddress,State
+	arp -A
+	Get-NetNeighbor -AddressFamily IPv4 | ft ifIndex,IPAddress,LinkLayerAddress,State
 	```
 - [ ] List current connections
 	```powershell
-	netstat \-ano
+	netstat -ano
 	```
 - [ ] List current connections correlated to running service (requires elevated privs)
 	```powershell
@@ -298,12 +300,12 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 - [ ] List network shares
 	```powershell
 	net share
-	powershell Find-DomainShare \-ComputerDomain domain.local
+	powershell Find-DomainShare -ComputerDomain domain.local
 	```
 - [ ] SNMP config
 	```powershell
 	reg query HKLM\\SYSTEM\\CurrentControlSet\\Services\\SNMP /s
-	Get-ChildItem \-path HKLM:\\SYSTEM\\CurrentControlSet\\Services\\SNMP \-Recurse
+	Get-ChildItem -path HKLM:\\SYSTEM\\CurrentControlSet\\Services\\SNMP -Recurse
 	```
 ### Credential Access
 - [ ]  Go from **medium mandatory level** to **high mandatory level**
@@ -319,7 +321,7 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 - [ ] Creds from config files (Try different words e.g: pass, passwd, pwd, user, usr, username, secret, cred, credential, auth):
 	```powershell
 	dir /s /b /p *pass* == *cred* == *vnc* == *.config* == *conf* == *ini*
-	findstr /si /m password \*.xml \*.ini \*.txt
+	findstr /si /m password *.xml *.ini *.txt
 	```
 - [ ] Creds from local DBs
 - [ ] Creds from  Windows Vault
@@ -330,8 +332,11 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 	```
 - [ ] Creds from Registry
 	```powershell
-	reg query HKLM /f password /t REG\_SZ /s
-	reg query HKCU /f password /t REG\_SZ /s
+	reg query HKLM /f pass /t REG_SZ /s
+	reg query HKCU /f pass /t REG_SZ /s
+	
+	reg query HKLM /f password /t REG_SZ /s
+	reg query HKCU /f password /t REG_SZ /s
 	
 	# Windows Autologin
 	reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
@@ -521,7 +526,7 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 	```powershell
 	# Check if the retrieved sotfwares are vulnerable to DLL Sideloading
 	# https://github.com/enjoiz/Privesc
-	$result \= Get-WmiObject -Namespace "root\\ccm\\clientSDK" -Class CCM\_Application -Property \* | select Name,SoftwareVersion
+	$result = Get-WmiObject -Namespace "root\\ccm\\clientSDK" -Class CCM\_Application -Property * | select Name,SoftwareVersion
 	if ($result) { $result }
 	else { Write "Not Installed." }
 	```
@@ -676,6 +681,17 @@ This is a non comprehensive list of linux privesc automated script, to gain a be
 	msiexec /quiet /qn /i C:\Users\Homer.NUCLEAR\Downloads\donuts.msi
 	```
 - [ ] Scheduled tasks
+	```powershell
+	# using schtasks
+	schtasks /query /fo LIST /v
+	# filtering the output
+	schtasks /query /fo LIST /v | findstr /v "\Microsoft"
+	
+	# using powershell
+	Get-ScheduledTask | ft TaskName,TaskPath,State
+	# filtering the output
+	Get-ScheduledTask | where {$_.TaskPath -nolike "\Microsoft*"} | ft TaskName,TaskPath,State	
+	```
 	- [ ] Executable file writeable
 	- [ ] Dependency writeable
 - [ ] Sensitive files readable
