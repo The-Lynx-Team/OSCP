@@ -551,7 +551,53 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	nmap -p88 --script krb5-enum-users --script-args krb5-enum-users.realm=research $IP
 	```
 - [ ] Test MS14-068
+### Rsync (TCP 873)
+- [ ] Manual enumeration
+	```bash
+	nc -vn 127.0.0.1 873
+	(UNKNOWN) [127.0.0.1] 873 (rsync) open
+	@RSYNCD: 31.0        <--- You receive this banner with the version from the server
+	@RSYNCD: 31.0        <--- Then you send the same info
+	#list                <--- Then you ask the sever to list
+	raidroot             <--- The server starts enumerating
+	USBCopy        	
+	NAS_Public     	
+	_NAS_Recycle_TOSRAID	<--- Enumeration finished
+	@RSYNCD: EXIT         <--- Sever closes the connection
 
+	#Now lets try to enumerate "raidroot"
+	nc -vn 127.0.0.1 873
+	(UNKNOWN) [127.0.0.1] 873 (rsync) open
+	@RSYNCD: 31.0
+	@RSYNCD: 31.0
+	raidroot
+	@RSYNCD: AUTHREQD 7H6CqsHCPG06kRiFkKwD8g    <--- This means you need the password
+	```
+- [ ] Automate the enum
+	```bash
+	# using nmap
+	nmap -sV --script "rsync-list-modules" -p <PORT> <IP>
+
+	# using msf
+	msf> use auxiliary/scanner/rsync/modules_list
+
+	# using rsync application
+
+	rsync -av --list-only rsync://$IP:$PORT
+	```
+- [ ] Gather the modules
+	```bash
+	# if no auth is required, you can list the module with
+	rsync -av --list-only rsync://$IP/module_name
+	# you can download with
+	rsync -av rsync://$IP/module_name ./downloaded_module
+	# you can upload with
+	rsync -av /path/to/upload/ rsync://$IP/destination/path/
+	
+	# if auth is required, you just need to add username@$IP
+	# e.g.:
+	# rsync -av --list-only rsync://username@$IP/module_name
+	```
 ### Image File Investigation
 - [ ] Always use wget for downloading files to keep original timestamps and file information
 - [ ] Use binwalk and strings to check image files for hidden content
