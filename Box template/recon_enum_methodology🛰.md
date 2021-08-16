@@ -90,11 +90,11 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	```
 - [ ] Version/OS detection using other DNS servers
 	```bash
-	nmap -v --dns-server <DNS> -sV --reason -O --open -Pn $IP
+	nmap -v --dns-server \<DNS\> -sV --reason -O --open -Pn $IP
 	```
 - [ ] Try identify unknown services
 	```bash
-	amap -d $IP <PORT>
+	amap -d $IP \<PORT\>
 	```
 - [ ] Full vulnerability scanning with [vulnscan.nse]
 	```bash
@@ -102,7 +102,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	```
 ## Service enumeration
 ### FTP (TCP 21) | TFTP (UDP 21)
-- [ ]  [Banner grabbing](Box%20template/recon_enum_methodology%F0%9F%9B%B0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](Methodologies/recon_enum_methodology🛰.md#grab-the-damn-banner)
 - [ ] Connect and check for anonymous access
 - [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
@@ -121,7 +121,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	hydra -s <PORT> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ftp
 	```
 ### SSH (TCP 22)
-- [ ]  [Banner grabbing](Box%20template/recon_enum_methodology%F0%9F%9B%B0.md#grab-the-damn-banner)
+- [ ]  [Banner grabbing](Methodologies/recon_enum_methodology🛰.md#grab-the-damn-banner)
 - [ ] User enumeration
 	```bash
 	# using msf
@@ -212,7 +212,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] cadevar
 	- [ ] Use nmap to detect WebDAV installations & listings:
 		```bash
-		nmap -p80 --script http-webdav-scan $IP
+		nmap --script http-webdav-scan -p80,8080 $IP
 		```
 - [ ] Any known vulnerability?
 	- [ ] Check https://www.exploit-db.com/
@@ -238,7 +238,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	- [ ] Look at the application from a bad guy perspective, what does it do? what is the most valuable part? Some applications will value things more than others, for example a premium website might be more concerned about users being able to bypass the pay wall than they are of say cross-site scripting
 	- [ ] Look at the application logic too, how is business conducted?
 #### Phase Bravo - go deeper
-- [ ] Follow webapp testing methodology [[Box template/webapp_testing_methodology🌐]]
+- [ ] Follow webapp testing methodology [[webapp_testing_methodology🌐]]
 - [ ] LFI / RFI test
 - [ ] cgi-bin found? try shellshock [https://www.exploit-db.com/exploits/34900]
 - [ ] Check every input field for SQLi
@@ -303,7 +303,7 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	USER user@IP
 	PASS admin
 	LIST - once logged in list messages
-	RETR <MSG NUMBER> - retrieve message
+	RETR \<MSG NUMBER\> - retrieve message
 	QUIT
 	```
 - [ ] Bruteforce with nmap
@@ -551,7 +551,53 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	nmap -p88 --script krb5-enum-users --script-args krb5-enum-users.realm=research $IP
 	```
 - [ ] Test MS14-068
+### Rsync (TCP 873)
+- [ ] Manual enumeration
+	```bash
+	nc -vn 127.0.0.1 873
+	(UNKNOWN) [127.0.0.1] 873 (rsync) open
+	@RSYNCD: 31.0        <--- You receive this banner with the version from the server
+	@RSYNCD: 31.0        <--- Then you send the same info
+	#list                <--- Then you ask the sever to list
+	raidroot             <--- The server starts enumerating
+	USBCopy        	
+	NAS_Public     	
+	_NAS_Recycle_TOSRAID	<--- Enumeration finished
+	@RSYNCD: EXIT         <--- Sever closes the connection
 
+	#Now lets try to enumerate "raidroot"
+	nc -vn 127.0.0.1 873
+	(UNKNOWN) [127.0.0.1] 873 (rsync) open
+	@RSYNCD: 31.0
+	@RSYNCD: 31.0
+	raidroot
+	@RSYNCD: AUTHREQD 7H6CqsHCPG06kRiFkKwD8g    <--- This means you need the password
+	```
+- [ ] Automate the enum
+	```bash
+	# using nmap
+	nmap -sV --script "rsync-list-modules" -p <PORT> <IP>
+
+	# using msf
+	msf> use auxiliary/scanner/rsync/modules_list
+
+	# using rsync application
+
+	rsync -av --list-only rsync://$IP:$PORT
+	```
+- [ ] Gather the modules
+	```bash
+	# if no auth is required, you can list the module with
+	rsync -av --list-only rsync://$IP/module_name
+	# you can download with
+	rsync -av rsync://$IP/module_name ./downloaded_module
+	# you can upload with
+	rsync -av /path/to/upload/ rsync://$IP/destination/path/
+	
+	# if auth is required, you just need to add username@$IP
+	# e.g.:
+	# rsync -av --list-only rsync://username@$IP/module_name
+	```
 ### Image File Investigation
 - [ ] Always use wget for downloading files to keep original timestamps and file information
 - [ ] Use binwalk and strings to check image files for hidden content
