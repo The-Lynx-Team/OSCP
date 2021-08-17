@@ -152,7 +152,12 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [SUDO KILLER](https://github.com/TH3xACE/SUDO_KILLER)
 - [mgeeky's Penetration Testing Tools](https://github.com/mgeeky/Penetration-Testing-Tools)
 - [A @TomNomNom Recon Tools Primer](https://danielmiessler.com/blog/a-tomnomnom-tools-primer/)
-
+### Firefox extensions
+*Tip: You should create a dedicated [profile](https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles) for each browsing activity*
+- [Wappalyzer](https://addons.mozilla.org/it/firefox/addon/wappalyzer/)
+- [FoxtProxy](https://addons.mozilla.org/it/firefox/addon/foxyproxy-standard/)
+- [Cookie-Editor](https://addons.mozilla.org/it/firefox/addon/cookie-editor/)
+- [Penetration Testing Kit](https://addons.mozilla.org/it/firefox/addon/penetration-testing-kit/)
 ## Cheat sheets and Wordlists
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
 - [OSCP-Prep-cheatsheet](https://github.com/evets007/OSCP-Prep-cheatsheet)
