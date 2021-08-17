@@ -71,6 +71,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Not your standard OSCP guide](https://blog.thehackingnomad.com/)
 - [How to pass the OSCP in 30 days.](https://achrafj.medium.com/how-to-pass-the-oscp-in-30-days-dc9207d09f2b)
 - [Unofficial OSCP Approved Tools](https://falconspy.medium.com/unofficial-oscp-approved-tools-b2b4e889e707)
+
 ## Reddit
 - [First Attempt ... Discouraged](https://www.reddit.com/r/oscp/comments/l7x5gq/first_attempt_discouraged/)
 - [1 attempt 1 fail with 55 points](https://www.reddit.com/r/oscp/comments/l5sett/1_attempt_1_fail_with_55_points/)
@@ -97,6 +98,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 ### General
 - [Web vulnerabilities to gain access to the system](https://www.exploit-db.com/papers/13017)
 - [Basic Shellshock Exploitation](https://blog.knapsy.com/blog/2014/10/07/basic-shellshock-exploitation/)
+
 ### Playing with SQL
 - [NetSPI SQL Injection Wiki](https://sqlwiki.netspi.com/)
 - [Full MSSQL Injection PWNage](https://www.exploit-db.com/papers/12975)
@@ -127,6 +129,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Elevating your Windows Privileges Like a Boss! (Jake Williams)](https://www.youtube.com/watch?v=SHdM197sbIE)
 - [Weird PrivEsc Techinques](https://www.youtube.com/watch?v=wyeRPSjnNjY)
 - [Level Up! Practical Windows Privilege Escalation - Andrew Smith](https://www.youtube.com/watch?v=PC_iMqiuIRQ)
+
 ####  Linux Capabilities
 - [Linux Privilege Escalation using Capabilities](https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/)
 - [Linux Capabilities](https://github.com/carlospolop/hacktricks/blob/master/linux-unix/privilege-escalation/linux-capabilities.md)
@@ -137,7 +140,9 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [CTF Series : Vulnerable Machines](https://bitvijays.github.io/LFC-VulnerableMachines.html)
 - [Post Exploitation](https://n00bpentesting.wordpress.com/lessons/ptes-101/post-exploitation/)
 - [PayloadAllTheThings - Methodology and Resources](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Methodology%20and%20Resources)
+
 ## Automation scripts
+- [Incursore](https://github.com/wirzka/incursore)
 - [nmapAutomator](https://github.com/21y4d/nmapAutomator)
 - [Autorecon](https://github.com/Tib3rius/AutoRecon)
 - [Onetwopunch](https://github.com/superkojiman/onetwopunch)
@@ -147,10 +152,10 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [SUDO KILLER](https://github.com/TH3xACE/SUDO_KILLER)
 - [mgeeky's Penetration Testing Tools](https://github.com/mgeeky/Penetration-Testing-Tools)
 - [A @TomNomNom Recon Tools Primer](https://danielmiessler.com/blog/a-tomnomnom-tools-primer/)
+
 ## Cheat sheets and Wordlists
 - [Reverse Shell Cheat Sheet](https://highon.coffee/blog/reverse-shell-cheat-sheet/)
 - [OSCP-Prep-cheatsheet](https://github.com/evets007/OSCP-Prep-cheatsheet)
-- [Immunity Debugger](https://psyl0ckediary.tumblr.com/post/148689728108/4-immunity-debugger-first-steps)
 - [SecLists](https://github.com/danielmiessler/SecLists)
 - [MSSQL Practical Injection Cheat Sheet](https://perspectiverisk.com/mssql-practical-injection-cheat-sheet/)
 - [c0deman's Cave MSSQL Injection Cheat Sheet](https://c0deman.wordpress.com/2013/06/25/mssql-injection-cheat-sheet/)
