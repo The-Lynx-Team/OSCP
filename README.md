@@ -93,6 +93,7 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Awesome OSCP](https://github.com/The-Lynx-Team/awesome-oscp)
 - [Enumeration wikis](https://github.com/theonlykernel/enumeration/wiki)
 - [PimpMyKali](https://github.com/Dewalt-arch/pimpmykali)
+- [ConPtyShell - Fully Interactive Revese Shell for Windows](https://github.com/antonioCoco/ConPtyShell)
 
 ## Webbing
 ### General
