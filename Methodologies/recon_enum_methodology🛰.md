@@ -120,6 +120,11 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 	```bash
 	hydra -s <PORT> -C usr/share/wordlists/ftp-default-userpass.txt -u -f $IP ftp
 	```
+- [ ] Download recursively all the files
+	```bash
+	wget -r ftp://user:pass@$IP/
+	wget -r --user="user" --password="secret" ftp://$IP/
+	```
 ### SSH (TCP 22)
 - [ ]  [Banner grabbing](Methodologies/recon_enum_methodology🛰.md#grab-the-damn-banner)
 - [ ] User enumeration
@@ -358,6 +363,14 @@ If you don't know the alive hosts,  you can scan the full subnet to find them, s
 		nmap -n -v --script smb-os-discovery.nse --script-args=unsafe=1 -oN nmap/smbOS -p 445 $IP
 		nmap -n -v --script smb-check-vulns --script-args=unsafe=1 -oN nmap/smbCehckVulns -p445 $IP
 		```
+- [ ] Download recursively all the files
+	```bash
+	smbclient \\\\$IP\\share
+	mask ""
+	recurse ON
+	prompt OFF
+	mget *
+	```
 ### SNMP (UDP 161)
 - [ ] Enumeration
 	```bash
