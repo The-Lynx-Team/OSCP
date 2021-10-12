@@ -223,3 +223,5 @@ The InfoSec community is an enormous family, you’ll always find someone ready 
 - [Mental Health for Hackers: Contents Under Pressure](https://www.tripwire.com/state-of-security/security-awareness/events/mental-health-hackers-under-pressure/)
 - [How to beat imposter syndrome to get into cybersecurity industry?](https://www.reddit.com/r/cybersecurity/comments/koh3bj/how_to_beat_imposter_syndrome_to_get_into/)
 - [Navigating Imposter Syndrome in the world of Information Security](https://medium.com/@west.a.dominique/navigating-imposter-syndrome-in-the-world-of-information-security-dc6ec10d9c0f)
+- [Staying Sane in Cybersecurity - Dealing with Burnout and Stress by Hakluke](https://www.youtube.com/watch?v=XARTT8P_698)
+- [r00tMI Night Talk - Burnout nella Cybersecurity: la minaccia che non ti aspetti - Italian talk about burnout](https://www.youtube.com/watch?v=tV0bGS4tPx8)
