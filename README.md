@@ -48,6 +48,7 @@ _**Be aware**: we use  [Obsidian](https://obsidian.md/) as note taking applicati
 We think the graph view provided by Obsidian is a pleasant way to have a visual view of the data we gather. So if you use our checklists, we suggest you run them on Obsidian for a better experience._
 
 ## Official Offensive Security References
+- [**OSCP Exam Change**](https://www.offensive-security.com/offsec/oscp-exam-structure/)
 - [Exam Guide](https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide)
 - [Try Harder: From mantra to mindset](https://www.offensive-security.com/offsec/what-it-means-to-try-harder/)
 - [Proctored Exam Information](https://help.offensive-security.com/hc/en-us/sections/360008126631)
