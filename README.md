@@ -21,6 +21,7 @@ We maintain this repo with the aim to gather all the info that we’d found usef
 - [Webbing](#webbing)
 - [Genereal useful resources](#genereal-useful-resources)
 - [Buffer Overflow](#buffer-overflow)
+- [Active Directory](#active-directory)
 - [PrivEsc](#privesc)
 - [Methodologies](#methodologies)
 - [Automation scripts](#automation-scripts)
@@ -106,18 +107,30 @@ We think the graph view provided by Obsidian is a pleasant way to have a visual 
 - [Full MSSQL Injection PWNage](https://www.exploit-db.com/papers/12975)
 - [MySQL Error Based SQL Injection Using EXP](https://www.exploit-db.com/docs/english/37953-mysql-error-based-sql-injection-using-exp.pdf)
 
+### Microsoft IIS resources
+##### Official documentation
+- [Understanding Sites, Applications, and Virtual Directories on IIS 7](https://docs.microsoft.com/en-us/iis/get-started/planning-your-iis-architecture/understanding-sites-applications-and-virtual-directories-on-iis)
+##### Other interesting stuff
+- [Uploading web.config for Fun and Profit 2 by @irsdl](https://soroush.secproject.com/blog/2019/08/uploading-web-config-for-fun-and-profit-2/)
+- [IIS Application vs. Folder Detection During Blackbox Testing by @irsdl](https://soroush.secproject.com/blog/2019/07/iis-application-vs-folder-detection-during-blackbox-testing/)
 ## Genereal useful resources
 - [Explain shell](https://explainshell.com/)
 - [Powershell basics](https://www.darkoperator.com/powershellbasics)
 - [Pentest Tips and Tricks](https://jivoi.github.io/2015/07/01/pentest-tips-and-tricks/)
 - [Big list with tips, tricks and cheat sheets](https://guif.re/)
-- [Attacking Active Directory: 0 to 0.9](https://zer1t0.gitlab.io/posts/attacking_ad/?s=09)
 - [How to PASS the OSCP Exam - You're probably not preparing like you should be!](https://www.youtube.com/watch?v=eLNYc-1ScdU)
 
 ## Buffer Overflow
 - [Do Stack Bufferoverflow Good](https://github.com/justinsteven/dostackbufferoverflowgood)
 - [OSCP Prep - x86 Windows Stack-Based Buffer Overflow Full Tutorial - War-FTP 1.65](https://www.youtube.com/watch?v=Z2pQuGmFNrM)
-
+## Active Directory
+- [Attacking Active Directory: 0 to 0.9](https://zer1t0.gitlab.io/posts/attacking_ad/?s=09)
+- [Stealthbits Attack Catalog](https://attack.stealthbits.com/)
+- [Cheat Sheet - Attack Active Directory](https://github.com/drak3hft7/Cheat-Sheet---Active-Directory)
+- [Active Directory Kill Chain Attack & Defense](https://github.com/infosecn1nja/AD-Attack-Defense)
+- [Active Directory Exploitation Cheat Sheet](https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet)
+- [Vulnerable-AD (Local lab)](https://github.com/WazeHell/vulnerable-AD)
+- [Active Directory Labs/exams Review](https://github.com/ryan412/ADLabsReview) **Extra**
 ## PrivEsc
 #### General
 - [PayloadAllTheThings - Linux Privilege Escalation methodology](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md)
