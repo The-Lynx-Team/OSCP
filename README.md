@@ -240,3 +240,4 @@ The InfoSec community is an enormous family, you’ll always find someone ready 
 - [Navigating Imposter Syndrome in the world of Information Security](https://medium.com/@west.a.dominique/navigating-imposter-syndrome-in-the-world-of-information-security-dc6ec10d9c0f)
 - [Staying Sane in Cybersecurity - Dealing with Burnout and Stress by Hakluke](https://www.youtube.com/watch?v=XARTT8P_698)
 - [r00tMI Night Talk - Burnout nella Cybersecurity: la minaccia che non ti aspetti - Italian talk about burnout](https://www.youtube.com/watch?v=tV0bGS4tPx8)
+- [Ask Chloé: Vacations Aren’t the Cure for Burnout](https://securityboulevard.com/2022/02/ask-chloe-vacations-arent-the-cure-for-burnout/)
