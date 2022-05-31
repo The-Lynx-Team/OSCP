@@ -8,9 +8,9 @@
 			       ---- lynxes just wanna have fun ----
 ```
 # OSCP
-We maintain this repo with the aim to gather all the info that we’d found useful and interesting for the OSCP. We also collect material from other resources (websites, courses, blogs, git repos, books, etc).
+We have created this repo with the aim to gather all the info that we’d found useful and interesting for the OSCP. We have also collected material from other resources (websites, courses, blogs, git repos, books, etc).
 
-**Before continue**: we are still working on this repo as we go on with our OSCP journey. This means we'll add or remove parts without giving notice. Furthermore, this is not intended to be a comprehensive repo, cross-reference and information gathering are your friends.
+**YO! YO!**: we are _no more_ working on this repo, even if future updates are not excluded. We hope this could be still useful for future students. As always remember: this is not intended to be a comprehensive repo, cross-reference and information gathering are your friends.
 
 ## TOC
 - [How to navigate the repo](#how-to-navigate-the-repo)
